@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_horoscope"
+        android:icon="@drawable/nav_ic_horoscope"
+        android:title="@string/title_horosope" />
+
+    <item
+        android:id="@+id/navigation_psychomatrix"
+        android:icon="@drawable/nav_ic_psychomatrix"
+        android:title="@string/title_psychomatrix" />
+
+    <item
+        android:id="@+id/navigation_compatibility"
+        android:icon="@drawable/nav_ic_compatibility"
+        android:title="@string/title_compatibility" />
+
+</menu>
