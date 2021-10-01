@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.wiserax.zodiac.User
+import com.wiserax.zodiac.UserFactory
 import com.wiserax.zodiac.databinding.FragmentHoroscopeBinding
 
 class HoroscopeFragment : Fragment() {
@@ -30,10 +33,22 @@ class HoroscopeFragment : Fragment() {
         _binding = FragmentHoroscopeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHorosope
-        horoscopeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+        val nameTextView: TextView = binding.textName
+        val imageView: ImageView = binding.imageView
+        val jsonTextView: TextView = binding.textJson
+
+        horoscopeViewModel.name.observe(viewLifecycleOwner, Observer {
+            nameTextView.text = it
         })
+
+        horoscopeViewModel.image.observe(viewLifecycleOwner, Observer {
+            imageView.setImageDrawable(it)
+        })
+
+        horoscopeViewModel.description.observe(viewLifecycleOwner, Observer {
+            jsonTextView.text = it
+        })
+
         return root
     }
 
