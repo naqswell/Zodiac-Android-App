@@ -9,18 +9,19 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="@dimen/_70sdp"
         android:background="@drawable/rounded_bottom_corners">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
             android:layout_marginStart="16dp"
             android:src="@drawable/ic_sign_empty"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.500" />
 
         <TextView
             android:id="@+id/textName"
@@ -30,21 +31,21 @@
             android:text="Sign"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="@dimen/_22sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.504" />
+            app:layout_constraintVertical_bias="0.50" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="16dp"
-        android:paddingTop="16dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="64dp">
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_48sdp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,7 +56,10 @@
                 android:id="@+id/textJson"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="JSON Text Here" />
+                android:text="JSON Text Here"
+                android:textSize="@dimen/_16ssp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                />
         </LinearLayout>
     </ScrollView>
 

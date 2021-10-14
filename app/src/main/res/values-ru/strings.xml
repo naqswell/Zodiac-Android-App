@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Зодиак</string>
+    <string name="title_horosope">Гороскоп</string>
+    <string name="title_psychomatrix">Психоматрица</string>
+    <string name="title_compatibility">Совместимость</string>
+    <string name="get_horoscope">Получить гороскоп</string>
+    <string name="choose_birthdate">Выберите вашу дату рождения</string>
+
+    <string-array name="months">
+        <item>Январь</item>
+        <item>Февраль</item>
+        <item>Март</item>
+        <item>Апрель</item>
+        <item>Май</item>
+        <item>Июнь</item>
+        <item>Июль</item>
+        <item>Август</item>
+        <item>Сентябрь</item>
+        <item>Октябрь</item>
+        <item>Ноябрь</item>
+        <item>Декабрь</item>
+    </string-array>
+</resources>

@@ -2,12 +2,10 @@ package com.wiserax.zodiac.ui.horoscope
 
 import android.app.Application
 import android.graphics.drawable.Drawable
-import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.wiserax.zodiac.Gender
-import com.wiserax.zodiac.R
 import com.wiserax.zodiac.User
 import com.wiserax.zodiac.UserFactory
 
