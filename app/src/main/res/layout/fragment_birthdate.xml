@@ -14,62 +14,60 @@
         android:fontFamily="sans-serif-black"
         android:paddingTop="@dimen/_50sdp"
         android:paddingBottom="@dimen/_50sdp"
-        android:text="@string/choose_birthdate"
+        android:text="@string/choose_your_birthdate"
         android:textAlignment="center"
         android:textSize="@dimen/_22sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--    <Spinner-->
-    <!--        android:id="@+id/spinner_date"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:background="@drawable/rounded_corners"-->
-    <!--        android:layout_marginTop="@dimen/_24sdp"-->
-    <!--        android:backgroundTint="?android:attr/spinnerStyle"-->
-    <!--        app:layout_constraintEnd_toStartOf="@+id/spinner_month"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/choose_date_textview"-->
-    <!--        tools:listitem="@layout/support_simple_spinner_dropdown_item" />-->
 
-    <!--    <Spinner-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginStart="@dimen/_64sdp"-->
-    <!--        android:layout_marginTop="@dimen/_24sdp"-->
-    <!--        android:layout_marginBottom="@dimen/_24sdp"-->
-    <!--        android:background="@drawable/rounded_corners"-->
-    <!--        android:dropDownVerticalOffset="@dimen/_60sdp"-->
-    <!--        android:padding="@dimen/_5sdp"-->
-    <!--        android:popupBackground="@color/yellow"-->
-    <!--        android:spinnerMode="dropdown"-->
-    <!--        android:textAlignment="center"-->
-    <!--        app:layout_constraintBottom_toTopOf="@+id/get_horoscope_btn"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="@+id/spinner_month"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/choose_date_textview"-->
-    <!--        tools:listitem="@android:layout/simple_list_item_1"/>-->
-
-    <Spinner
-        android:id="@+id/spinner_month"
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_6sdp"
-        android:layout_marginTop="@dimen/_24sdp"
-        android:layout_marginBottom="@dimen/_24sdp"
-        android:background="@drawable/rounded_corners"
-        android:popupBackground="@color/yellow"
-        android:spinnerMode="dropdown"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/get_horoscope_btn"
+        app:layout_constraintBottom_toTopOf="@+id/btn_choose_date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/choose_date_textview"
-        tools:listitem="@android:layout/simple_list_item_1" />
+        android:weightSum="1"
+        android:id="@+id/radioGroup"
+        android:layout_marginBottom="@dimen/_12sdp"
+        >
+
+        <RadioButton
+            android:id="@+id/male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male"
+            app:layout_constraintBottom_toTopOf="@+id/btn_choose_date"
+            app:layout_constraintEnd_toStartOf="@+id/rd_btn_female" />
+
+
+        <RadioButton
+            android:id="@+id/female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btn_choose_date"
+            app:layout_constraintStart_toEndOf="@+id/rd_btn_male" />
+    </RadioGroup>
 
     <Button
-        android:id="@+id/get_horoscope_btn"
+        android:id="@+id/btn_choose_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/choose_birthdate"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/btn_get_horoscope"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_get_horoscope"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/_64sdp"
@@ -80,8 +78,7 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_month" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

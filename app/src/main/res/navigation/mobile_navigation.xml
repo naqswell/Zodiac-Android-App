@@ -26,5 +26,9 @@
     <fragment
         android:id="@+id/navigation_birthdate"
         android:name="com.wiserax.zodiac.ui.birthdate.BirthDateFragment"
-        tools:layout="@layout/fragment_birthdate"/>
+        tools:layout="@layout/fragment_birthdate">
+        <action
+            android:id="@+id/action_navigation_birthdate_to_navigation_horoscope"
+            app:destination="@id/navigation_horoscope" />
+    </fragment>
 </navigation>

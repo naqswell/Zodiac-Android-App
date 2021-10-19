@@ -5,7 +5,12 @@
     <string name="title_psychomatrix">Психоматрица</string>
     <string name="title_compatibility">Совместимость</string>
     <string name="get_horoscope">Получить гороскоп</string>
-    <string name="choose_birthdate">Выберите вашу дату рождения</string>
+    <string name="choose_your_birthdate">Для работы приложения необходимо указать вашу дату рождения и пол</string>
+    <string name="choose_your_birthdate_alert">Выберите дату и пол, чтобы продолжить!</string>
+    <string name="your_birthdate"> Ваша дата рождения: \n %1$s</string>
+    <string name="choose_birthdate">Выбрать дату рождения</string>
+    <string name="male">Мужчина</string>
+    <string name="female">Женщина</string>
 
     <string-array name="months">
         <item>Январь</item>
@@ -21,4 +26,5 @@
         <item>Ноябрь</item>
         <item>Декабрь</item>
     </string-array>
+
 </resources>

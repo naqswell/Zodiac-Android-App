@@ -4,7 +4,12 @@
     <string name="title_psychomatrix">Psychomatrix</string>
     <string name="title_compatibility">Compatibility</string>
     <string name="get_horoscope"> Get horoscope </string>
-    <string name="choose_birthdate"> Choose your date of birth </string>
+    <string name="choose_your_birthdate"> To work the application, you must enter your date of birth and gender</string>
+    <string name="choose_your_birthdate_alert">Select a date and gender to continue!</string>
+    <string name="choose_birthdate"> Choose your date of birth</string>
+    <string name="your_birthdate"> Your date of birth: \n %1$s</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
 
     <string-array name="months">
         <item>January</item>
