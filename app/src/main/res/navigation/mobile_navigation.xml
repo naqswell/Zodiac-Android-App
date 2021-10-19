@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_horoscope">
+    app:startDestination="@+id/navigation_birthdate">
 
     <fragment
         android:id="@+id/navigation_horoscope"
@@ -22,4 +22,13 @@
         android:name="com.wiserax.zodiac.ui.compatibility.CompatibilityFragment"
         android:label="@string/title_compatibility"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_birthdate"
+        android:name="com.wiserax.zodiac.ui.birthdate.BirthDateFragment"
+        tools:layout="@layout/fragment_birthdate">
+        <action
+            android:id="@+id/action_navigation_birthdate_to_navigation_horoscope"
+            app:destination="@id/navigation_horoscope" />
+    </fragment>
 </navigation>

@@ -4,17 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/_16sdp"
     tools:context=".ui.psychomatrix.PsychomatrixFragment">
 
-   <Button
-       android:layout_width="wrap_content"
-       android:paddingStart="160dp"
-       android:paddingEnd="10dp"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="16dp"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.5"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/choose_date_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:paddingTop="@dimen/_50sdp"
+        android:paddingBottom="@dimen/_50sdp"
+        android:text="@string/choose_your_birthdate"
+        android:textAlignment="center"
+        android:textSize="@dimen/_22sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/btn_choose_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:weightSum="1"
+        android:id="@+id/radioGroup"
+        android:layout_marginBottom="@dimen/_12sdp"
+        >
+
+        <RadioButton
+            android:id="@+id/male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male"
+            app:layout_constraintBottom_toTopOf="@+id/btn_choose_date"
+            app:layout_constraintEnd_toStartOf="@+id/rd_btn_female" />
+
+
+        <RadioButton
+            android:id="@+id/female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btn_choose_date"
+            app:layout_constraintStart_toEndOf="@+id/rd_btn_male" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_choose_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/choose_birthdate"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/btn_get_horoscope"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_get_horoscope"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_64sdp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/get_horoscope"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

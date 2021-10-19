@@ -19,9 +19,13 @@ class UserFactory {
             val healthText = jsonObject.getString("healthText")
             val luckText = jsonObject.getString("luckText")
             val adviceText = jsonObject.getString("adviceText")
+            val sex = when(gender) {
+                Gender.Male -> "maleText"
+                Gender.Female -> "femaleText"
+            }
 
             return User(
-                name, date, generalText, jsonObject.getString(gender.text), additionText,
+                name, date, generalText, jsonObject.getString(sex), additionText,
                 loveText, workText, healthText, luckText, adviceText
             )
         }

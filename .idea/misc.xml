@@ -22,48 +22,24 @@
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/drawable/nav_ic_compatibility.xml" value="0.35625" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/drawable/nav_ic_horoscope.xml" value="0.35625" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/drawable/nav_ic_psychomatrix.xml" value="0.35625" />
+        <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/drawable/rounded_bottom_corners.xml" value="0.37604166666666666" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/drawable/rounded_corners.xml" value="0.35625" />
+        <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/drawable/rounded_spinners.xml" value="0.35625" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
-        <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/layout/fragment_birthdate.xml" value="0.34010416666666665" />
+        <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/layout/birthdate_spinner_item.xml" value="0.34010416666666665" />
+        <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/layout/birthdate_spinner_item_dropdown.xml" value="0.35989583333333336" />
+        <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/layout/fragment_birthdate.xml" value="0.25" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/layout/fragment_dashboard.xml" value="0.34010416666666665" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/layout/fragment_home.xml" value="0.34010416666666665" />
+        <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/layout/fragment_horoscope.xml" value="0.34010416666666665" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/layout/ic_psymatrix.xml" value="0.34010416666666665" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/menu/bottom_nav_menu.xml" value="0.34010416666666665" />
-        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.16510416666666666" />
-        <entry key="app/src/main/res/drawable/ic_aries.xml" value="0.24895833333333334" />
-        <entry key="app/src/main/res/drawable/ic_compatibility.xml" value="0.3260416666666667" />
-        <entry key="app/src/main/res/drawable/ic_compatibility_filled.xml" value="0.3260416666666667" />
-        <entry key="app/src/main/res/drawable/ic_horoscope.xml" value="0.16510416666666666" />
-        <entry key="app/src/main/res/drawable/ic_horoscope_filled.xml" value="0.3260416666666667" />
-        <entry key="app/src/main/res/drawable/ic_psychomatrix.xml" value="0.3260416666666667" />
-        <entry key="app/src/main/res/drawable/ic_psychomatrix_filled.xml" value="0.3260416666666667" />
-        <entry key="app/src/main/res/drawable/ic_scorpio.xml" value="0.10172382343997917" />
-        <entry key="app/src/main/res/drawable/ic_sign_aquaris.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/ic_sign_aries.xml" value="0.18385416666666668" />
-        <entry key="app/src/main/res/drawable/ic_sign_cancer.xml" value="0.2140625" />
-        <entry key="app/src/main/res/drawable/ic_sign_capricorn.xml" value="0.2140625" />
-        <entry key="app/src/main/res/drawable/ic_sign_empty.xml" value="0.2140625" />
-        <entry key="app/src/main/res/drawable/ic_sign_gemini.xml" value="0.2140625" />
-        <entry key="app/src/main/res/drawable/ic_sign_leo.xml" value="0.2140625" />
-        <entry key="app/src/main/res/drawable/ic_sign_libra.xml" value="0.2140625" />
-        <entry key="app/src/main/res/drawable/ic_sign_pisces.xml" value="0.11" />
-        <entry key="app/src/main/res/drawable/ic_sign_sagittarius.xml" value="0.2140625" />
-        <entry key="app/src/main/res/drawable/ic_sign_taurus.xml" value="0.2140625" />
-        <entry key="app/src/main/res/drawable/ic_sign_virgo.xml" value="0.2140625" />
-        <entry key="app/src/main/res/drawable/nav_ic_horoscope.xml" value="0.3260416666666667" />
-        <entry key="app/src/main/res/drawable/nav_ic_psychomatrix.xml" value="0.3260416666666667" />
-        <entry key="app/src/main/res/drawable/rounded_bottom_corners.xml" value="0.2140625" />
-        <entry key="app/src/main/res/drawable/rounded_corners.xml" value="0.3260416666666667" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.17447916666666666" />
-        <entry key="app/src/main/res/layout/fragment_birthdate.xml" value="0.17447916666666666" />
-        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.17447916666666666" />
-        <entry key="app/src/main/res/layout/fragment_horoscope.xml" value="0.3190179495327379" />
-        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.17447916666666666" />
-        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/Naqswell/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_dropdown_item.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/Naqswell/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.35989583333333336" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
