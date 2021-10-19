@@ -2,11 +2,9 @@ package com.wiserax.zodiac.ui.birthdate
 
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioButton
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.wiserax.zodiac.Gender
@@ -62,7 +60,6 @@ class BirthDateFragment : Fragment() {
                     binding.male.text.toString() -> prefs.sex = Gender.Male.text
                     binding.female.text.toString() -> prefs.sex = Gender.Female.text
                 }
-                Log.d("GGG", sex)
             } else {
                 binding.chooseDateTextview.text =
                     resources.getString(R.string.choose_your_birthdate_alert)
