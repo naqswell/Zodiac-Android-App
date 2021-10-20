@@ -72,12 +72,6 @@ class HoroscopeFragment : Fragment() {
             findNavController().navigate(R.id.navigation_birthdate)
         }
 
-//        scrollView.viewTreeObserver.addOnScrollChangedListener {
-//            /* get the maximum height which we have scroll before performing any action */
-//            val maxDistance = binding.constraintHoroscope.height
-//            val movement = scrollView.scrollY;
-//        }
-
         return root
     }
 
