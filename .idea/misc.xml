@@ -29,9 +29,23 @@
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/layout/fragment_home.xml" value="0.34010416666666665" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/layout/ic_psymatrix.xml" value="0.34010416666666665" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/menu/bottom_nav_menu.xml" value="0.34010416666666665" />
+        <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/drawable/btn_choose_date.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/drawable/ic_compatibility.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/drawable/ic_horoscope.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/drawable/ic_horoscope_filled.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/drawable/ic_psychomatrix.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/drawable/ic_psychomatrix_filled.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/drawable/ic_sign_libra.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/drawable/ic_sign_taurus.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/drawable/nav_ic_compatibility.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/drawable/nav_ic_horoscope.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/drawable/nav_ic_psychomatrix.xml" value="0.20729166666666668" />
         <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/drawable/rounded_bottom_corners.xml" value="0.2734375" />
+        <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/drawable/rounded_corners.xml" value="0.20729166666666668" />
         <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
         <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/layout/birthdate_spinner_item.xml" value="0.1503623188405797" />
+        <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/layout/birthdate_spinner_item_dropdown.xml" value="0.19114583333333332" />
         <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/layout/fragment_birthdate.xml" value="0.23369565217391305" />
         <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.1503623188405797" />
         <entry key="..\:/Users/Wiserax/source/repos/Android_Cource/ZodiacApp/app/src/main/res/layout/fragment_horoscope.xml" value="0.25" />
