@@ -11,7 +11,7 @@
         android:id="@+id/scrollView_horoscope"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/_48sdp">
+        android:layout_marginBottom="@dimen/_48sdp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,8 +27,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_16sdp"
-                    android:textSize="@dimen/_16ssp"
                     android:fontFamily="@font/jost_bold"
+                    android:textSize="@dimen/_16ssp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -105,6 +105,26 @@
                 android:textSize="@dimen/_16ssp" />
 
             <TextView
+                android:id="@+id/textViewHoroscopeGenderTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:textSize="@dimen/_24ssp" />
+
+            <TextView
+                android:id="@+id/textViewHoroscopeGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
                 android:id="@+id/textViewHoroscopeAdditionTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -117,27 +137,6 @@
 
             <TextView
                 android:id="@+id/textViewHoroscopeAddition"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:textSize="@dimen/_16ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeGenderTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:text="TODO dynamic male or female title"
-                android:paddingEnd="@dimen/_8sdp"
-                android:textSize="@dimen/_24ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_8sdp"

@@ -18,27 +18,6 @@ data class User(
     val adviceText: String
 ) {
 
-    fun getGeneralTextData(): String {
-        return StringBuilder()
-            .append("$generalText\n\n")
-            .append(additionText)
-            .toString()
-    }
-
-    fun getGenderTextData(): String {
-        return StringBuilder()
-            .append("$generalText\n\n")
-            .append(additionText)
-            .toString()
-    }
-
-    fun getAdditionallTextData(): String {
-        return StringBuilder()
-            .append("$generalText\n\n")
-            .append(additionText)
-            .toString()
-    }
-
     fun getImage(application: Application): Drawable {
         return when (name) {
             "Козерог" -> getImage(application, R.drawable.ic_sign_capricorn)

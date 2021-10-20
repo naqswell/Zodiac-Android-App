@@ -15,24 +15,28 @@ class HoroscopeViewModel(application: Application) : AndroidViewModel(applicatio
     private val user =
         UserFactory.createUser(application, Gender.valueOf(prefs.sex), prefs.getDayAndMonth())
 
-    val name: LiveData<String> = MutableLiveData<String>().apply {
-        value = user.name
-    }
-    val image: LiveData<Drawable> = MutableLiveData<Drawable>().apply {
-        value = user.getImage(application)
-    }
-    val generalText: LiveData<String> = MutableLiveData<String>().apply {
-        value = user.getGeneralTextData()
-    }
-    val genderText: LiveData<String> = MutableLiveData<String>().apply {
-        value = user.getGenderTextData()
-    }
-    val additionalText: LiveData<String> = MutableLiveData<String>().apply {
-        value = user.getAdditionallTextData()
-    }
+    val name: LiveData<String> = MutableLiveData<String>().apply { value = user.name }
+
+    val image: LiveData<Drawable> = MutableLiveData<Drawable>().apply { value = user.getImage(application) }
+
+    val generalText: LiveData<String> = MutableLiveData<String>().apply { value = user.generalText }
+
+    val genderText: LiveData<String> = MutableLiveData<String>().apply { value = user.genderText }
+
+    val additionalText: LiveData<String> = MutableLiveData<String>().apply { value = user.additionText }
+
+    val loveText: LiveData<String> = MutableLiveData<String>().apply { value = user.loveText }
+
+    val workText: LiveData<String> = MutableLiveData<String>().apply { value = user.workText }
+
+    val healthText: LiveData<String> = MutableLiveData<String>().apply { value = user.healthText }
+
+    val luckText: LiveData<String> = MutableLiveData<String>().apply { value = user.luckText }
+
+    val adviceText: LiveData<String> = MutableLiveData<String>().apply { value = user.adviceText }
+
     val date: LiveData<String> = MutableLiveData<String>().apply {
         value = prefs.day.toString() + " " + getApplication<Application>().resources.getStringArray(
             R.array.months)[prefs.month-1] + " " + prefs.year.toString()
     }
-
 }

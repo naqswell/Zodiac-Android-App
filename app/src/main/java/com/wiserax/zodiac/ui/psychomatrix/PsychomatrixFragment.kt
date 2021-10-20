@@ -1,6 +1,7 @@
 package com.wiserax.zodiac.ui.psychomatrix
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +19,11 @@ class PsychomatrixFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d("fragment", "Psycho onCreate")
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
