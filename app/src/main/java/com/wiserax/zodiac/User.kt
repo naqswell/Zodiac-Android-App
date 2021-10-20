@@ -8,22 +8,7 @@ import org.json.JSONObject
 import java.lang.StringBuilder
 
 class User(application: Application, private val birthDate: String) {
-    private val jsonObject: JSONObject
-
-    init {
-        val file = application.assets.open("character_1.json")
-        val text = file.bufferedReader().use { it.readText() }
-        val array = JSONArray(text)
-
-        for (i in 0 until array.length()) {
-            val jsonObject = JSONObject(array[i].toString())
-
-            if (jsonObject.getString("date") == this.birthDate) {
-                break
-            }
-        }
-        this.jsonObject = JSONObject(array[0].toString())
-    }
+    private val jsonObject: JSONObject = getJsonObject(application, prefs.getDayAndMonth())
 
     companion object Static{
         enum class JsonFields(val text: String) {
@@ -60,6 +45,22 @@ class User(application: Application, private val birthDate: String) {
 
         private fun getImage(application: Application, path: Int): Drawable {
             return ResourcesCompat.getDrawable(application.resources, path, null)!!
+        }
+
+        private fun getJsonObject(application: Application, birthDate: String): JSONObject {
+            val file = application.assets.open("character_1.json")
+            val text = file.bufferedReader().use { it.readText() }
+            val array = JSONArray(text)
+
+            for (i in 0 until array.length()) {
+                val jsonObject = JSONObject(array[i].toString())
+
+                if (jsonObject.getString("date") == birthDate) {
+                    return jsonObject
+                }
+            }
+
+            return JSONObject(array[0].toString())
         }
     }
 
