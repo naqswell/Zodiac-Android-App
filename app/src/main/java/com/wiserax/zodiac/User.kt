@@ -16,12 +16,25 @@ data class User(
     val healthText: String,
     val luckText: String,
     val adviceText: String
-    ) {
+) {
 
-    fun getDescription(): String {
+    fun getGeneralTextData(): String {
         return StringBuilder()
             .append("$generalText\n\n")
-            .append("$genderText\n\n")
+            .append(additionText)
+            .toString()
+    }
+
+    fun getGenderTextData(): String {
+        return StringBuilder()
+            .append("$generalText\n\n")
+            .append(additionText)
+            .toString()
+    }
+
+    fun getAdditionallTextData(): String {
+        return StringBuilder()
+            .append("$generalText\n\n")
             .append(additionText)
             .toString()
     }

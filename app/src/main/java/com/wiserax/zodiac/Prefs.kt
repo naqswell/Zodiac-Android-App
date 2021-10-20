@@ -32,12 +32,12 @@ class Prefs(context: Context) {
         get() = preferences.getString(PREF_SEX, DEF_STRING_VALUE)!!
         set(value) = preferences.edit().putString(PREF_SEX, value).apply()
 
-    fun getInitFlag(): Boolean {
+    fun getDateInitFlag(): Boolean {
         return ((day != DEF_INT_VALUE) && (month != DEF_INT_VALUE) && (year != DEF_INT_VALUE))
     }
 
     fun getFullDate(): String? {
-        return if (getInitFlag()) {
+        return if (getDateInitFlag()) {
             String.format("%02d/%02d/%04d", day, month, year)
         } else {
             null

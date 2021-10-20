@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.wiserax.zodiac.Gender
+import com.wiserax.zodiac.R
 import com.wiserax.zodiac.UserFactory
 import com.wiserax.zodiac.prefs
 
@@ -14,19 +15,24 @@ class HoroscopeViewModel(application: Application) : AndroidViewModel(applicatio
     private val user =
         UserFactory.createUser(application, Gender.valueOf(prefs.sex), prefs.getDayAndMonth())
 
-    private val _name = MutableLiveData<String>().apply {
+    val name: LiveData<String> = MutableLiveData<String>().apply {
         value = user.name
     }
-
-    private val _image = MutableLiveData<Drawable>().apply {
+    val image: LiveData<Drawable> = MutableLiveData<Drawable>().apply {
         value = user.getImage(application)
     }
-
-    private val _description = MutableLiveData<String>().apply {
-        value = user.getDescription()
+    val generalText: LiveData<String> = MutableLiveData<String>().apply {
+        value = user.getGeneralTextData()
+    }
+    val genderText: LiveData<String> = MutableLiveData<String>().apply {
+        value = user.getGenderTextData()
+    }
+    val additionalText: LiveData<String> = MutableLiveData<String>().apply {
+        value = user.getAdditionallTextData()
+    }
+    val date: LiveData<String> = MutableLiveData<String>().apply {
+        value = prefs.day.toString() + " " + getApplication<Application>().resources.getStringArray(
+            R.array.months)[prefs.month-1] + " " + prefs.year.toString()
     }
 
-    val name: LiveData<String> = _name
-    val image: LiveData<Drawable> = _image
-    val description: LiveData<String> = _description
 }

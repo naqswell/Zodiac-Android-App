@@ -21,7 +21,7 @@ class BirthDateFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    private var dateString: String? = prefs.getFullDate()
+    private var dateString: String? = null
 
     private val calendar: Calendar = Calendar.getInstance()
     private val year = calendar.get(Calendar.YEAR)
@@ -36,10 +36,19 @@ class BirthDateFragment : Fragment() {
         _binding = FragmentBirthdateBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        if (prefs.getDateInitFlag()) {
+            dateString = prefs.day.toString() + " " + resources.getStringArray(
+                R.array.months
+            )[prefs.month - 1] + " " + prefs.year.toString()
+        }
+
         dateString?.let {
-            binding.chooseDateTextview.text = String.format(
-                resources.getString(R.string.your_birthdate), it
-            )
+            binding.chooseDateTextview.text =
+                String.format(resources.getString(R.string.your_birthdate), it)
+            when (prefs.sex) {
+                Gender.Male.text -> binding.radioGroup.check(R.id.male)
+                Gender.Female.text -> binding.radioGroup.check(R.id.female)
+            }
         }
 
         binding.btnChooseDate.setOnClickListener {
@@ -70,7 +79,6 @@ class BirthDateFragment : Fragment() {
 
     private fun showDatePickerDialog() {
         val dpd = DatePickerDialog(requireContext(), { _, year, monthOfYear, dayOfMonth ->
-
             prefs.day = dayOfMonth
             prefs.month =
                 monthOfYear + 1 // Да именно так, спасибо Android SDK за отчёт с 0, а не с 1

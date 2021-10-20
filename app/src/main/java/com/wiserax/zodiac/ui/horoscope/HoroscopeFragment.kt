@@ -4,11 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.ScrollView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.wiserax.zodiac.R
 import com.wiserax.zodiac.databinding.FragmentHoroscopeBinding
 
 class HoroscopeFragment : Fragment() {
@@ -33,7 +37,12 @@ class HoroscopeFragment : Fragment() {
 
         val nameTextView: TextView = binding.textName
         val imageView: ImageView = binding.imageView
-        val jsonTextView: TextView = binding.textJson
+        val generalTextView: TextView = binding.textViewHoroscopeGeneral
+        val genderTextView: TextView = binding.textViewHoroscopeGender
+        val additionalTextView: TextView = binding.textViewHoroscopeAddition
+        val dateTextView: TextView = binding.textViewBirthdate
+        val chooseDateBtn: Button = binding.chooseDateBtn
+        val scrollView: ScrollView = binding.scrollViewHoroscope
 
         horoscopeViewModel.name.observe(viewLifecycleOwner, Observer {
             nameTextView.text = it
@@ -43,9 +52,25 @@ class HoroscopeFragment : Fragment() {
             imageView.setImageDrawable(it)
         })
 
-        horoscopeViewModel.description.observe(viewLifecycleOwner, Observer {
-            jsonTextView.text = it
+        horoscopeViewModel.generalText.observe(viewLifecycleOwner, Observer {
+            generalTextView.text = it
         })
+
+        horoscopeViewModel.genderText.observe(viewLifecycleOwner, Observer {
+            genderTextView.text = it
+        })
+
+        horoscopeViewModel.additionalText.observe(viewLifecycleOwner, Observer {
+            additionalTextView.text = it
+        })
+
+        horoscopeViewModel.date.observe(viewLifecycleOwner, Observer {
+            dateTextView.text = it
+        })
+
+        chooseDateBtn.setOnClickListener{
+            findNavController().navigate(R.id.navigation_birthdate)
+        }
 
         return root
     }
