@@ -11,7 +11,7 @@
         <!--        <item name="colorOnSecondary">@color/black</item>-->
 <!--        <item name="spinnerStyle">@color/blue</item>-->
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@android:color/black</item>
+        <item name="android:statusBarColor">@android:color/black</item>
         <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="android:fontFamily">sans-serif-black</item>

@@ -13,18 +13,18 @@
     <string name="female">Женщина</string>
 
     <string-array name="months">
-        <item>Январь</item>
-        <item>Февраль</item>
-        <item>Март</item>
-        <item>Апрель</item>
-        <item>Май</item>
-        <item>Июнь</item>
-        <item>Июль</item>
-        <item>Август</item>
-        <item>Сентябрь</item>
-        <item>Октябрь</item>
-        <item>Ноябрь</item>
-        <item>Декабрь</item>
+        <item>января</item>
+        <item>февраля</item>
+        <item>иарта</item>
+        <item>апреля</item>
+        <item>мая</item>
+        <item>июня</item>
+        <item>июля</item>
+        <item>августа</item>
+        <item>сентября</item>
+        <item>октября</item>
+        <item>ноября</item>
+        <item>декабря</item>
     </string-array>
 
 </resources>

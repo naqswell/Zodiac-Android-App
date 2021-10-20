@@ -6,27 +6,37 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.wiserax.zodiac.Gender
-import com.wiserax.zodiac.UserFactory
+import com.wiserax.zodiac.R
+import com.wiserax.zodiac.User
 import com.wiserax.zodiac.prefs
 
 class HoroscopeViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val user =
-        UserFactory.createUser(application, Gender.valueOf(prefs.sex), prefs.getDayAndMonth())
+    private val user: User = User(application, prefs.getDayAndMonth())
 
-    private val _name = MutableLiveData<String>().apply {
-        value = user.name
+    val name: LiveData<String> = MutableLiveData<String>().apply {
+        value = user.getText(User.Static.JsonFields.Name)
+    }
+    val image: LiveData<Drawable> = MutableLiveData<Drawable>().apply {
+        value = User.getImage(User.Static.JsonFields.Name, application)
+    }
+    val generalText: LiveData<String> = MutableLiveData<String>().apply {
+        value = user.getText(User.Static.JsonFields.GeneralText)
+    }
+    val genderText: LiveData<String> =  MutableLiveData<String>().apply {
+        value = user.getText(when(Gender.valueOf(prefs.sex)) {
+            Gender.Male -> User.Static.JsonFields.MaleText
+            Gender.Female -> User.Static.JsonFields.FemaleText
+        })
+    }
+    val additionalText: LiveData<String> = MutableLiveData<String>().apply {
+        value = user.getText(User.Static.JsonFields.AdditionText)
+    }
+    val date: LiveData<String> = MutableLiveData<String>().apply {
+        value = dateToString()
     }
 
-    private val _image = MutableLiveData<Drawable>().apply {
-        value = user.getImage(application)
+    private fun dateToString() : String {
+         return prefs.day.toString() + " " + getApplication<Application>().resources.getStringArray(R.array.months)[prefs.month-1] + " " + prefs.year.toString()
     }
-
-    private val _description = MutableLiveData<String>().apply {
-        value = user.getDescription()
-    }
-
-    val name: LiveData<String> = _name
-    val image: LiveData<Drawable> = _image
-    val description: LiveData<String> = _description
 }

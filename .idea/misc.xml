@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.35625" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/drawable-v24/ic_psymatrix.xml" value="0.35625" />
+        <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/drawable/btn_choose_date.xml" value="0.37604166666666666" />
+        <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/drawable/btn_choose_date_colorized.xml" value="0.37604166666666666" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/drawable/heart-solid_1.xml" value="0.353125" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/drawable/ic_compatibility.xml" value="0.35625" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/drawable/ic_compatibility_filled.xml" value="0.35625" />
@@ -32,6 +34,7 @@
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/layout/fragment_dashboard.xml" value="0.34010416666666665" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/layout/fragment_home.xml" value="0.34010416666666665" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/layout/fragment_horoscope.xml" value="0.34010416666666665" />
+        <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/layout/fragment_notifications.xml" value="0.29846014492753625" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/layout/ic_psymatrix.xml" value="0.34010416666666665" />
         <entry key="..\:/Naqs/Android/Projects/Zodiac/app/src/main/res/menu/bottom_nav_menu.xml" value="0.34010416666666665" />
         <entry key="..\:/Users/Naqswell/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_dropdown_item.xml" value="0.35989583333333336" />
