@@ -27,8 +27,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_16sdp"
-                    android:textSize="@dimen/_18ssp"
-                    android:textStyle="bold"
+                    android:textSize="@dimen/_16ssp"
+                    android:fontFamily="@font/jost_bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -53,13 +53,13 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraint_horoscope"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_70sdp"
+                android:layout_height="@dimen/_120sdp"
                 android:background="@drawable/rounded_bottom_corners">
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_93sdp"
+                    android:layout_height="@dimen/_93sdp"
                     android:layout_marginStart="@dimen/_16sdp"
                     android:src="@drawable/ic_sign_empty"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -75,7 +75,7 @@
                     android:text="@android:string/unknownName"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_22sdp"
+                    android:textSize="@dimen/_26sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -91,7 +91,7 @@
                 android:paddingStart="@dimen/_8sdp"
                 android:paddingTop="@dimen/_8sdp"
                 android:paddingEnd="@dimen/_8sdp"
-                android:text="@android:string/unknownName"
+                android:text="@string/general_text_title"
                 android:textSize="@dimen/_24ssp" />
 
             <TextView
@@ -102,29 +102,6 @@
                 android:paddingStart="@dimen/_8sdp"
                 android:paddingTop="@dimen/_8sdp"
                 android:paddingEnd="@dimen/_8sdp"
-                android:text="@android:string/unknownName"
-                android:textSize="@dimen/_16ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeGenderTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:text="@android:string/unknownName"
-                android:textSize="@dimen/_24ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeGender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:text="@android:string/unknownName"
                 android:textSize="@dimen/_16ssp" />
 
             <TextView
@@ -135,7 +112,7 @@
                 android:paddingStart="@dimen/_8sdp"
                 android:paddingTop="@dimen/_8sdp"
                 android:paddingEnd="@dimen/_8sdp"
-                android:text="@android:string/unknownName"
+                android:text="@string/addition_text_title"
                 android:textSize="@dimen/_24ssp" />
 
             <TextView
@@ -146,7 +123,131 @@
                 android:paddingStart="@dimen/_8sdp"
                 android:paddingTop="@dimen/_8sdp"
                 android:paddingEnd="@dimen/_8sdp"
-                android:text="@android:string/unknownName"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:id="@+id/textViewHoroscopeGenderTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:textSize="@dimen/_24ssp" />
+
+            <TextView
+                android:id="@+id/textViewHoroscopeGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:id="@+id/textViewHoroscopeLoveTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:text="@string/love_text_title"
+                android:textSize="@dimen/_24ssp" />
+
+            <TextView
+                android:id="@+id/textViewHoroscopeLove"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:id="@+id/textViewHoroscopeWorkTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:text="@string/work_text_title"
+                android:textSize="@dimen/_24ssp" />
+
+            <TextView
+                android:id="@+id/textViewHoroscopeWork"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:id="@+id/textViewHoroscopeHealthTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:text="@string/health_text_title"
+                android:textSize="@dimen/_24ssp" />
+
+            <TextView
+                android:id="@+id/textViewHoroscopeHealth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:id="@+id/textViewHoroscopeLuckTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:text="@string/luck_text_title"
+                android:textSize="@dimen/_24ssp" />
+
+            <TextView
+                android:id="@+id/textViewHoroscopeLuck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:id="@+id/textViewHoroscopeAdviceTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:text="@string/advice_text_title"
+                android:textSize="@dimen/_24ssp" />
+
+            <TextView
+                android:id="@+id/textViewHoroscopeAdvice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
                 android:textSize="@dimen/_16ssp" />
 
 

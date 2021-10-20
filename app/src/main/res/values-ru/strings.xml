@@ -26,5 +26,14 @@
         <item>ноября</item>
         <item>декабря</item>
     </string-array>
+    <string name="general_text_title">Общая информация</string>
+    <string name="male_text_title">Мужчина</string>
+    <string name="female_text_title">Женщина</string>
+    <string name="love_text_title">Любовь и Совместимость</string>
+    <string name="advice_text_title">Советы</string>
+    <string name="luck_text_title">Судьба и Удача</string>
+    <string name="health_text_title">Здоровье</string>
+    <string name="work_text_title">Работа и Карьера</string>
+    <string name="addition_text_title">Зодиак</string>
 
 </resources>
