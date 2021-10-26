@@ -3,13 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_birthdate">
+    app:startDestination="@+id/navigation_horoscope">
 
     <fragment
         android:id="@+id/navigation_horoscope"
         android:name="com.wiserax.zodiac.ui.horoscope.HoroscopeFragment"
         android:label="@string/title_horosope"
-        tools:layout="@layout/fragment_horoscope" />
+        tools:layout="@layout/fragment_horoscope">
+        <action
+            android:id="@+id/action_horoscope_to_birthdate"
+            app:destination="@id/navigation_birthdate"
+            app:popUpTo="@+id/navigation_horoscope"
+            app:popUpToInclusive="true" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_psychomatrix"
@@ -28,7 +34,10 @@
         android:name="com.wiserax.zodiac.ui.birthdate.BirthDateFragment"
         tools:layout="@layout/fragment_birthdate">
         <action
-            android:id="@+id/action_navigation_birthdate_to_navigation_horoscope"
-            app:destination="@id/navigation_horoscope" />
+            android:id="@+id/action_birthdate_to_horoscope"
+            app:destination="@id/navigation_horoscope"
+            app:popUpTo="@+id/navigation_birthdate"
+            app:popUpToInclusive="true"
+            />
     </fragment>
 </navigation>

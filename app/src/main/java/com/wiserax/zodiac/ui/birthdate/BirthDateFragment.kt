@@ -59,7 +59,7 @@ class BirthDateFragment : Fragment() {
         binding.btnGetHoroscope.setOnClickListener {
             val selectedId = binding.radioGroup.checkedRadioButtonId
             if ((selectedId != -1) && (dateString != null)) {
-                findNavController().navigate(R.id.navigation_horoscope)
+                findNavController().navigate(R.id.action_birthdate_to_horoscope)
                 val sex: String = if (binding.male.isChecked) {
                     binding.male.text.toString()
                 } else {

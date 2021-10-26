@@ -1,13 +1,13 @@
 package com.wiserax.zodiac
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.wiserax.zodiac.databinding.ActivityMainBinding
-import com.wiserax.zodiac.ui.birthdate.BirthDateFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,10 +24,8 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         if (!prefs.getDateInitFlag()) {
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.navigation_horoscope, BirthDateFragment())
-            transaction.disallowAddToBackStack()
-            transaction.commit()
+            Log.d("lol", prefs.getFullDate().toString() + " " + prefs.sex)
+            navController.navigate(R.id.action_horoscope_to_birthdate)
         }
 
         navController.addOnDestinationChangedListener { _, destination, _ ->

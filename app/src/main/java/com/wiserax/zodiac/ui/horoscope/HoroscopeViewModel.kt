@@ -15,7 +15,7 @@ class HoroscopeViewModel(application: Application) : AndroidViewModel(applicatio
     private val user = if (prefs.getDateInitFlag()) {
         UserFactory.createUser(application, Gender.valueOf(prefs.sex), prefs.getDayAndMonth())
     } else {
-        UserFactory.createUser(application, Gender.valueOf("male"), "01.01")
+        UserFactory.createUser(application, Gender.Male, "01.01")
     }
 
     val name: LiveData<String> = MutableLiveData<String>().apply { value = user.name }
@@ -41,8 +41,12 @@ class HoroscopeViewModel(application: Application) : AndroidViewModel(applicatio
     val adviceText: LiveData<String> = MutableLiveData<String>().apply { value = user.adviceText }
 
     val date: LiveData<String> = MutableLiveData<String>().apply {
-        value = prefs.day.toString() + " " + getApplication<Application>().resources.getStringArray(
-            R.array.months
-        )[prefs.month - 1] + " " + prefs.year.toString()
+        value = if (prefs.getDateInitFlag()) {
+            prefs.day.toString() + " " + getApplication<Application>().resources.getStringArray(
+                R.array.months
+            )[prefs.month - 1] + " " + prefs.year.toString()
+        } else {
+            ""
+        }
     }
 }
