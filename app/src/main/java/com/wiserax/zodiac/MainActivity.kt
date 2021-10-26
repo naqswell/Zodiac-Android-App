@@ -3,11 +3,11 @@ package com.wiserax.zodiac
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.wiserax.zodiac.databinding.ActivityMainBinding
+import com.wiserax.zodiac.ui.birthdate.BirthDateFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,43 +22,23 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = binding.navView
         navView.itemIconTintList = null
 
-
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
-//        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        val navController = navHostFragment.navController
-        val navGraph = navController.navInflater.inflate(R.navigation.mobile_navigation)
-        val graphInflater = navHostFragment.navController.navInflater
-
-        val destination = if (prefs.getFullDate() != null) {
-            R.id.navigation_horoscope
-        } else {
-            R.id.navigation_birthdate
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        if (!prefs.getDateInitFlag()) {
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.navigation_horoscope, BirthDateFragment())
+            transaction.disallowAddToBackStack()
+            transaction.commit()
         }
-        navGraph.startDestination = destination
-        navController.graph = navGraph
-
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_horoscope,
-                R.id.navigation_psychomatrix,
-                R.id.navigation_compatibility
-            )
-        )
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-
             when (destination.id) {
                 R.id.navigation_birthdate -> hideBottomNav()
                 else -> showBottomNav()
             }
-
         }
-//        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
 
     private fun showBottomNav() {
         binding.navView.visibility = View.VISIBLE
@@ -67,6 +47,5 @@ class MainActivity : AppCompatActivity() {
 
     private fun hideBottomNav() {
         binding.navView.visibility = View.GONE
-
     }
 }

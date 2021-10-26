@@ -2,7 +2,6 @@ package com.wiserax.zodiac.ui.horoscope
 
 import android.content.res.Configuration
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,6 +24,7 @@ class HoroscopeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         horoscopeViewModel =
             ViewModelProvider(this).get(HoroscopeViewModel::class.java)
 
@@ -43,6 +43,7 @@ class HoroscopeFragment : Fragment() {
         chooseDateBtn.setOnClickListener{
             findNavController().navigate(R.id.navigation_birthdate)
         }
+
 
         return binding.root
     }

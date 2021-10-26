@@ -12,18 +12,23 @@ import com.wiserax.zodiac.prefs
 
 class HoroscopeViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val user =
+    private val user = if (prefs.getDateInitFlag()) {
         UserFactory.createUser(application, Gender.valueOf(prefs.sex), prefs.getDayAndMonth())
+    } else {
+        UserFactory.createUser(application, Gender.valueOf("male"), "01.01")
+    }
 
     val name: LiveData<String> = MutableLiveData<String>().apply { value = user.name }
 
-    val image: LiveData<Drawable> = MutableLiveData<Drawable>().apply { value = user.getImage(application) }
+    val image: LiveData<Drawable> =
+        MutableLiveData<Drawable>().apply { value = user.getImage(application) }
 
     val generalText: LiveData<String> = MutableLiveData<String>().apply { value = user.generalText }
 
     val genderText: LiveData<String> = MutableLiveData<String>().apply { value = user.genderText }
 
-    val additionalText: LiveData<String> = MutableLiveData<String>().apply { value = user.additionText }
+    val additionalText: LiveData<String> =
+        MutableLiveData<String>().apply { value = user.additionText }
 
     val loveText: LiveData<String> = MutableLiveData<String>().apply { value = user.loveText }
 
@@ -37,6 +42,7 @@ class HoroscopeViewModel(application: Application) : AndroidViewModel(applicatio
 
     val date: LiveData<String> = MutableLiveData<String>().apply {
         value = prefs.day.toString() + " " + getApplication<Application>().resources.getStringArray(
-            R.array.months)[prefs.month-1] + " " + prefs.year.toString()
+            R.array.months
+        )[prefs.month - 1] + " " + prefs.year.toString()
     }
 }
