@@ -11,7 +11,7 @@
         android:id="@+id/scrollView_horoscope"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/_48sdp">
+       >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,8 +40,8 @@
                     android:layout_marginEnd="@dimen/_16sdp"
                     android:background="@android:color/transparent"
                     app:icon="@drawable/btn_choose_date"
+                    app:iconTint="?attr/colorPrimary"
                     app:iconGravity="textStart"
-                    app:iconTint="@color/grey_ic_nav_bar"
                     app:iconPadding="0dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

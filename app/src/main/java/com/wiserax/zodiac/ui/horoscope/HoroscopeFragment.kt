@@ -1,6 +1,6 @@
 package com.wiserax.zodiac.ui.horoscope
 
-import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.button.MaterialButton
 import com.wiserax.zodiac.R
 import com.wiserax.zodiac.databinding.FragmentHoroscopeBinding
 
@@ -32,18 +31,19 @@ class HoroscopeFragment : Fragment() {
 
         initializeObservables()
 
-        val chooseDateBtn: MaterialButton = binding.chooseDateBtn
+        with(binding) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                if (resources.configuration.isNightModeActive) {
+                    chooseDateBtn.setIconTintResource(R.color.grey_ic_nav_bar)
+                } else {
+                    chooseDateBtn.setIconTintResource(R.color.black)
+                }
+            }
 
-        if (resources.configuration.uiMode == Configuration.UI_MODE_NIGHT_YES) {
-            chooseDateBtn.setIconTintResource(R.color.white)
-        } else {
-            chooseDateBtn.setIconTintResource(R.color.black)
+            chooseDateBtn.setOnClickListener {
+                findNavController().navigate(R.id.navigation_birthdate)
+            }
         }
-
-        chooseDateBtn.setOnClickListener{
-            findNavController().navigate(R.id.navigation_birthdate)
-        }
-
 
         return binding.root
     }
@@ -55,48 +55,50 @@ class HoroscopeFragment : Fragment() {
 
     private fun initializeObservables() {
 
-        horoscopeViewModel.name.observe(viewLifecycleOwner, {
-            binding.textName.text = it
-        })
+        with(horoscopeViewModel) {
+            name.observe(viewLifecycleOwner, {
+                binding.textName.text = it
+            })
 
-        horoscopeViewModel.image.observe(viewLifecycleOwner, {
-            binding.imageView.setImageDrawable(it)
-        })
+            image.observe(viewLifecycleOwner, {
+                binding.imageView.setImageDrawable(it)
+            })
 
-        horoscopeViewModel.generalText.observe(viewLifecycleOwner, {
-            binding.textViewHoroscopeGeneral.text = it
-        })
+            generalText.observe(viewLifecycleOwner, {
+                binding.textViewHoroscopeGeneral.text = it
+            })
 
-        horoscopeViewModel.genderText.observe(viewLifecycleOwner, {
-            binding.textViewHoroscopeGender.text = it
-        })
+            genderText.observe(viewLifecycleOwner, {
+                binding.textViewHoroscopeGender.text = it
+            })
 
-        horoscopeViewModel.additionalText.observe(viewLifecycleOwner, {
-            binding.textViewHoroscopeAddition.text = it
-        })
+            additionalText.observe(viewLifecycleOwner, {
+                binding.textViewHoroscopeAddition.text = it
+            })
 
-        horoscopeViewModel.loveText.observe(viewLifecycleOwner, {
-            binding.textViewHoroscopeLove.text = it
-        })
+            loveText.observe(viewLifecycleOwner, {
+                binding.textViewHoroscopeLove.text = it
+            })
 
-        horoscopeViewModel.workText.observe(viewLifecycleOwner, {
-            binding.textViewHoroscopeWork.text = it
-        })
+            workText.observe(viewLifecycleOwner, {
+                binding.textViewHoroscopeWork.text = it
+            })
 
-        horoscopeViewModel.healthText.observe(viewLifecycleOwner, {
-            binding.textViewHoroscopeHealth.text = it
-        })
+            healthText.observe(viewLifecycleOwner, {
+                binding.textViewHoroscopeHealth.text = it
+            })
 
-        horoscopeViewModel.luckText.observe(viewLifecycleOwner, {
-            binding.textViewHoroscopeLuck.text = it
-        })
+            luckText.observe(viewLifecycleOwner, {
+                binding.textViewHoroscopeLuck.text = it
+            })
 
-        horoscopeViewModel.adviceText.observe(viewLifecycleOwner, {
-            binding.textViewHoroscopeAdvice.text = it
-        })
+            adviceText.observe(viewLifecycleOwner, {
+                binding.textViewHoroscopeAdvice.text = it
+            })
 
-        horoscopeViewModel.date.observe(viewLifecycleOwner, {
-            binding.textViewBirthdate.text = it
-        })
+            date.observe(viewLifecycleOwner, {
+                binding.textViewBirthdate.text = it
+            })
+        }
     }
 }
