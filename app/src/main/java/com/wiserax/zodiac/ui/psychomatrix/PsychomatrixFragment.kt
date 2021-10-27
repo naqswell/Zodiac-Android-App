@@ -5,16 +5,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.wiserax.zodiac.databinding.FragmentDashboardBinding
+import com.wiserax.zodiac.databinding.FragmentPsychomatrixBinding
 
 class PsychomatrixFragment : Fragment() {
 
     private lateinit var psychomatrixViewModel: PsychomatrixViewModel
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentPsychomatrixBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -33,13 +31,9 @@ class PsychomatrixFragment : Fragment() {
         psychomatrixViewModel =
             ViewModelProvider(this).get(PsychomatrixViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentPsychomatrixBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        psychomatrixViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
         return root
     }
 

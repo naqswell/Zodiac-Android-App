@@ -1,7 +1,6 @@
 package com.wiserax.zodiac
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -24,7 +23,6 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         if (!prefs.getDateInitFlag()) {
-            Log.d("lol", prefs.getFullDate().toString() + " " + prefs.sex)
             navController.navigate(R.id.action_horoscope_to_birthdate)
         }
 
@@ -40,7 +38,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun showBottomNav() {
         binding.navView.visibility = View.VISIBLE
-
     }
 
     private fun hideBottomNav() {

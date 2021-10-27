@@ -27,7 +27,7 @@
         android:id="@+id/navigation_compatibility"
         android:name="com.wiserax.zodiac.ui.compatibility.CompatibilityFragment"
         android:label="@string/title_compatibility"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_psychomatrix" />
 
     <fragment
         android:id="@+id/navigation_birthdate"
