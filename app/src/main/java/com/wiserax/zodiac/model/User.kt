@@ -1,9 +1,9 @@
-package com.wiserax.zodiac
+package com.wiserax.zodiac.model
 
 import android.app.Application
 import android.graphics.drawable.Drawable
 import androidx.core.content.res.ResourcesCompat
-import java.lang.StringBuilder
+import com.wiserax.zodiac.R
 
 data class User(
     val name: String,

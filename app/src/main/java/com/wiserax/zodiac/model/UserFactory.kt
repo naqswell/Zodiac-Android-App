@@ -1,6 +1,7 @@
-package com.wiserax.zodiac
+package com.wiserax.zodiac.model
 
 import android.app.Application
+import com.wiserax.zodiac.Gender
 import org.json.JSONArray
 import org.json.JSONObject
 
