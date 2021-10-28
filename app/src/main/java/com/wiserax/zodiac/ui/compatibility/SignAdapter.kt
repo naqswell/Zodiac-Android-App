@@ -1,10 +1,8 @@
-package com.wiserax.zodiac.ui.psychomatrix
+package com.wiserax.zodiac.ui.compatibility
 
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.wiserax.zodiac.R
 import com.wiserax.zodiac.databinding.InstanceSignBinding
 import com.wiserax.zodiac.model.Sign
 
