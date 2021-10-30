@@ -1,33 +1,16 @@
 package com.wiserax.zodiac
 
 import android.app.Application
-import org.json.JSONArray
+import android.util.Log
 import org.json.JSONObject
 
-class PsychoMatrixFactory {
+class PsychoMatrixFactory(application: Application, dateOfBirth: String) {
+    val arrayOneToNine: MutableMap<Int, Int> = calculateSquare(dateOfBirth)
+    val textMap = getPsychomatrixText(application, arrayOneToNine)
+    val matrixCellsData = createSquare(arrayOneToNine)
 
-    data class PsychoMatrixTextFields(
-        val number1: String,
-        val number2: String,
-        val number3: String,
-        val number4: String,
-        val number5: String,
-        val number6: String,
-        val number7: String,
-        val number8: String,
-        val number9: String,
-        val number123: String,
-        val number456: String,
-        val number789: String,
-        val number147: String,
-        val number258: String,
-        val number369: String,
-        val number159: String,
-        val number357: String,
-    )
-
-    private fun calculateSquare(dateOfBirth: String): Array<String> {
-        val arrayOfInt = arrayListOf<Int>()
+    private fun calculateSquare(dateOfBirth: String): MutableMap<Int, Int> {
+        val arrayOfInt = mutableListOf<Int>()
 
         for (symbol in dateOfBirth) {
             if (symbol.isDigit()) {
@@ -35,83 +18,152 @@ class PsychoMatrixFactory {
             }
         }
 
-        val digitCounter = arrayListOf<Int>()
-        for (el in 1..10) {
-            digitCounter.add(0)
-        }
+        val digitCounter = mutableMapOf(
+            0 to 0,
+            1 to 0,
+            2 to 0,
+            3 to 0,
+            4 to 0,
+            5 to 0,
+            6 to 0,
+            7 to 0,
+            8 to 0,
+            9 to 0,
+            123 to 0,
+            456 to 0,
+            789 to 0,
+            147 to 0,
+            258 to 0,
+            369 to 0,
+            159 to 0,
+            357 to 0
+        )
 
         for (el in arrayOfInt) {
-            digitCounter[el] += 1
+            digitCounter[el] = digitCounter[el]!! + 1
         }
 
         val firstValue = arrayOfInt.sum()
         var part1 = firstValue % 10
         var part2 = firstValue / 10
-        digitCounter[part1] += 1
-        digitCounter[part2] += 1
+        digitCounter[part1] = digitCounter[part1]!! + 1
+        digitCounter[part2] = digitCounter[part2]!! + 1
 
         val secondValue = part1 + part2
         part1 = secondValue % 10
         part2 = secondValue / 10
-        digitCounter[part1] += 1
-        digitCounter[part2] += 1
+        digitCounter[part1] = digitCounter[part1]!! + 1
+        digitCounter[part2] = digitCounter[part2]!! + 1
 
-        val thirdValue = firstValue - arrayOfInt[1] * 2
+        val thirdValue = firstValue - arrayOfInt[0] * 2
         part1 = thirdValue % 10
         part2 = thirdValue / 10
-        digitCounter[part1] += 1
-        digitCounter[part2] += 1
+        digitCounter[part1] = digitCounter[part1]!! + 1
+        digitCounter[part2] = digitCounter[part2]!! + 1
 
         val fourthValue = part1 + part2
         part1 = fourthValue % 10
         part2 = fourthValue / 10
-        digitCounter[part1] += 1
-        digitCounter[part2] += 1
-//        val str =
-//            firstValue.toString() + secondValue.toString() + thirdValue.toString() + fourthValue.toString()
-//        val chech = 0 % 10
-//        Log.d("SSS", chech.toString())
-//        Log.d("SSS", arrayOfInt.toString() + "\n" + str)
-        return createSquare(digitCounter)
+        digitCounter[part1] = digitCounter[part1]!! + 1
+        digitCounter[part2] = digitCounter[part2]!! + 1
+
+        Log.d("SSS", digitCounter.toString())
+        digitCounter[123] = digitCounter[1]!! + digitCounter[2]!! + digitCounter[3]!!
+        digitCounter[456] = digitCounter[4]!! + digitCounter[5]!! + digitCounter[6]!!
+        digitCounter[789] = digitCounter[7]!! + digitCounter[8]!! + digitCounter[9]!!
+        digitCounter[147] = digitCounter[1]!! + digitCounter[4]!! + digitCounter[7]!!
+        digitCounter[258] = digitCounter[2]!! + digitCounter[5]!! + digitCounter[8]!!
+        digitCounter[369] = digitCounter[3]!! + digitCounter[6]!! + digitCounter[9]!!
+        digitCounter[159] = digitCounter[1]!! + digitCounter[5]!! + digitCounter[9]!!
+        digitCounter[357] = digitCounter[3]!! + digitCounter[5]!! + digitCounter[7]!!
+        Log.d("SSS", digitCounter.toString())
+
+        return digitCounter
     }
 
-    private fun createSquare(intArray: ArrayList<Int>): Array<String> {
-        return intArray.mapIndexed() {idx, value ->
-            if (value == 0) {
+//    private fun createSquare(arrayOneToNine: IntArray): Array<String> {
+//        return arrayOneToNine.mapIndexed() { idx, value ->
+//            if (value == 0) {
+//                "---"
+//            } else {
+//                var str = ""
+//                for (el in 1..value) {
+//                    str += idx
+//                }
+//                str
+//            }
+//        }.toTypedArray()
+//    }
+
+    private fun createSquare(arrayOneToNine: MutableMap<Int, Int>): Map<Int, String> {
+        val a = arrayOneToNine.mapValues() {
+            if ((it.key / 10) > 0) {
+            }
+            if (it.value == 0) {
                 "---"
             } else {
                 var str = ""
-                for (el in 1..value) {
-                    str += idx
+                for (el in 1..it.value) {
+                    str += it.key
                 }
                 str
             }
-        }.toTypedArray()
+        }
+        Log.d("MMM", a.toString())
+        return a
     }
 
-    companion object {
-        fun createMatrix(application: Application, dateOfBirth: String) {
-            val jsonObject = getJsonObject(application, dateOfBirth)
+    fun getPsychomatrixText(
+        application: Application,
+        digitCounter: MutableMap<Int, Int>
+    ): MutableMap<Int, String> {
 
-            val name = jsonObject.getString("name")
-        }
+        val textMap = mutableMapOf(
+            1 to "",
+            2 to "",
+            3 to "",
+            4 to "",
+            5 to "",
+            6 to "",
+            7 to "",
+            8 to "",
+            9 to "",
+            123 to "",
+            456 to "",
+            789 to "",
+            147 to "",
+            258 to "",
+            369 to "",
+            159 to "",
+            357 to ""
+        )
 
-        private fun getJsonObject(application: Application, birthDate: String): JSONObject {
-            val file = application.assets.open("psychomatrix.json")
-            val text = file.bufferedReader().use { it.readText() }
-            val array = JSONArray(text)
+        val file = application.assets.open("psychomatrix.json")
+        val text = file.bufferedReader().use { it.readText() }
 
-            for (i in 0 until array.length()) {
-                val jsonObject = JSONObject(array[i].toString())
+        val arrayNumbers = JSONObject(text).getJSONArray("entities")
+        for (numbersIterator in 0 until arrayNumbers.length()) {
+            val number = arrayNumbers.getJSONObject(numbersIterator)
+            val arrayPower = number.getJSONArray("power")
+//            Log.d("POWER", arrayPower.toString())
+            Log.d("SETED", "number is" + number.getInt("number"))
 
-                if (jsonObject.getString("date") == birthDate) {
-                    return jsonObject
+            for (powerIterator in 0 until arrayPower.length()) {
+                val power = arrayPower.getJSONObject(powerIterator)
+//                Log.d("QUA", power.toString())
+//                Log.d("QUA", power.getInt("quantity").toString())
+                Log.d("SETED",
+                    "q= " + power.getInt("quantity")
+                        .toString() + " " + "v=" + digitCounter[number.getInt("number")]
+                )
+                if (power.getInt("quantity") == digitCounter[number.getInt("number")]) {
+                    textMap[number.getInt("number")] = power.getString("text")
+                    Log.d("SETED", power.getString("text"))
                 }
             }
-
-            return JSONObject(array[0].toString())
         }
+        Log.d("JJJ123", "lol" + textMap[123].toString())
+        return textMap
     }
-
-
 }
+

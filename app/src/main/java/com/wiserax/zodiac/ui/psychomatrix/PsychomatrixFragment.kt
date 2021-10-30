@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.wiserax.zodiac.MatrixFactory
+import com.wiserax.zodiac.App
+import com.wiserax.zodiac.PsychoMatrixFactory
 import com.wiserax.zodiac.databinding.FragmentPsychomatrixBinding
 import com.wiserax.zodiac.prefs
 
@@ -50,6 +51,8 @@ class PsychomatrixFragment : Fragment() {
 //            textView8SenseOfDuty.text = matrix[8]
 //            textView9Intelligence.text = matrix[9]
         }
+
+        PsychoMatrixFactory(App.instance, prefs.getFullDate()!!)
 
         return root
     }
