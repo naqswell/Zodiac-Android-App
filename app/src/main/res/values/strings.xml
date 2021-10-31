@@ -35,4 +35,14 @@
         <item>December</item>
     </string-array>
 
+    <string name="character_title">Character, willpower</string>
+    <string name="energy_title">Energy, Charisma </string>
+    <string name="cognition_title">Cognition, creativity</string>
+    <string name="health_title">Health, beauty</string>
+    <string name="logic_title">Logic, intuition</string>
+    <string name="diligence_title">Diligence, skill </string>
+    <string name="luck_title">Luck</string>
+    <string name="duty_title">Call of Duty</string>
+    <string name="memory_title">Memory, mind</string>
+
 </resources>

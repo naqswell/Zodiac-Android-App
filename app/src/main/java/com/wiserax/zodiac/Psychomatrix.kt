@@ -4,10 +4,10 @@ import android.app.Application
 import android.util.Log
 import org.json.JSONObject
 
-class PsychoMatrixFactory(application: Application, dateOfBirth: String) {
-    val arrayOneToNine: MutableMap<Int, Int> = calculateSquare(dateOfBirth)
+class Psychomatrix(application: Application, dateOfBirth: String) {
+    private val arrayOneToNine: MutableMap<Int, Int> = calculateSquare(dateOfBirth)
     val textMap = getPsychomatrixText(application, arrayOneToNine)
-    val matrixCellsData = createSquare(arrayOneToNine)
+    val matrixCellsData: Map<Int, String> = createSquare(arrayOneToNine)
 
     private fun calculateSquare(dateOfBirth: String): MutableMap<Int, Int> {
         val arrayOfInt = mutableListOf<Int>()
@@ -109,7 +109,6 @@ class PsychoMatrixFactory(application: Application, dateOfBirth: String) {
                 str
             }
         }
-        Log.d("MMM", a.toString())
         return a
     }
 
@@ -145,24 +144,15 @@ class PsychoMatrixFactory(application: Application, dateOfBirth: String) {
         for (numbersIterator in 0 until arrayNumbers.length()) {
             val number = arrayNumbers.getJSONObject(numbersIterator)
             val arrayPower = number.getJSONArray("power")
-//            Log.d("POWER", arrayPower.toString())
-            Log.d("SETED", "number is" + number.getInt("number"))
 
             for (powerIterator in 0 until arrayPower.length()) {
                 val power = arrayPower.getJSONObject(powerIterator)
-//                Log.d("QUA", power.toString())
-//                Log.d("QUA", power.getInt("quantity").toString())
-                Log.d("SETED",
-                    "q= " + power.getInt("quantity")
-                        .toString() + " " + "v=" + digitCounter[number.getInt("number")]
-                )
                 if (power.getInt("quantity") == digitCounter[number.getInt("number")]) {
                     textMap[number.getInt("number")] = power.getString("text")
-                    Log.d("SETED", power.getString("text"))
                 }
             }
         }
-        Log.d("JJJ123", "lol" + textMap[123].toString())
+        Log.d("JJJ", "lol" + textMap[123].toString())
         return textMap
     }
 }
