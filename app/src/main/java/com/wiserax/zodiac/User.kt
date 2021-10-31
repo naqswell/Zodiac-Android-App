@@ -3,7 +3,6 @@ package com.wiserax.zodiac
 import android.app.Application
 import android.graphics.drawable.Drawable
 import androidx.core.content.res.ResourcesCompat
-import java.lang.StringBuilder
 
 data class User(
     val name: String,

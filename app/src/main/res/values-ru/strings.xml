@@ -35,5 +35,14 @@
     <string name="health_text_title">Здоровье</string>
     <string name="work_text_title">Работа и Карьера</string>
     <string name="addition_text_title">Зодиак</string>
+    <string name="health_title">Здоровье, красота</string>
+    <string name="character_title">Характер, сила воли</string>
+    <string name="cognition_title">"Познание, творчество "</string>
+    <string name="logic_title">Логика, интуиция</string>
+    <string name="diligence_title">Трудолюбие, мастерство</string>
+    <string name="luck_title">Удача, везение</string>
+    <string name="duty_title">Чувство долга</string>
+    <string name="memory_title">Память, ум</string>
+    <string name="energy_title">Энергетика, харизма</string>
 
 </resources>

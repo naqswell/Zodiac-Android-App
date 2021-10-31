@@ -1,13 +1,18 @@
 package com.wiserax.zodiac.ui.psychomatrix
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.wiserax.zodiac.Psychomatrix
+import com.wiserax.zodiac.prefs
 
-class PsychomatrixViewModel : ViewModel() {
+class PsychomatrixViewModel(application: Application) : AndroidViewModel(application) {
+    private val psyMatrix = if (prefs.getDateInitFlag()) {
+        Psychomatrix(application, prefs.getFullDate()!!)
+    } else Psychomatrix(application, "01.01.2001")
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is Psychomatrix Fragment"
-    }
-    val text: LiveData<String> = _text
+    val matrixCells: LiveData<Map<Int, String>> = MutableLiveData(psyMatrix.matrixCellsData)
+
+    val matrixText: LiveData<Map<Int, String>> = MutableLiveData(psyMatrix.textMap)
 }

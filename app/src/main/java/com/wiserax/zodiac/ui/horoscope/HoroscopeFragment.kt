@@ -25,7 +25,7 @@ class HoroscopeFragment : Fragment() {
     ): View? {
 
         horoscopeViewModel =
-            ViewModelProvider(this).get(HoroscopeViewModel::class.java)
+            ViewModelProvider(this)[HoroscopeViewModel::class.java]
 
         _binding = FragmentHoroscopeBinding.inflate(inflater, container, false)
 
