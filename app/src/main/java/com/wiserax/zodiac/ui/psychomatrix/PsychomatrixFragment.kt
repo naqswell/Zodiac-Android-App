@@ -1,12 +1,20 @@
 package com.wiserax.zodiac.ui.psychomatrix
 
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
 import android.util.Log
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.core.view.setPadding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.wiserax.zodiac.R
 import com.wiserax.zodiac.databinding.FragmentPsychomatrixBinding
 
 class PsychomatrixFragment : Fragment() {
@@ -47,18 +55,47 @@ class PsychomatrixFragment : Fragment() {
             textView8SenseOfDuty.text = viewModel.matrixCells.value?.get(8)
             textView9Intelligence.text = viewModel.matrixCells.value?.get(9)
 
+            var counter = 0
+            viewModel.matrixText.value?.forEach {
+                val textTitle = TextView(requireContext())
+                textTitle.layoutParams = LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                )
 
-            textViewNum1.text = viewModel.matrixText.value?.get(1)
-            textViewNum2.text = viewModel.matrixText.value?.get(2)
-            textViewNum3.text = viewModel.matrixText.value?.get(3)
-            textViewNum4.text = viewModel.matrixText.value?.get(4)
-            textViewNum5.text = viewModel.matrixText.value?.get(5)
-            textViewNum6.text = viewModel.matrixText.value?.get(6)
-            textViewNum7.text = viewModel.matrixText.value?.get(7)
-            textViewNum8.text = viewModel.matrixText.value?.get(8)
-            textViewNum9.text = viewModel.matrixText.value?.get(9)
+                val titleText = resources.getStringArray(R.array.human_qualities)[counter]
+                val titleTextWithDigits =
+                    SpannableString(titleText + " " + (viewModel.matrixCells.value?.get(counter+1) ?: ""))
+                titleTextWithDigits.setSpan(
+                    ForegroundColorSpan(resources.getColor(R.color.ic_horoscope_filled)),
+                    titleText.length,
+                    titleTextWithDigits.length,
+                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                textTitle.text = titleTextWithDigits
+                textTitle.setTextSize(
+                    TypedValue.COMPLEX_UNIT_PX,
+                    resources.getDimension(R.dimen._24ssp)
+                )
+                textTitle.setPadding(resources.getDimensionPixelSize(R.dimen._8sdp))
+                linearLayoutInScrollView.addView(textTitle)
+
+                val textSimple = TextView(requireContext())
+                textSimple.layoutParams = LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                )
+                textSimple.text = it.value
+                textSimple.setTextSize(
+                    TypedValue.COMPLEX_UNIT_PX,
+                    resources.getDimension(R.dimen._16ssp)
+                )
+                textSimple.setPadding(resources.getDimensionPixelSize(R.dimen._8sdp))
+                linearLayoutInScrollView.addView(textSimple)
+
+                counter += 1
+            }
         }
-
         return root
     }
 

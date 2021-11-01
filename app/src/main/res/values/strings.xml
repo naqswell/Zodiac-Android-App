@@ -45,4 +45,33 @@
     <string name="duty_title">Call of Duty</string>
     <string name="memory_title">Memory, mind</string>
 
+    <string name="selfesteem_title">Self-esteem</string>
+    <string name="making_money">Making money</string>
+    <string name="talent_potential">Talent potential</string>
+    <string name="sense_of_purpose">Sense of purpose</string>
+    <string name="family">Family</string>
+    <string name="stability">Stability</string>
+    <string name="spiritual_potential">Spiritual potential</string>
+    <string name="temperament">Temperament</string>
+
+    <string-array name="human_qualities">
+        <item>Character, willpower</item>
+        <item>Energy, Charisma</item>
+        <item>Cognition, creativity</item>
+        <item>Health, beauty</item>
+        <item>Logic, intuition</item>
+        <item>Diligence, skill</item>
+        <item>Luck</item>
+        <item>Call of Duty</item>
+        <item>Memory, mind</item>
+        <item>Self-esteem</item>
+        <item>Making money</item>
+        <item>Talent potential</item>
+        <item>Sense of purpose</item>
+        <item>Family</item>
+        <item>Stability</item>
+        <item>Spiritual potential</item>
+        <item>Temperament</item>
+    </string-array>
+
 </resources>
