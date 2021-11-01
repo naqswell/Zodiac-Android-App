@@ -37,12 +37,41 @@
     <string name="addition_text_title">Зодиак</string>
     <string name="health_title">Здоровье, красота</string>
     <string name="character_title">Характер, сила воли</string>
-    <string name="cognition_title">"Познание, творчество "</string>
+    <string name="cognition_title">Познание, творчество</string>
     <string name="logic_title">Логика, интуиция</string>
     <string name="diligence_title">Трудолюбие, мастерство</string>
     <string name="luck_title">Удача, везение</string>
     <string name="duty_title">Чувство долга</string>
     <string name="memory_title">Память, ум</string>
     <string name="energy_title">Энергетика, харизма</string>
+    <string name="selfesteem_title">Самооценка</string>
+    <string name="making_money">Зарабатывание денег</string>
+    <string name="talent_potential">Потенциал таланта</string>
+    <string name="sense_of_purpose">Целеустремленность</string>
+    <string name="family">Семейность</string>
+    <string name="stability">Стабильность</string>
+    <string name="spiritual_potential">Духовный потенциал</string>
+    <string name="temperament">Темперамент</string>
+
+
+    <string-array name="human_qualities">
+        <item>Характер, сила воли</item>
+        <item>Энергетика, харизма</item>
+        <item>Познание, творчество</item>
+        <item>Здоровье, красота</item>
+        <item>Логика, интуиция</item>
+        <item>Трудолюбие, мастерство</item>
+        <item>Удача, везение</item>
+        <item>Чувство долга</item>
+        <item>Память, ум</item>
+        <item>Самооценка</item>
+        <item>Зарабатывание денег</item>
+        <item>Потенциал таланта</item>
+        <item>Целеустремленность</item>
+        <item>Семейность</item>
+        <item>Стабильность</item>
+        <item>Духовный потенциал</item>
+        <item>Темперамент</item>
+    </string-array>
 
 </resources>

@@ -1,7 +1,6 @@
 package com.wiserax.zodiac
 
 import android.app.Application
-import android.util.Log
 import org.json.JSONObject
 
 class Psychomatrix(application: Application, dateOfBirth: String) {
@@ -10,16 +9,16 @@ class Psychomatrix(application: Application, dateOfBirth: String) {
     val matrixCellsData: Map<Int, String> = createSquare(arrayOneToNine)
 
     private fun calculateSquare(dateOfBirth: String): MutableMap<Int, Int> {
-        val arrayOfInt = mutableListOf<Int>()
+        val mapOfInt = mutableListOf<Int>()
 
         for (symbol in dateOfBirth) {
             if (symbol.isDigit()) {
-                arrayOfInt.add(symbol.digitToInt())
+                mapOfInt.add(symbol.digitToInt())
             }
         }
 
         val digitCounter = mutableMapOf(
-            0 to 0,
+//            0 to 0,
             1 to 0,
             2 to 0,
             3 to 0,
@@ -39,35 +38,42 @@ class Psychomatrix(application: Application, dateOfBirth: String) {
             357 to 0
         )
 
-        for (el in arrayOfInt) {
-            digitCounter[el] = digitCounter[el]!! + 1
+        for (el in mapOfInt) {
+            if (el != 0) {
+                digitCounter[el] = digitCounter[el]!! + 1
+            }
         }
 
-        val firstValue = arrayOfInt.sum()
+        val firstValue = mapOfInt.sum()
         var part1 = firstValue % 10
         var part2 = firstValue / 10
-        digitCounter[part1] = digitCounter[part1]!! + 1
-        digitCounter[part2] = digitCounter[part2]!! + 1
-
+        if ((part1 != 0) && (part2 != 0)) {
+            digitCounter[part1] = digitCounter[part1]!! + 1
+            digitCounter[part2] = digitCounter[part2]!! + 1
+        }
         val secondValue = part1 + part2
         part1 = secondValue % 10
         part2 = secondValue / 10
-        digitCounter[part1] = digitCounter[part1]!! + 1
-        digitCounter[part2] = digitCounter[part2]!! + 1
-
-        val thirdValue = firstValue - arrayOfInt[0] * 2
+        if ((part1 != 0) && (part2 != 0)) {
+            digitCounter[part1] = digitCounter[part1]!! + 1
+            digitCounter[part2] = digitCounter[part2]!! + 1
+        }
+        val thirdValue = firstValue - mapOfInt[0] * 2
         part1 = thirdValue % 10
         part2 = thirdValue / 10
-        digitCounter[part1] = digitCounter[part1]!! + 1
-        digitCounter[part2] = digitCounter[part2]!! + 1
-
+        if ((part1 != 0) && (part2 != 0)) {
+            digitCounter[part1] = digitCounter[part1]!! + 1
+            digitCounter[part2] = digitCounter[part2]!! + 1
+        }
         val fourthValue = part1 + part2
         part1 = fourthValue % 10
         part2 = fourthValue / 10
-        digitCounter[part1] = digitCounter[part1]!! + 1
-        digitCounter[part2] = digitCounter[part2]!! + 1
+        if ((part1 != 0) && (part2 != 0)) {
+            digitCounter[part1] = digitCounter[part1]!! + 1
+            digitCounter[part2] = digitCounter[part2]!! + 1
+        }
 
-        Log.d("SSS", digitCounter.toString())
+
         digitCounter[123] = digitCounter[1]!! + digitCounter[2]!! + digitCounter[3]!!
         digitCounter[456] = digitCounter[4]!! + digitCounter[5]!! + digitCounter[6]!!
         digitCounter[789] = digitCounter[7]!! + digitCounter[8]!! + digitCounter[9]!!
@@ -76,29 +82,12 @@ class Psychomatrix(application: Application, dateOfBirth: String) {
         digitCounter[369] = digitCounter[3]!! + digitCounter[6]!! + digitCounter[9]!!
         digitCounter[159] = digitCounter[1]!! + digitCounter[5]!! + digitCounter[9]!!
         digitCounter[357] = digitCounter[3]!! + digitCounter[5]!! + digitCounter[7]!!
-        Log.d("SSS", digitCounter.toString())
 
         return digitCounter
     }
 
-//    private fun createSquare(arrayOneToNine: IntArray): Array<String> {
-//        return arrayOneToNine.mapIndexed() { idx, value ->
-//            if (value == 0) {
-//                "---"
-//            } else {
-//                var str = ""
-//                for (el in 1..value) {
-//                    str += idx
-//                }
-//                str
-//            }
-//        }.toTypedArray()
-//    }
-
     private fun createSquare(arrayOneToNine: MutableMap<Int, Int>): Map<Int, String> {
         val a = arrayOneToNine.mapValues() {
-            if ((it.key / 10) > 0) {
-            }
             if (it.value == 0) {
                 "---"
             } else {
@@ -152,7 +141,6 @@ class Psychomatrix(application: Application, dateOfBirth: String) {
                 }
             }
         }
-        Log.d("JJJ", "lol" + textMap[123].toString())
         return textMap
     }
 }
