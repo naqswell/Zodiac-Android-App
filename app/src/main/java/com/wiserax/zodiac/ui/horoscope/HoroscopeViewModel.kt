@@ -7,7 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.wiserax.zodiac.Gender
 import com.wiserax.zodiac.R
-import com.wiserax.zodiac.UserFactory
+import com.wiserax.zodiac.model.UserFactory
 import com.wiserax.zodiac.prefs
 
 class HoroscopeViewModel(application: Application) : AndroidViewModel(application) {
