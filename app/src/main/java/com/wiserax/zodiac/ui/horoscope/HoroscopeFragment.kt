@@ -31,19 +31,19 @@ class HoroscopeFragment : Fragment() {
 
         initializeObservables()
 
-        with(binding) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                if (resources.configuration.isNightModeActive) {
-                    chooseDateBtn.setIconTintResource(R.color.grey_ic_nav_bar)
-                } else {
-                    chooseDateBtn.setIconTintResource(R.color.black)
-                }
-            }
-
-            chooseDateBtn.setOnClickListener {
-                findNavController().navigate(R.id.navigation_birthdate)
-            }
-        }
+//        with(binding) {
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//                if (resources.configuration.isNightModeActive) {
+//                    chooseDateBtn.setIconTintResource(R.color.grey_ic_nav_bar)
+//                } else {
+//                    chooseDateBtn.setIconTintResource(R.color.black)
+//                }
+//            }
+//
+//            chooseDateBtn.setOnClickListener {
+//                findNavController().navigate(R.id.navigation_birthdate)
+//            }
+//        }
 
         return binding.root
     }
@@ -96,9 +96,9 @@ class HoroscopeFragment : Fragment() {
                 binding.textViewHoroscopeAdvice.text = it
             })
 
-            date.observe(viewLifecycleOwner, {
-                binding.textViewBirthdate.text = it
-            })
+//            date.observe(viewLifecycleOwner, {
+//                binding.textViewBirthdate.text = it
+//            })
         }
     }
 }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".ui.horoscope.HoroscopeFragment">
 
@@ -18,36 +18,36 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_60sdp">
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/_60sdp">-->
 
-                <TextView
-                    android:id="@+id/textView_birthdate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_16sdp"
-                    android:fontFamily="@font/jost_bold"
-                    android:textSize="@dimen/_16ssp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+<!--                <TextView-->
+<!--                    android:id="@+id/textView_birthdate"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/_16sdp"-->
+<!--                    android:fontFamily="@font/jost_bold"-->
+<!--                    android:textSize="@dimen/_16ssp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/choose_date_btn"
-                    android:layout_width="@dimen/_32sdp"
-                    android:layout_height="@dimen/_32sdp"
-                    android:layout_marginEnd="@dimen/_16sdp"
-                    android:background="@android:color/transparent"
-                    app:icon="@drawable/btn_choose_date"
-                    app:iconTint="?attr/colorPrimary"
-                    app:iconGravity="textStart"
-                    app:iconPadding="0dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:id="@+id/choose_date_btn"-->
+<!--                    android:layout_width="@dimen/_32sdp"-->
+<!--                    android:layout_height="@dimen/_32sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_16sdp"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    app:icon="@drawable/btn_choose_date"-->
+<!--                    app:iconTint="?attr/colorPrimary"-->
+<!--                    app:iconGravity="textStart"-->
+<!--                    app:iconPadding="0dp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -78,7 +78,7 @@
                     android:textSize="@dimen/_26sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.50" />
             </androidx.constraintlayout.widget.ConstraintLayout>

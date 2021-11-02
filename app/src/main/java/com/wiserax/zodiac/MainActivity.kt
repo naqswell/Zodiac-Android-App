@@ -3,10 +3,12 @@ package com.wiserax.zodiac
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.commit
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.wiserax.zodiac.databinding.ActivityMainBinding
+import com.wiserax.zodiac.ui.DateFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,6 +19,10 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportFragmentManager.commit {
+            replace(R.id.fragment_date, DateFragment())
+        }
 
         val navView: BottomNavigationView = binding.navView
         navView.itemIconTintList = null
