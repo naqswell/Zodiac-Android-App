@@ -40,6 +40,10 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
 
         if (!prefs.isDateInit()) {
             navController.navigate(R.id.action_horoscope_to_birthdate)
+        } else {
+            supportFragmentManager.commit {
+                replace(R.id.container_fragment_date, DateFragment())
+            }
         }
 
         navView.setupWithNavController(navController)
