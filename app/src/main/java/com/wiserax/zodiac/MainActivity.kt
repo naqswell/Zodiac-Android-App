@@ -38,11 +38,11 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
             }
         }
 
-        navView.setupWithNavController(navController)
-
         if (!prefs.isDateInit()) {
-            findNavController(R.id.nav_host_fragment_activity_main).navigate(R.id.navigation_birthdate)
+            navController.navigate(R.id.action_horoscope_to_birthdate)
         }
+
+        navView.setupWithNavController(navController)
     }
 
     private fun showBars() {
