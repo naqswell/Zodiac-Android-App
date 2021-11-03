@@ -8,9 +8,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.wiserax.zodiac.databinding.ActivityMainBinding
-import com.wiserax.zodiac.ui.DateFragment
+import com.wiserax.zodiac.ui.birthdate.DateFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), DateFragment.Callbacks {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportFragmentManager.commit {
-            replace(R.id.fragment_date, DateFragment())
+            replace(R.id.container_fragment_date, DateFragment())
         }
 
         val navView: BottomNavigationView = binding.navView
@@ -34,19 +34,30 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.navigation_birthdate -> hideBottomNav()
-                else -> showBottomNav()
+                R.id.navigation_birthdate -> hideBars()
+                R.id.navigation_compatibility -> hideBars()
+                else -> showBars()
             }
         }
         navView.setupWithNavController(navController)
     }
 
 
-    private fun showBottomNav() {
+    private fun showBars() {
         binding.navView.visibility = View.VISIBLE
+        with(supportFragmentManager) {
+            this.commit { findFragmentById(R.id.container_fragment_date)?.let { show(it) } }
+        }
     }
 
-    private fun hideBottomNav() {
+    private fun hideBars() {
         binding.navView.visibility = View.GONE
+        with(supportFragmentManager) {
+            this.commit { findFragmentById(R.id.container_fragment_date)?.let { hide(it) } }
+        }
+    }
+
+    override fun onDateButtonPressed() {
+        findNavController(R.id.nav_host_fragment_activity_main).navigate(R.id.navigation_birthdate)
     }
 }
