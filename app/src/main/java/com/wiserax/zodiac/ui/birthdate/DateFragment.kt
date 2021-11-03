@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
 import com.wiserax.zodiac.R
 import com.wiserax.zodiac.databinding.FragmentDateBinding
 
@@ -17,7 +17,7 @@ class DateFragment: Fragment() {
         fun onDateButtonPressed()
     }
 
-    private lateinit var viewModel: DateViewModel
+    private val viewModel: DateViewModel by activityViewModels()
     private var _binding: FragmentDateBinding? = null
     private val binding get() = _binding!!
     private var callbacks: Callbacks? = null
@@ -32,8 +32,6 @@ class DateFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewModel =
-            ViewModelProvider(this)[DateViewModel::class.java]
 
         _binding = FragmentDateBinding.inflate(inflater, container, false)
 

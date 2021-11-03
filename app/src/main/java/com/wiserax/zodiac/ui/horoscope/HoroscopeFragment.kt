@@ -22,7 +22,7 @@ class HoroscopeFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         horoscopeViewModel =
             ViewModelProvider(this)[HoroscopeViewModel::class.java]
@@ -30,20 +30,6 @@ class HoroscopeFragment : Fragment() {
         _binding = FragmentHoroscopeBinding.inflate(inflater, container, false)
 
         initializeObservables()
-
-//        with(binding) {
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-//                if (resources.configuration.isNightModeActive) {
-//                    chooseDateBtn.setIconTintResource(R.color.grey_ic_nav_bar)
-//                } else {
-//                    chooseDateBtn.setIconTintResource(R.color.black)
-//                }
-//            }
-//
-//            chooseDateBtn.setOnClickListener {
-//                findNavController().navigate(R.id.navigation_birthdate)
-//            }
-//        }
 
         return binding.root
     }
@@ -96,9 +82,6 @@ class HoroscopeFragment : Fragment() {
                 binding.textViewHoroscopeAdvice.text = it
             })
 
-//            date.observe(viewLifecycleOwner, {
-//                binding.textViewBirthdate.text = it
-//            })
         }
     }
 }

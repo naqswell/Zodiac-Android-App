@@ -8,7 +8,7 @@ import com.wiserax.zodiac.Psychomatrix
 import com.wiserax.zodiac.prefs
 
 class PsychomatrixViewModel(application: Application) : AndroidViewModel(application) {
-    private val psyMatrix = if (prefs.getDateInitFlag()) {
+    private val psyMatrix = if (prefs.isDateInit()) {
         Psychomatrix(application, prefs.getFullDate()!!)
     } else Psychomatrix(application, "01.01.2001")
 

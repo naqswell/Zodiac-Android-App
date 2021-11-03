@@ -3,7 +3,7 @@ package com.wiserax.zodiac
 import android.content.Context
 import android.content.SharedPreferences
 
-class Prefs(context: Context) {
+class Prefs(val context: Context) {
 
     private val PREF_BIRTHDATE = "prefBirthDate"
     private val PREF_DATE = "prefDay"
@@ -32,12 +32,12 @@ class Prefs(context: Context) {
         get() = preferences.getString(PREF_SEX, DEF_STRING_VALUE)!!
         set(value) = preferences.edit().putString(PREF_SEX, value).apply()
 
-    fun getDateInitFlag(): Boolean {
+    fun isDateInit(): Boolean {
         return ((day != DEF_INT_VALUE) && (month != DEF_INT_VALUE) && (year != DEF_INT_VALUE))
     }
 
     fun getFullDate(): String? {
-        return if (getDateInitFlag()) {
+        return if (isDateInit()) {
             String.format("%02d/%02d/%04d", day, month, year)
         } else {
             null
@@ -46,5 +46,11 @@ class Prefs(context: Context) {
 
     fun getDayAndMonth(): String {
         return String.format("%02d.%02d", day, month)
+    }
+
+    fun getDateFormated(): String {
+        return prefs.day.toString() + " " + context.resources.getStringArray(
+            R.array.months
+        )[prefs.month - 1] + " " + prefs.year.toString()
     }
 }

@@ -12,7 +12,7 @@ import com.wiserax.zodiac.prefs
 
 class HoroscopeViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val user = if (prefs.getDateInitFlag()) {
+    private val user = if (prefs.isDateInit()) {
         UserFactory.createUser(application, Gender.valueOf(prefs.sex), prefs.getDayAndMonth())
     } else {
         UserFactory.createUser(application, Gender.Male, "01.01")
@@ -41,7 +41,7 @@ class HoroscopeViewModel(application: Application) : AndroidViewModel(applicatio
     val adviceText: LiveData<String> = MutableLiveData<String>().apply { value = user.adviceText }
 
     val date: LiveData<String> = MutableLiveData<String>().apply {
-        value = if (prefs.getDateInitFlag()) {
+        value = if (prefs.isDateInit()) {
             prefs.day.toString() + " " + getApplication<Application>().resources.getStringArray(
                 R.array.months
             )[prefs.month - 1] + " " + prefs.year.toString()
