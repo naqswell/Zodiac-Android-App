@@ -21,13 +21,13 @@
         android:id="@+id/navigation_psychomatrix"
         android:name="com.wiserax.zodiac.ui.psychomatrix.PsychomatrixFragment"
         android:label="@string/title_psychomatrix"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_psychomatrix" />
 
     <fragment
         android:id="@+id/navigation_compatibility"
         android:name="com.wiserax.zodiac.ui.compatibility.CompatibilityFragment"
         android:label="@string/title_compatibility"
-        tools:layout="@layout/fragment_psychomatrix" />
+        tools:layout="@layout/fragment_compability" />
 
     <fragment
         android:id="@+id/navigation_birthdate"
