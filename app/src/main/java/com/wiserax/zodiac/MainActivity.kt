@@ -18,6 +18,11 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
     private lateinit var binding: ActivityMainBinding
     private val dateViewModel: DateViewModel by viewModels()
 
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        navControllerDestinationChanged()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -26,17 +31,7 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
 
         val navView: BottomNavigationView = binding.navView
         navView.itemIconTintList = null
-
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.navigation_birthdate -> hideBars()
-                R.id.navigation_compatibility -> hideBars()
-                R.id.action_horoscope_to_birthdate -> hideBars()
-                else -> showBars()
-            }
-        }
 
         if (!prefs.isDateInit()) {
             navController.navigate(R.id.action_horoscope_to_birthdate)
@@ -45,8 +40,20 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
                 replace(R.id.container_fragment_date, DateFragment())
             }
         }
-
+        navControllerDestinationChanged()
         navView.setupWithNavController(navController)
+    }
+
+    private fun navControllerDestinationChanged() {
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.navigation_birthdate -> hideBars()
+                R.id.navigation_compatibility -> hideTopBar()
+                else -> showBars()
+            }
+        }
     }
 
     private fun showBars() {
@@ -58,6 +65,11 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
 
     private fun hideBars() {
         binding.navView.visibility = View.GONE
+        hideTopBar()
+
+    }
+
+    private fun hideTopBar() {
         with(supportFragmentManager) {
             this.commit { findFragmentById(R.id.container_fragment_date)?.let { hide(it) } }
         }
