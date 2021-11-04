@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.wiserax.zodiac.databinding.InstanceSignBinding
 import com.wiserax.zodiac.model.Sign
+import java.util.*
 
 class SignAdapter: RecyclerView.Adapter<SignAdapter.SignHolder>() {
 
@@ -24,9 +25,10 @@ class SignAdapter: RecyclerView.Adapter<SignAdapter.SignHolder>() {
     }
 
     override fun getItemCount(): Int {
-
         return signs.size
     }
+
+    fun getCurrentTitle(position: Int) = signs[position].toString()
 
     class SignHolder(private val binding: InstanceSignBinding): RecyclerView.ViewHolder(binding.root) {
 

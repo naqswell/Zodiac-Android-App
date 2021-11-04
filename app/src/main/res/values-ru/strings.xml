@@ -48,7 +48,7 @@
     <string name="making_money">Зарабатывание денег</string>
     <string name="talent_potential">Потенциал таланта</string>
     <string name="sense_of_purpose">Целеустремленность</string>
-    <string name="family">Семейность</string>
+<!--    <string name="family">Семейность</string>-->
     <string name="stability">Стабильность</string>
     <string name="spiritual_potential">Духовный потенциал</string>
     <string name="temperament">Темперамент</string>
@@ -73,5 +73,14 @@
         <item>Духовный потенциал</item>
         <item>Темперамент</item>
     </string-array>
+
+    // For json reader
+    <string name="general">Общее</string>
+    <string name="work">Работа</string>
+    <string name="friendship">Дружба</string>
+    <string name="love">Любовь</string>
+    <string name="intimacy">Интимные отношения</string>
+    <string name="family">Семья</string>
+
 
 </resources>

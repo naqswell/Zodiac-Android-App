@@ -67,7 +67,7 @@ class PsychomatrixFragment : Fragment() {
                 val titleTextWithDigits =
                     SpannableString(titleText + " " + (viewModel.matrixCells.value?.get(counter+1) ?: ""))
                 titleTextWithDigits.setSpan(
-                    ForegroundColorSpan(resources.getColor(R.color.ic_horoscope_filled)),
+                    ForegroundColorSpan(resources.getColor(R.color.orange)),
                     titleText.length,
                     titleTextWithDigits.length,
                     Spanned.SPAN_EXCLUSIVE_EXCLUSIVE

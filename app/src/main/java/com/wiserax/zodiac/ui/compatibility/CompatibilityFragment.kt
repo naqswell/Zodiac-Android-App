@@ -5,41 +5,42 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.viewpager2.widget.ViewPager2
 import com.wiserax.zodiac.databinding.FragmentCompabilityBinding
 import com.wiserax.zodiac.model.Sign
 
 class CompatibilityFragment : Fragment() {
 
-    private lateinit var compatibilityViewModel: CompatibilityViewModel
+//    private val compatibilityViewModel: CompatibilityViewModel by viewModels()
 
     private var _binding: FragmentCompabilityBinding? = null
     private val binding get() = _binding!!
+
+    private val adapter1 by lazy { SignAdapter() }
+    private val adapter2 by lazy { SignAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        compatibilityViewModel =
-            ViewModelProvider(this).get(CompatibilityViewModel::class.java)
-
+    ): View {
         _binding = FragmentCompabilityBinding.inflate(inflater, container, false)
 
-        val viewPager1 = binding.viewPager1
-        val viewPager2 = binding.viewPager2
+        binding.viewPager1.instantiate(adapter1)
+        binding.viewPager2.instantiate(adapter2)
 
-        viewPager1.adapter = SignAdapter()
-        viewPager1.currentItem = Sign.values().size / 2 + 1
-        viewPager1.offscreenPageLimit = 3
-        viewPager1.clipToPadding = false
-        viewPager1.clipChildren = false
+        binding.buttonCheckCompability.setOnClickListener {
+            val position1 = binding.viewPager1.currentItem
+            val position2 = binding.viewPager2.currentItem
 
-        viewPager2.adapter = SignAdapter()
-        viewPager2.currentItem = Sign.values().size / 2 - 1
-        viewPager2.offscreenPageLimit = 3
-        viewPager2.clipToPadding = false
-        viewPager2.clipChildren = false
+            val title1 = adapter1.getCurrentTitle(position1)
+            val title2 = adapter1.getCurrentTitle(position2)
+
+            val action = CompatibilityFragmentDirections.actionCompatibilityToCompabilityFragment2(title1, title2)
+
+            findNavController().navigate(action)
+        }
 
         return binding.root
     }
@@ -47,5 +48,13 @@ class CompatibilityFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun ViewPager2.instantiate(adapter: SignAdapter) {
+        this.adapter = adapter
+        setCurrentItem(Sign.values().size / 2, false)
+        offscreenPageLimit = 3
+        clipToPadding = false
+        clipChildren = false
     }
 }
