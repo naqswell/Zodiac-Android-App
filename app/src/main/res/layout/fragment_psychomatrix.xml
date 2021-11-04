@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.compatibility.CompatibilityFragment">
+    tools:context=".ui.compatibility.CompatibilityFragment"
+    android:layout_marginBottom="?actionBarSize"
+    android:layout_marginTop="@dimen/_60sdp">
 
     <ScrollView
         android:id="@+id/scrollView_horoscope"
@@ -21,41 +23,6 @@
             android:layout_marginRight="@dimen/_8sdp"
             android:layout_marginLeft="@dimen/_8sdp"
             >
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/header_container"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_60sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:id="@+id/textView_birthdate_psychomatrix"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_16sdp"
-                    android:fontFamily="@font/jost_bold"
-                    android:textSize="@dimen/_16ssp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/choose_date_btn_psychomatrix"
-                    android:layout_width="@dimen/_32sdp"
-                    android:layout_height="@dimen/_32sdp"
-                    android:layout_marginEnd="@dimen/_16sdp"
-                    android:background="@android:color/transparent"
-                    app:icon="@drawable/btn_choose_date"
-                    app:iconGravity="textStart"
-                    app:iconPadding="0dp"
-                    app:iconTint="?attr/colorPrimary"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/matrix"

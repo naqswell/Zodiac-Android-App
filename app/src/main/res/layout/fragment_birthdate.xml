@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/_16sdp"
-    tools:context=".ui.psychomatrix.PsychomatrixFragment">
+    tools:context=".ui.psychomatrix.PsychomatrixFragment"
+    >
 
     <TextView
         android:id="@+id/choose_date_textview"
