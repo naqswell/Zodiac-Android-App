@@ -28,7 +28,7 @@ class CompatibilityFragment2 : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentCompability2Binding.inflate(inflater, container, false)
 
         with(binding) {
@@ -40,7 +40,7 @@ class CompatibilityFragment2 : Fragment() {
             textViewTitle2.text = sign2.title
             textViewDates2.text = sign2.dates
 
-            loadTextTo(linearLayoutText)
+            loadCompatibilityInfo(linearLayoutText)
         }
 
         return binding.root
@@ -51,44 +51,34 @@ class CompatibilityFragment2 : Fragment() {
         _binding = null
     }
 
-    private fun loadTextTo(layout: LinearLayout) {
+    private fun loadCompatibilityInfo(layout: LinearLayout) {
         val application = activity?.application ?: throw NullPointerException("Activity is null")
         val reader = JsonReader(application)
-        val map = reader.getCompatibilityTextBySignsPair(sign1, sign2)
 
-        map.forEach { (key, value) ->
+        val (textMap, percentagesMap) = reader.getCompatibility(sign1, sign2)
+
+        textMap.forEach { (title, description) ->
+            if (title == application.resources.getString(R.string.general)) {
+                binding.textViewGeneralTitle.text = title
+                binding.textViewGeneralDescription.text = description
+            } else {
+                val titleTextView = createTextView(title, 20f, true)
+                val descriptionTextView = createTextView(description, 16f, false)
+
+                layout.addView(titleTextView)
+                layout.addView(descriptionTextView)
+            }
+        }
+
+        percentagesMap.forEach { (key, value) ->
+            val percentage = "$value%"
+
             when (key) {
-                application.resources.getString(R.string.general) -> {
-                    binding.textViewGeneralTitle.text = key
-                    binding.textViewGeneralDescription.text = value
-                }
-                "generalPower" -> {
-                    val text = "$value%"
-                    binding.textViewPercentage.text = text
-                }
-                "lovePower" -> {
-                    val text = "$value%"
-                    binding.textViewLove.text = text
-                }
-                "friendshipPower" -> {
-                    val text = "$value%"
-                    binding.textViewFriendship.text = text
-                }
-                "workPower" -> {
-                    val text = "$value%"
-                    binding.textViewWork.text = text
-                }
-                "familyPower" -> {
-                    val text = "$value%"
-                    binding.textViewFamily.text = text
-                }
-                else -> {
-                    val title = createTextView(key, 20f, true)
-                    val description = createTextView(value, 16f, false)
-
-                    layout.addView(title)
-                    layout.addView(description)
-                }
+                "generalPower" -> binding.textViewPercentage.text = percentage
+                "lovePower" -> binding.textViewLove.text = percentage
+                "friendshipPower" -> binding.textViewFriendship.text = percentage
+                "workPower" -> binding.textViewWork.text = percentage
+                "familyPower" -> binding.textViewFamily.text = percentage
             }
         }
     }

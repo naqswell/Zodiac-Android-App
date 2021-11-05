@@ -7,8 +7,8 @@ import org.json.JSONObject
 
 class JsonReader(private val application: Application) {
 
-    fun getCompatibilityTextBySignsPair(sign1: Sign, sign2: Sign): Map<String, String> {
-        val file = application.assets.open("compability.json")
+    fun getCompatibility(sign1: Sign, sign2: Sign): Pair<Map<String, String>, Map<String, String>> {
+        val file = application.assets.open("compatibility.json")
         val text = file.bufferedReader().use { it.readText() }
         val array = JSONArray(text)
 
@@ -17,33 +17,48 @@ class JsonReader(private val application: Application) {
             val jsonArray = jsonObject.getJSONArray("partner")
 
             if (jsonArray[0] == sign1.toString() && jsonArray[1] == sign2.toString()) {
-                val titlesList = listOf(
-                    "general", "work", "friendship", "love", "intimacy", "family",
-                    "generalPower", "lovePower", "friendshipPower", "workPower", "familyPower"
-                )
+                val textMap = getCompatibilityText(jsonObject)
+                val percentagesMap = getCompatibilityPercentages(jsonObject)
 
-                val resultMap = mutableMapOf<String, String>()
-
-                titlesList.forEach { title ->
-                    val value = jsonObject.getString(title)
-
-                    val key = when(title) {
-                        "general" ->    application.resources.getString(R.string.general)
-                        "work" ->       application.resources.getString(R.string.work)
-                        "friendship" -> application.resources.getString(R.string.friendship)
-                        "love" ->       application.resources.getString(R.string.love)
-                        "intimacy" ->   application.resources.getString(R.string.intimacy)
-                        "family" ->     application.resources.getString(R.string.family)
-                        else -> title
-                    }
-
-                    resultMap[key] = value
-                }
-
-                return resultMap
+                return Pair(textMap, percentagesMap)
             }
         }
 
-        return mapOf()
+        return Pair(mapOf(), mapOf())
+    }
+
+    private fun getCompatibilityText(jsonObject: JSONObject): Map<String, String> {
+        val resultsMap = mutableMapOf<String, String>()
+        val titlesMap = mapOf(
+            "general" to application.resources.getString(R.string.general),
+            "work" to application.resources.getString(R.string.work),
+            "friendship" to application.resources.getString(R.string.friendship),
+            "love" to application.resources.getString(R.string.love),
+            "intimacy" to application.resources.getString(R.string.intimacy),
+            "family" to application.resources.getString(R.string.family),
+        )
+
+        titlesMap.forEach { (name, title) ->
+            resultsMap[title] = jsonObject.getString(name)
+        }
+
+        return resultsMap
+    }
+
+    private fun getCompatibilityPercentages(jsonObject: JSONObject): Map<String, String> {
+        val resultsMap = mutableMapOf<String, String>()
+        val percentagesList = listOf(
+            "generalPower",
+            "lovePower",
+            "friendshipPower",
+            "workPower",
+            "familyPower"
+        )
+
+        percentagesList.forEach { percentage ->
+            resultsMap[percentage] = jsonObject.getString(percentage)
+        }
+
+        return resultsMap
     }
 }
