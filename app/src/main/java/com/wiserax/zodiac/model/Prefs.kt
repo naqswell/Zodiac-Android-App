@@ -1,7 +1,10 @@
-package com.wiserax.zodiac
+package com.wiserax.zodiac.model
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.wiserax.zodiac.Gender
+import com.wiserax.zodiac.R
+import com.wiserax.zodiac.prefs
 
 class Prefs(val context: Context) {
 

@@ -1,4 +1,4 @@
-package com.wiserax.zodiac.model
+package com.wiserax.zodiac
 
 import com.wiserax.zodiac.R
 

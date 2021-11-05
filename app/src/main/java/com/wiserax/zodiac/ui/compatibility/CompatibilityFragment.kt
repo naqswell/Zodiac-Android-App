@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.wiserax.zodiac.databinding.FragmentCompabilityBinding
-import com.wiserax.zodiac.model.Sign
+import com.wiserax.zodiac.Sign
 
 class CompatibilityFragment : Fragment() {
 

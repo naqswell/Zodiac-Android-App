@@ -1,4 +1,4 @@
-package com.wiserax.zodiac
+package com.wiserax.zodiac.ui.psychomatrix
 
 import android.app.Application
 import org.json.JSONObject

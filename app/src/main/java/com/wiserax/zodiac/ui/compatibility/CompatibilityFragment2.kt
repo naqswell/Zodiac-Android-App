@@ -9,10 +9,10 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.fragment.navArgs
-import com.wiserax.zodiac.JsonReader
+import com.wiserax.zodiac.model.JsonReader
 import com.wiserax.zodiac.R
 import com.wiserax.zodiac.databinding.FragmentCompability2Binding
-import com.wiserax.zodiac.model.Sign
+import com.wiserax.zodiac.Sign
 import java.lang.NullPointerException
 
 class CompatibilityFragment2 : Fragment() {

@@ -1,6 +1,7 @@
 package com.wiserax.zodiac
 
 import android.app.Application
+import com.wiserax.zodiac.model.Prefs
 
 val prefs: Prefs by lazy {
     App.prefs!!

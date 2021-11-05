@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.wiserax.zodiac.Psychomatrix
 import com.wiserax.zodiac.prefs
 
 class PsychomatrixViewModel(application: Application) : AndroidViewModel(application) {

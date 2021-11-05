@@ -4,8 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.wiserax.zodiac.databinding.InstanceSignBinding
-import com.wiserax.zodiac.model.Sign
-import java.util.*
+import com.wiserax.zodiac.Sign
 
 class SignAdapter: RecyclerView.Adapter<SignAdapter.SignHolder>() {
 

@@ -1,7 +1,8 @@
-package com.wiserax.zodiac
+package com.wiserax.zodiac.model
 
 import android.app.Application
-import com.wiserax.zodiac.model.Sign
+import com.wiserax.zodiac.R
+import com.wiserax.zodiac.Sign
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -16,7 +17,10 @@ class JsonReader(private val application: Application) {
             val jsonObject = JSONObject(array[i].toString())
             val jsonArray = jsonObject.getJSONArray("partner")
 
-            if (jsonArray[0] == sign1.toString() && jsonArray[1] == sign2.toString()) {
+            if (
+                jsonArray[0] == sign1.toString() && jsonArray[1] == sign2.toString() ||
+                jsonArray[1] == sign1.toString() && jsonArray[0] == sign2.toString()
+            ) {
                 val textMap = getCompatibilityText(jsonObject)
                 val percentagesMap = getCompatibilityPercentages(jsonObject)
 
