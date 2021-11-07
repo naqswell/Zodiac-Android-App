@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.compatibility.CompatibilityFragment"
     android:layout_marginTop="@dimen/_60sdp"
     android:layout_marginBottom="?actionBarSize"
-    >
+    tools:context=".ui.compatibility.CompatibilityFragment">
 
     <ScrollView
         android:id="@+id/scrollView_horoscope"
@@ -19,122 +17,140 @@
             android:id="@+id/linearLayout_in_scrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginRight="@dimen/_8sdp"
             android:layout_marginLeft="@dimen/_8sdp"
-            >
+            android:layout_marginRight="@dimen/_8sdp"
+            android:gravity="center"
+            android:orientation="vertical">
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/matrix"
+<!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                            android:id="@+id/matrix"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_margin="@dimen/_12sdp"-->
+<!--                            >-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/textView_1_temper"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_margin="@dimen/_10sdp"-->
+<!--                                android:background="@drawable/img_psychomatrix_square"-->
+<!--                                android:gravity="center"-->
+<!--                                android:textAlignment="center"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/textView_2_charisma"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_margin="@dimen/_10sdp"-->
+<!--                                android:background="@drawable/img_psychomatrix_square"-->
+<!--                                android:gravity="center"-->
+<!--                                android:textAlignment="center"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toBottomOf="@+id/textView_1_temper" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/textView_3_knowledge"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_margin="@dimen/_10sdp"-->
+<!--                                android:background="@drawable/img_psychomatrix_square"-->
+<!--                                android:gravity="center"-->
+<!--                                android:textAlignment="center"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toBottomOf="@+id/textView_2_charisma" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/textView_4_health"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_margin="@dimen/_10sdp"-->
+<!--                                android:background="@drawable/img_psychomatrix_square"-->
+<!--                                android:gravity="center"-->
+<!--                                android:textAlignment="center"-->
+<!--                                app:layout_constraintStart_toEndOf="@+id/textView_1_temper"-->
+<!--                                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/textView_5_logic"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_margin="@dimen/_10sdp"-->
+<!--                                android:background="@drawable/img_psychomatrix_square"-->
+<!--                                android:gravity="center"-->
+<!--                                android:textAlignment="center"-->
+<!--                                app:layout_constraintStart_toEndOf="@+id/textView_2_charisma"-->
+<!--                                app:layout_constraintTop_toBottomOf="@+id/textView_4_health" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/textView_6_mastery"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_margin="@dimen/_10sdp"-->
+<!--                                android:background="@drawable/img_psychomatrix_square"-->
+<!--                                android:gravity="center"-->
+<!--                                android:textAlignment="center"-->
+<!--                                app:layout_constraintStart_toEndOf="@+id/textView_3_knowledge"-->
+<!--                                app:layout_constraintTop_toBottomOf="@+id/textView_5_logic" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/textView_7_luck"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_margin="@dimen/_10sdp"-->
+<!--                                android:background="@drawable/img_psychomatrix_square"-->
+<!--                                android:gravity="center"-->
+<!--                                android:textAlignment="center"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintStart_toEndOf="@+id/textView_4_health"-->
+<!--                                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/textView_8_sense_of_duty"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_margin="@dimen/_10sdp"-->
+<!--                                android:background="@drawable/img_psychomatrix_square"-->
+<!--                                android:gravity="center"-->
+<!--                                android:textAlignment="center"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintStart_toEndOf="@+id/textView_5_logic"-->
+<!--                                app:layout_constraintTop_toBottomOf="@+id/textView_7_luck" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/textView_9_intelligence"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_margin="@dimen/_10sdp"-->
+<!--                                android:background="@drawable/img_psychomatrix_square"-->
+<!--                                android:gravity="center"-->
+<!--                                android:textAlignment="center"-->
+<!--                                app:layout_constraintStart_toEndOf="@+id/textView_6_mastery"-->
+<!--                                app:layout_constraintTop_toBottomOf="@+id/textView_8_sense_of_duty" />-->
+<!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <GridLayout
+                android:id="@+id/grid_matrix_cells"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_12sdp"
-                >
+                android:columnCount="3"
+                android:orientation="vertical"
+                android:rowCount="3"
+                tools:context=".GridXMLActivity">
 
-                <TextView
-                    android:id="@+id/textView_1_temper"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:background="@drawable/img_psychomatrix_square"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView_2_charisma"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:background="@drawable/img_psychomatrix_square"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView_1_temper" />
-
-                <TextView
-                    android:id="@+id/textView_3_knowledge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:background="@drawable/img_psychomatrix_square"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView_2_charisma" />
-
-                <TextView
-                    android:id="@+id/textView_4_health"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:background="@drawable/img_psychomatrix_square"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    app:layout_constraintStart_toEndOf="@+id/textView_1_temper"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView_5_logic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:background="@drawable/img_psychomatrix_square"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    app:layout_constraintStart_toEndOf="@+id/textView_2_charisma"
-                    app:layout_constraintTop_toBottomOf="@+id/textView_4_health" />
-
-                <TextView
-                    android:id="@+id/textView_6_mastery"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:background="@drawable/img_psychomatrix_square"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    app:layout_constraintStart_toEndOf="@+id/textView_3_knowledge"
-                    app:layout_constraintTop_toBottomOf="@+id/textView_5_logic" />
-
-                <TextView
-                    android:id="@+id/textView_7_luck"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:background="@drawable/img_psychomatrix_square"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView_4_health"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView_8_sense_of_duty"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:background="@drawable/img_psychomatrix_square"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView_5_logic"
-                    app:layout_constraintTop_toBottomOf="@+id/textView_7_luck" />
-
-                <TextView
-                    android:id="@+id/textView_9_intelligence"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:background="@drawable/img_psychomatrix_square"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    app:layout_constraintStart_toEndOf="@+id/textView_6_mastery"
-                    app:layout_constraintTop_toBottomOf="@+id/textView_8_sense_of_duty" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
+<!--                <TextView-->
+<!--                    android:id="@+id/textView_1_temper"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="@dimen/_10sdp"-->
+<!--                    android:background="@drawable/img_psychomatrix_square"-->
+<!--                    android:gravity="center"-->
+<!--                    android:textAlignment="center"-->
+<!--                    />-->
+            </GridLayout>
 
         </LinearLayout>
     </ScrollView>

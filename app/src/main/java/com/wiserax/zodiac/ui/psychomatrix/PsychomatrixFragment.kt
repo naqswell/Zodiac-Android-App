@@ -9,6 +9,7 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridLayout
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
@@ -17,6 +18,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.wiserax.zodiac.R
 import com.wiserax.zodiac.databinding.FragmentPsychomatrixBinding
+import android.view.Gravity
+
+
+
 
 class PsychomatrixFragment : Fragment() {
 
@@ -46,17 +51,38 @@ class PsychomatrixFragment : Fragment() {
 
 
         with(binding) {
-            textView1Temper.text = viewModel.matrixCells.value?.get(1)
-            textView2Charisma.text = viewModel.matrixCells.value?.get(2)
-            textView3Knowledge.text = viewModel.matrixCells.value?.get(3)
-            textView4Health.text = viewModel.matrixCells.value?.get(4)
-            textView5Logic.text = viewModel.matrixCells.value?.get(5)
-            textView6Mastery.text = viewModel.matrixCells.value?.get(6)
-            textView7Luck.text = viewModel.matrixCells.value?.get(7)
-            textView8SenseOfDuty.text = viewModel.matrixCells.value?.get(8)
-            textView9Intelligence.text = viewModel.matrixCells.value?.get(9)
+//            textView1Temper.text = viewModel.matrixCells.value?.get(1)
+//            textView2Charisma.text = viewModel.matrixCells.value?.get(2)
+//            textView3Knowledge.text = viewModel.matrixCells.value?.get(3)
+//            textView4Health.text = viewModel.matrixCells.value?.get(4)
+//            textView5Logic.text = viewModel.matrixCells.value?.get(5)
+//            textView6Mastery.text = viewModel.matrixCells.value?.get(6)
+//            textView7Luck.text = viewModel.matrixCells.value?.get(7)
+//            textView8SenseOfDuty.text = viewModel.matrixCells.value?.get(8)
+//            textView9Intelligence.text = viewModel.matrixCells.value?.get(9)
 
             var counter = 0
+            viewModel.matrixCells.value?.forEach {
+                val textView = TextView(requireContext())
+                textView.setBackgroundResource(R.drawable.img_psychomatrix_square)
+                val param = GridLayout.LayoutParams()
+                param.height = GridLayout.LayoutParams.WRAP_CONTENT
+                param.width = GridLayout.LayoutParams.WRAP_CONTENT
+                param.rightMargin = 5
+                param.topMargin = 5
+                param.setGravity(Gravity.CENTER)
+                textView.layoutParams = param
+                val str = it.value + "\n" + resources.getStringArray(R.array.human_qualities_two_row)[counter]
+                textView.text = str
+                textView.textAlignment = View.TEXT_ALIGNMENT_CENTER
+                textView.typeface = ResourcesCompat.getFont(requireContext(), R.font.jost_bold)
+                textView.gravity = Gravity.CENTER
+                gridMatrixCells.addView(textView)
+                counter += 1
+
+            }
+
+            counter = 0
             viewModel.matrixText.value?.forEach {
                 val textTitle = TextView(requireContext())
                 textTitle.layoutParams = LinearLayout.LayoutParams(
@@ -66,7 +92,9 @@ class PsychomatrixFragment : Fragment() {
 
                 val titleText = resources.getStringArray(R.array.human_qualities)[counter]
                 val titleTextWithDigits =
-                    SpannableString(titleText + " " + (viewModel.matrixCells.value?.get(counter+1) ?: ""))
+                    SpannableString(
+                        titleText + " " + (viewModel.matrixCells.value?.get(counter + 1) ?: "")
+                    )
                 titleTextWithDigits.setSpan(
                     ForegroundColorSpan(resources.getColor(R.color.orange)),
                     titleText.length,

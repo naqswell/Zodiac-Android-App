@@ -4,9 +4,9 @@ import android.app.Application
 import org.json.JSONObject
 
 class Psychomatrix(application: Application, dateOfBirth: String) {
-    private val arrayOneToNine: MutableMap<Int, Int> = calculateSquare(dateOfBirth)
-    val textMap = getPsychomatrixText(application, arrayOneToNine)
-    val matrixCellsData: Map<Int, String> = createSquare(arrayOneToNine)
+    private val matrixMap: MutableMap<Int, Int> = calculateSquare(dateOfBirth)
+    val textMap = getPsychomatrixText(application, matrixMap)
+    val matrixCellsData: Map<Int, String> = createSquare(matrixMap)
 
     private fun calculateSquare(dateOfBirth: String): MutableMap<Int, Int> {
         val mapOfInt = mutableListOf<Int>()
@@ -85,19 +85,23 @@ class Psychomatrix(application: Application, dateOfBirth: String) {
         return digitCounter
     }
 
-    private fun createSquare(arrayOneToNine: MutableMap<Int, Int>): Map<Int, String> {
-        val a = arrayOneToNine.mapValues() {
-            if (it.value == 0) {
-                "---"
-            } else {
-                var str = ""
-                for (el in 1..it.value) {
-                    str += it.key
+    private fun createSquare(map: MutableMap<Int, Int>): Map<Int, String> {
+        val outputMap = mutableMapOf<Int, String>()
+        map.forEach() {
+            if (it.key < 10) {
+                if (it.value == 0) {
+                    outputMap[it.key] = "---"
+                } else {
+                    var str = ""
+                    for (el in 1..it.value) {
+                        str += it.key
+                    }
+                    outputMap[it.key] = str
                 }
-                str
             }
+
         }
-        return a
+        return outputMap
     }
 
     fun getPsychomatrixText(

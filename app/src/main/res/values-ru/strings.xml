@@ -74,6 +74,29 @@
         <item>Темперамент</item>
     </string-array>
 
+
+    <string-array name="human_qualities_two_row">
+        <item>Характер, \nсила воли</item>
+        <item>Энергетика, \nхаризма</item>
+        <item>Познание, \nтворчество</item>
+        <item>Здоровье, \nкрасота</item>
+        <item>Логика, \nинтуиция</item>
+        <item>Трудолюбие, \nмастерство</item>
+        <item>Удача, \nвезение</item>
+        <item>Чувство \nдолга</item>
+        <item>Память, \nум</item>
+        <item>Самооценка</item>
+        <item>Зарабатывание \nденег</item>
+        <item>Потенциал \nталанта</item>
+        <item>Целеустремленность</item>
+        <item>Семейность</item>
+        <item>Стабильность</item>
+        <item>Духовный потенциал</item>
+        <item>Темперамент</item>
+    </string-array>
+
+
+
     // For json reader
     <string name="general">Общее</string>
     <string name="work">Работа</string>

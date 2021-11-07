@@ -73,6 +73,26 @@
         <item>Spiritual potential</item>
         <item>Temperament</item>
     </string-array>
+
+    <string-array name="human_qualities_two_row">
+        <item>Character, \nwillpower</item>
+        <item>Energy, \nCharisma</item>
+        <item>Cognition, \ncreativity</item>
+        <item>Health, \nbeauty</item>
+        <item>Logic, \nintuition</item>
+        <item>Diligence, \nskill</item>
+        <item>Luck</item>
+        <item>Call of \nDuty</item>
+        <item>Memory, \nmind</item>
+        <item>Self-esteem</item>
+        <item>Making \nmoney</item>
+        <item>Talent \npotential</item>
+        <item>Sense of \npurpose</item>
+        <item>Family</item>
+        <item>Stability</item>
+        <item>Spiritual \npotential</item>
+        <item>Temperament</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="plus" translatable="false">+</string>
