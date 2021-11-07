@@ -66,7 +66,6 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
     private fun hideBars() {
         binding.navView.visibility = View.GONE
         hideTopBar()
-
     }
 
     private fun hideTopBar() {

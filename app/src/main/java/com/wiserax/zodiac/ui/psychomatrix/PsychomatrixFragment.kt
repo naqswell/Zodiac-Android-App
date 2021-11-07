@@ -36,7 +36,7 @@ class PsychomatrixFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         viewModel =
             ViewModelProvider(this)[PsychomatrixViewModel::class.java]
 

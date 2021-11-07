@@ -81,6 +81,8 @@
     <string name="love">Любовь</string>
     <string name="intimacy">Интимные отношения</string>
     <string name="family">Семья</string>
+    <string name="choose_signs">Выберите \nзнаки</string>
+    <string name="check_compatibility">Проверить совместимость</string>
 
 
 </resources>

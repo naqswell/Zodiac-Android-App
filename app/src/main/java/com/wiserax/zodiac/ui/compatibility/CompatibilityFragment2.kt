@@ -11,7 +11,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.fragment.navArgs
 import com.wiserax.zodiac.model.JsonReader
 import com.wiserax.zodiac.R
-import com.wiserax.zodiac.databinding.FragmentCompability2Binding
+import com.wiserax.zodiac.databinding.FragmentCompatibility2Binding
 import com.wiserax.zodiac.Sign
 import java.lang.NullPointerException
 
@@ -22,14 +22,14 @@ class CompatibilityFragment2 : Fragment() {
     private val sign1: Sign by lazy { Sign.valueOf(args.title1.toString()) }
     private val sign2: Sign by lazy { Sign.valueOf(args.title2.toString()) }
 
-    private var _binding: FragmentCompability2Binding? = null
+    private var _binding: FragmentCompatibility2Binding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentCompability2Binding.inflate(inflater, container, false)
+        _binding = FragmentCompatibility2Binding.inflate(inflater, container, false)
 
         with(binding) {
             imageViewSign1.setImageResource(sign1.image)
@@ -96,7 +96,7 @@ class CompatibilityFragment2 : Fragment() {
         textView.text = text
         textView.textSize = size
         textView.typeface = ResourcesCompat.getFont(requireContext(), font)
-        textView.setTextColor(resources.getColor(R.color.black, null))
+//        textView.setTextColor(resources.getColor(R.color.black, null))
 
         return textView
     }

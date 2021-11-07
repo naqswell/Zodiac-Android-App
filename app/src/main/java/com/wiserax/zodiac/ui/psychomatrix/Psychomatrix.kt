@@ -18,7 +18,6 @@ class Psychomatrix(application: Application, dateOfBirth: String) {
         }
 
         val digitCounter = mutableMapOf(
-//            0 to 0,
             1 to 0,
             2 to 0,
             3 to 0,

@@ -40,7 +40,7 @@
         android:id="@+id/navigation_compatibility"
         android:name="com.wiserax.zodiac.ui.compatibility.CompatibilityFragment"
         android:label="@string/title_compatibility"
-        tools:layout="@layout/fragment_compability" >
+        tools:layout="@layout/fragment_compatibility" >
         <action
             android:id="@+id/action_compatibility_to_compabilityFragment2"
             app:destination="@id/compabilityFragment2" />
@@ -50,7 +50,7 @@
         android:id="@+id/compabilityFragment2"
         android:name="com.wiserax.zodiac.ui.compatibility.CompatibilityFragment2"
         android:label="fragment_compability2"
-        tools:layout="@layout/fragment_compability2" >
+        tools:layout="@layout/fragment_compatibility2" >
         <action
             android:id="@+id/action_compabilityFragment2_to_navigation_compatibility"
             app:destination="@id/navigation_compatibility" />

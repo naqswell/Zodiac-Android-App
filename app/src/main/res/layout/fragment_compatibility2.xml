@@ -30,8 +30,8 @@
 
                 <ImageView
                     android:id="@+id/imageViewSign1"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
                     android:layout_gravity="center_horizontal"
                     android:contentDescription="@string/description_first_sign_image"
                     tools:ignore="ImageContrastCheck"
@@ -42,9 +42,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="16dp"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:layout_marginTop="@dimen/_16ssp"
+                    android:textSize="@dimen/_20ssp"
                     tools:text="Лев" />
 
                 <TextView
@@ -52,7 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/_8sdp"
                     tools:text="22 июл. - 21 авг." />
 
             </LinearLayout>
@@ -61,12 +60,12 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="@dimen/_64sdp"
+                android:fontFamily="@font/jost_bold"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/plus"
-                android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:textSize="@dimen/_24ssp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -76,8 +75,8 @@
 
                 <ImageView
                     android:id="@+id/imageViewSign2"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
                     android:layout_gravity="center_horizontal"
                     android:contentDescription="@string/description_second_sign_image"
                     tools:ignore="ImageContrastCheck"
@@ -88,9 +87,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="16dp"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:textSize="@dimen/_20ssp"
                     tools:text="Дева" />
 
                 <TextView
@@ -98,7 +96,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/_8sdp"
                     tools:text="22 авг. - 21 сен." />
 
             </LinearLayout>
@@ -110,19 +108,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:paddingStart="12dp"
-            android:paddingTop="16dp"
-            android:paddingEnd="12dp"
-            android:paddingBottom="16dp">
+            android:paddingStart="@dimen/_12sdp"
+            android:paddingTop="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_12sdp"
+            android:paddingBottom="@dimen/_16sdp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/card_red"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="@dimen/_10sdp"
                 app:cardElevation="0dp">
 
                 <LinearLayout
@@ -142,9 +140,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginBottom="@dimen/_8sdp"
                         android:contentDescription="@string/description_icon_heart"
-                        android:src="@drawable/ic_comatibility_love"
+                        android:src="@drawable/ic_compatibility_love"
                         tools:ignore="ImageContrastCheck" />
 
                     <TextView
@@ -165,10 +163,10 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
                 android:layout_weight="1"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="@dimen/_10sdp"
                 app:cardElevation="0dp">
 
                 <LinearLayout
@@ -188,7 +186,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginBottom="@dimen/_8sdp"
                         android:contentDescription="@string/description_icon_hand"
                         android:src="@drawable/ic_compatibility_friendship"
                         tools:ignore="ImageContrastCheck" />
@@ -211,10 +209,10 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
                 android:layout_weight="1"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="@dimen/_10sdp"
                 app:cardElevation="0dp">
 
                 <LinearLayout
@@ -234,7 +232,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginBottom="@dimen/_8sdp"
                         android:contentDescription="@string/description_icon_case"
                         android:src="@drawable/ic_compatibility_work" />
 
@@ -256,10 +254,10 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
                 android:layout_weight="1"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="@dimen/_10sdp"
                 app:cardElevation="0dp">
 
                 <LinearLayout
@@ -279,7 +277,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginBottom="@dimen/_8sdp"
                         android:contentDescription="@string/description_icon_home"
                         android:src="@drawable/ic_compatibility_family"
                         tools:ignore="ImageContrastCheck" />
@@ -306,14 +304,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingStart="16dp"
-            android:paddingTop="8dp"
-            android:paddingEnd="16dp">
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_16sdp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="@dimen/_8sdp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -322,7 +320,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:fontFamily="@font/jost_bold"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/_20ssp"
                     tools:text="Общая" />
 
                 <TextView
@@ -331,7 +329,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/jost_bold"
                     android:textColor="@color/orange"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/_20ssp"
                     tools:ignore="TextContrastCheck"
                     tools:text="65%" />
 
@@ -342,7 +340,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/jost_regular"
-                android:textSize="16sp"
+                android:textSize="@dimen/_16ssp"
                 tools:text="@sample/compatibility_example.json/sample" />
         </LinearLayout>
     </LinearLayout>

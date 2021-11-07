@@ -74,18 +74,20 @@
         <item>Temperament</item>
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="plus">+</string>
-    <string name="description_first_sign_image">First sign image</string>
-    <string name="description_second_sign_image">Second sign image</string>
-    <string name="description_icon_heart">Heart icon</string>
-    <string name="description_icon_hand">Hand icon</string>
-    <string name="description_icon_case">Case icon</string>
-    <string name="description_icon_home">Home icon</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="plus" translatable="false">+</string>
+    <string name="description_first_sign_image" translatable="false">First sign image</string>
+    <string name="description_second_sign_image" translatable="false">Second sign image</string>
+    <string name="description_icon_heart" translatable="false">Heart icon</string>
+    <string name="description_icon_hand" translatable="false">Hand icon</string>
+    <string name="description_icon_case" translatable="false">Case icon</string>
+    <string name="description_icon_home" translatable="false">Home icon</string>
     <string name="general">General</string>
     <string name="work">Work</string>
     <string name="friendship">Friendship</string>
     <string name="love">Love</string>
     <string name="intimacy">Intimacy</string>
+    <string name="choose_signs">Choose \nsigns</string>
+    <string name="check_compatibility">Проверить совместимость</string>
 
 </resources>
