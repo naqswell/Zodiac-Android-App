@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.setPadding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -73,6 +74,7 @@ class PsychomatrixFragment : Fragment() {
                     Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
                 )
                 textTitle.text = titleTextWithDigits
+                textTitle.typeface = ResourcesCompat.getFont(requireContext(), R.font.jost_bold)
                 textTitle.setTextSize(
                     TypedValue.COMPLEX_UNIT_PX,
                     resources.getDimension(R.dimen._24ssp)
@@ -86,6 +88,7 @@ class PsychomatrixFragment : Fragment() {
                     ViewGroup.LayoutParams.WRAP_CONTENT
                 )
                 textSimple.text = it.value
+                textSimple.typeface = ResourcesCompat.getFont(requireContext(), R.font.jost_regular)
                 textSimple.setTextSize(
                     TypedValue.COMPLEX_UNIT_PX,
                     resources.getDimension(R.dimen._16ssp)

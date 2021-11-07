@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
             when (destination.id) {
                 R.id.navigation_birthdate -> hideBars()
                 R.id.navigation_compatibility -> hideTopBar()
+                R.id.navigation_compatibility2 -> hideTopBar()
                 else -> showBars()
             }
         }

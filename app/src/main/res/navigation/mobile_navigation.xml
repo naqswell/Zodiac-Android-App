@@ -43,11 +43,11 @@
         tools:layout="@layout/fragment_compatibility" >
         <action
             android:id="@+id/action_compatibility_to_compabilityFragment2"
-            app:destination="@id/compabilityFragment2" />
+            app:destination="@id/navigation_compatibility2" />
     </fragment>
 
     <fragment
-        android:id="@+id/compabilityFragment2"
+        android:id="@+id/navigation_compatibility2"
         android:name="com.wiserax.zodiac.ui.compatibility.CompatibilityFragment2"
         android:label="fragment_compability2"
         tools:layout="@layout/fragment_compatibility2" >

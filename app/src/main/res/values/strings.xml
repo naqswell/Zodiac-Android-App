@@ -87,7 +87,7 @@
     <string name="friendship">Friendship</string>
     <string name="love">Love</string>
     <string name="intimacy">Intimacy</string>
-    <string name="choose_signs">Choose \nsigns</string>
+    <string name="choose_signs">Choose signs</string>
     <string name="check_compatibility">Проверить совместимость</string>
 
 </resources>

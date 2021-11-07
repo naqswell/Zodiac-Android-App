@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="8dp"
-    tools:context=".ui.compatibility.CompatibilityFragment2">
+    tools:context=".ui.compatibility.CompatibilityFragment2"
+    android:layout_marginBottom="?actionBarSize"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,6 +44,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="@dimen/_16ssp"
+                    android:fontFamily="@font/jost_bold"
                     android:textSize="@dimen/_20ssp"
                     tools:text="Лев" />
 
@@ -89,6 +91,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:textSize="@dimen/_20ssp"
+                    android:fontFamily="@font/jost_bold"
                     tools:text="Дева" />
 
                 <TextView
@@ -304,9 +307,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingStart="@dimen/_16sdp"
+            android:paddingStart="@dimen/_8sdp"
             android:paddingTop="@dimen/_8sdp"
-            android:paddingEnd="@dimen/_16sdp">
+            android:paddingEnd="@dimen/_8sdp">
 
             <LinearLayout
                 android:layout_width="match_parent"
