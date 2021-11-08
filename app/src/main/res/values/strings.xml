@@ -64,7 +64,7 @@
         <item>Luck</item>
         <item>Call of Duty</item>
         <item>Memory, mind</item>
-        <item>Self-esteem</item>
+        <item>Self–esteem</item>
         <item>Making money</item>
         <item>Talent potential</item>
         <item>Sense of purpose</item>
@@ -92,6 +92,27 @@
         <item>Stability</item>
         <item>Spiritual \npotential</item>
         <item>Temperament</item>
+    </string-array>
+
+
+    <string-array name="human_qualities_addition">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>(column "1–2–3")</item>
+        <item>(column "4–5–6")</item>
+        <item>(column "7–8–9")</item>
+        <item>(column "1–4–7")</item>
+        <item>(row "2–5–8")</item>
+        <item>(row "3–6–9")</item>
+        <item>(diagonal "1–5–9")</item>
+        <item>(diagonal "3–5–7")</item>
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>

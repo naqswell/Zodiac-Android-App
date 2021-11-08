@@ -98,6 +98,8 @@ class Psychomatrix(application: Application, dateOfBirth: String) {
                     }
                     outputMap[it.key] = str
                 }
+            } else {
+                outputMap[it.key] = it.value.toString()
             }
 
         }

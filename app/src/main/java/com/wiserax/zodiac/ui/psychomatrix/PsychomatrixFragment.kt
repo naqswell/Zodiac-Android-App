@@ -21,16 +21,11 @@ import com.wiserax.zodiac.databinding.FragmentPsychomatrixBinding
 import android.view.Gravity
 
 
-
-
 class PsychomatrixFragment : Fragment() {
 
     private lateinit var viewModel: PsychomatrixViewModel
     private var _binding: FragmentPsychomatrixBinding? = null
-    private lateinit var matrix: Array<String>
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,78 +46,120 @@ class PsychomatrixFragment : Fragment() {
 
 
         with(binding) {
-//            textView1Temper.text = viewModel.matrixCells.value?.get(1)
-//            textView2Charisma.text = viewModel.matrixCells.value?.get(2)
-//            textView3Knowledge.text = viewModel.matrixCells.value?.get(3)
-//            textView4Health.text = viewModel.matrixCells.value?.get(4)
-//            textView5Logic.text = viewModel.matrixCells.value?.get(5)
-//            textView6Mastery.text = viewModel.matrixCells.value?.get(6)
-//            textView7Luck.text = viewModel.matrixCells.value?.get(7)
-//            textView8SenseOfDuty.text = viewModel.matrixCells.value?.get(8)
-//            textView9Intelligence.text = viewModel.matrixCells.value?.get(9)
-
             var counter = 0
             viewModel.matrixCells.value?.forEach {
-                val textView = TextView(requireContext())
-                textView.setBackgroundResource(R.drawable.img_psychomatrix_square)
-                val param = GridLayout.LayoutParams()
-                param.height = GridLayout.LayoutParams.WRAP_CONTENT
-                param.width = GridLayout.LayoutParams.WRAP_CONTENT
-                param.rightMargin = 5
-                param.topMargin = 5
-                param.setGravity(Gravity.CENTER)
-                textView.layoutParams = param
-                val str = it.value + "\n" + resources.getStringArray(R.array.human_qualities_two_row)[counter]
-                textView.text = str
-                textView.textAlignment = View.TEXT_ALIGNMENT_CENTER
-                textView.typeface = ResourcesCompat.getFont(requireContext(), R.font.jost_bold)
-                textView.gravity = Gravity.CENTER
-                gridMatrixCells.addView(textView)
+                if (it.key < 10) {
+                    val textView = TextView(requireContext())
+                    textView.setBackgroundResource(R.drawable.img_psychomatrix_square)
+                    val param = GridLayout.LayoutParams()
+//                    param.height = GridLayout.LayoutParams.WRAP_CONTENT
+                    param.height = resources.getDimensionPixelSize(R.dimen._85sdp)
+//                    param.width = GridLayout.LayoutParams.WRAP_CONTENT
+                    param.width = resources.getDimensionPixelSize(R.dimen._85sdp)
+                    param.rightMargin = resources.getDimensionPixelSize(R.dimen._4sdp)
+//                    param.leftMargin = resources.getDimensionPixelSize(R.dimen._4sdp)
+                    param.topMargin = resources.getDimensionPixelSize(R.dimen._4sdp)
+                    param.setGravity(Gravity.CENTER)
+                    textView.layoutParams = param
+                    val str =
+                        it.value + "\n" + resources.getStringArray(R.array.human_qualities_two_row)[counter]
+                    textView.text = str
+                    textView.textAlignment = View.TEXT_ALIGNMENT_CENTER
+                    textView.typeface = ResourcesCompat.getFont(requireContext(), R.font.jost_bold)
+                    textView.gravity = Gravity.CENTER
+                    gridMatrixCells.addView(textView)
+                }
                 counter += 1
-
             }
 
             counter = 0
             viewModel.matrixText.value?.forEach {
-                val textTitle = TextView(requireContext())
-                textTitle.layoutParams = LinearLayout.LayoutParams(
+                val title = TextView(requireContext())
+                title.layoutParams = LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT
                 )
-
                 val titleText = resources.getStringArray(R.array.human_qualities)[counter]
-                val titleTextWithDigits =
-                    SpannableString(
-                        titleText + " " + (viewModel.matrixCells.value?.get(counter + 1) ?: "")
-                    )
-                titleTextWithDigits.setSpan(
-                    ForegroundColorSpan(resources.getColor(R.color.orange)),
-                    titleText.length,
-                    titleTextWithDigits.length,
-                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-                )
-                textTitle.text = titleTextWithDigits
-                textTitle.typeface = ResourcesCompat.getFont(requireContext(), R.font.jost_bold)
-                textTitle.setTextSize(
+                title.text = titleText
+                title.typeface = ResourcesCompat.getFont(requireContext(), R.font.jost_bold)
+                title.setTextSize(
                     TypedValue.COMPLEX_UNIT_PX,
                     resources.getDimension(R.dimen._24ssp)
                 )
-                textTitle.setPadding(resources.getDimensionPixelSize(R.dimen._8sdp))
-                linearLayoutInScrollView.addView(textTitle)
+                title.setPadding(resources.getDimensionPixelSize(R.dimen._8sdp))
+                linearLayoutInScrollView.addView(title)
 
-                val textSimple = TextView(requireContext())
-                textSimple.layoutParams = LinearLayout.LayoutParams(
+                val titleAddition = TextView(requireContext())
+                titleAddition.layoutParams = LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT
                 )
-                textSimple.text = it.value
-                textSimple.typeface = ResourcesCompat.getFont(requireContext(), R.font.jost_regular)
-                textSimple.setTextSize(
+                var titleAddition2: TextView? = null
+
+                if (it.key < 10) {
+                    val titleAdditionString =
+                        SpannableString(
+                            (viewModel.matrixCells.value?.get(counter + 1) ?: "")
+                        )
+                    titleAdditionString.setSpan(
+                        ForegroundColorSpan(resources.getColor(R.color.orange)),
+                        0,
+                        titleAdditionString.length,
+                        Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+                    )
+                    titleAddition.text = titleAdditionString
+                } else {
+                    titleAddition.text =
+                        resources.getStringArray(R.array.human_qualities_addition)[counter]
+
+                    titleAddition2 = TextView(requireContext())
+                    titleAddition2.layoutParams = LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT
+                    )
+                    titleAddition2.typeface =
+                        ResourcesCompat.getFont(requireContext(), R.font.jost_bold)
+                    titleAddition2.setTextSize(
+                        TypedValue.COMPLEX_UNIT_PX,
+                        resources.getDimension(R.dimen._24ssp)
+                    )
+                    val titleAdditionString2 =
+                        SpannableString(viewModel.matrixCells.value?.get(it.key).toString())
+                    titleAdditionString2.setSpan(
+                        ForegroundColorSpan(resources.getColor(R.color.orange)),
+                        0,
+                        titleAdditionString2.length,
+                        Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+                    )
+                    titleAddition2.text = titleAdditionString2
+                }
+
+                titleAddition.typeface =
+                    ResourcesCompat.getFont(requireContext(), R.font.jost_bold)
+                titleAddition.setTextSize(
+                    TypedValue.COMPLEX_UNIT_PX,
+                    resources.getDimension(R.dimen._24ssp)
+                )
+                titleAddition.setPadding(resources.getDimensionPixelSize(R.dimen._8sdp))
+                linearLayoutInScrollView.addView(titleAddition)
+                if (titleAddition2 != null) {
+                    linearLayoutInScrollView.addView(titleAddition2)
+                }
+
+                val textViewSimple = TextView(requireContext())
+                textViewSimple.layoutParams = LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                )
+                textViewSimple.text = it.value
+                textViewSimple.typeface =
+                    ResourcesCompat.getFont(requireContext(), R.font.jost_regular)
+                textViewSimple.setTextSize(
                     TypedValue.COMPLEX_UNIT_PX,
                     resources.getDimension(R.dimen._16ssp)
                 )
-                textSimple.setPadding(resources.getDimensionPixelSize(R.dimen._8sdp))
-                linearLayoutInScrollView.addView(textSimple)
+                textViewSimple.setPadding(resources.getDimensionPixelSize(R.dimen._8sdp))
+                linearLayoutInScrollView.addView(textViewSimple)
 
                 counter += 1
             }

@@ -60,7 +60,7 @@
         <item>Познание, творчество</item>
         <item>Здоровье, красота</item>
         <item>Логика, интуиция</item>
-        <item>Трудолюбие, мастерство</item>
+        <item>Трудолюбие,\nмастерство</item>
         <item>Удача, везение</item>
         <item>Чувство долга</item>
         <item>Память, ум</item>
@@ -93,6 +93,26 @@
         <item>Стабильность</item>
         <item>Духовный потенциал</item>
         <item>Темперамент</item>
+    </string-array>
+
+    <string-array name="human_qualities_addition">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>(столбец "1–2–3")</item>
+        <item>(столбец "4–5–6")</item>
+        <item>(столбец "7–8–9")</item>
+        <item>(столбец "1–4–7")</item>
+        <item>(строка "2–5–8")</item>
+        <item>(строка "3–6–9")</item>
+        <item>(диагональ "1–5–9")</item>
+        <item>(диагональ "3–5–7")</item>
     </string-array>
 
 
