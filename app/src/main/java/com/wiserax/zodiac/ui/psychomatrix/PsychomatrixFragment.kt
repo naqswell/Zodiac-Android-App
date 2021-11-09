@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
-import android.util.Log
 import android.util.TypedValue
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +18,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.wiserax.zodiac.R
 import com.wiserax.zodiac.databinding.FragmentPsychomatrixBinding
-import android.view.Gravity
 
 
 class PsychomatrixFragment : Fragment() {
@@ -27,11 +26,6 @@ class PsychomatrixFragment : Fragment() {
     private var _binding: FragmentPsychomatrixBinding? = null
 
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Log.d("fragment", "Psycho onCreate")
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,25 +38,25 @@ class PsychomatrixFragment : Fragment() {
         _binding = FragmentPsychomatrixBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-
+        val matrixResIdArray: MutableMap<Int, String> = mutableMapOf()
         with(binding) {
             var counter = 0
-            viewModel.matrixCells.value?.forEach {
+            viewModel.matrixCells.forEach {
                 if (it.key < 10) {
                     val textView = TextView(requireContext())
                     textView.setBackgroundResource(R.drawable.img_psychomatrix_square)
                     val param = GridLayout.LayoutParams()
-//                    param.height = GridLayout.LayoutParams.WRAP_CONTENT
                     param.height = resources.getDimensionPixelSize(R.dimen._85sdp)
-//                    param.width = GridLayout.LayoutParams.WRAP_CONTENT
                     param.width = resources.getDimensionPixelSize(R.dimen._85sdp)
                     param.rightMargin = resources.getDimensionPixelSize(R.dimen._4sdp)
-//                    param.leftMargin = resources.getDimensionPixelSize(R.dimen._4sdp)
                     param.topMargin = resources.getDimensionPixelSize(R.dimen._4sdp)
                     param.setGravity(Gravity.CENTER)
                     textView.layoutParams = param
                     val str =
                         it.value + "\n" + resources.getStringArray(R.array.human_qualities_two_row)[counter]
+                    val id = View.generateViewId()
+                    matrixResIdArray[id] = str
+                    textView.id = id
                     textView.text = str
                     textView.textAlignment = View.TEXT_ALIGNMENT_CENTER
                     textView.typeface = ResourcesCompat.getFont(requireContext(), R.font.jost_bold)
@@ -73,7 +67,7 @@ class PsychomatrixFragment : Fragment() {
             }
 
             counter = 0
-            viewModel.matrixText.value?.forEach {
+            viewModel.matrixText.forEach {
                 val title = TextView(requireContext())
                 title.layoutParams = LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -99,10 +93,10 @@ class PsychomatrixFragment : Fragment() {
                 if (it.key < 10) {
                     val titleAdditionString =
                         SpannableString(
-                            (viewModel.matrixCells.value?.get(counter + 1) ?: "")
+                            (viewModel.matrixCells.get(counter + 1) ?: "")
                         )
                     titleAdditionString.setSpan(
-                        ForegroundColorSpan(resources.getColor(R.color.orange)),
+                        ForegroundColorSpan(resources.getColor(R.color.orange, requireActivity().theme)),
                         0,
                         titleAdditionString.length,
                         Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
@@ -124,9 +118,9 @@ class PsychomatrixFragment : Fragment() {
                         resources.getDimension(R.dimen._24ssp)
                     )
                     val titleAdditionString2 =
-                        SpannableString(viewModel.matrixCells.value?.get(it.key).toString())
+                        SpannableString(viewModel.matrixCells.get(it.key).toString())
                     titleAdditionString2.setSpan(
-                        ForegroundColorSpan(resources.getColor(R.color.orange)),
+                        ForegroundColorSpan(resources.getColor(R.color.orange, requireActivity().theme)),
                         0,
                         titleAdditionString2.length,
                         Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
@@ -164,6 +158,7 @@ class PsychomatrixFragment : Fragment() {
                 counter += 1
             }
         }
+
         return root
     }
 

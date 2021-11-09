@@ -1,81 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/_16sdp"
     android:layout_marginBottom="?actionBarSize"
-    >
+    android:orientation="vertical"
+    android:fillViewport="true"
+    tools:context=".ui.horoscope.HoroscopeFragment">
 
-    <TextView
-        android:id="@+id/textViewChooseSigns"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/jost_bold"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="@dimen/_8sdp"
-        android:text="@string/choose_signs"
-        android:textSize="@dimen/_20ssp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager1"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fadingEdge="none"
-        android:paddingStart="@dimen/_100sdp"
-        android:paddingEnd="@dimen/_100sdp"
-        android:scrollbarAlwaysDrawHorizontalTrack="false"
-        app:layout_constraintBottom_toTopOf="@+id/textViewPlus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewChooseSigns">
+        android:layout_height="700dp">
 
-    </androidx.viewpager2.widget.ViewPager2>
+        <TextView
+            android:id="@+id/textViewChooseSigns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:fontFamily="@font/jost_bold"
+            android:gravity="center_horizontal"
+            android:text="@string/choose_signs"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewPlus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/jost_bold"
-        android:gravity="center_horizontal"
-        android:text="@string/plus"
-        android:textSize="@dimen/_24ssp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCheckCompatibility"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewChooseSigns" />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fadingEdge="none"
+            android:paddingStart="@dimen/_100sdp"
+            android:paddingEnd="@dimen/_100sdp"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            app:layout_constraintBottom_toTopOf="@+id/textViewPlus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewChooseSigns">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fadingEdge="none"
-        android:paddingStart="@dimen/_100sdp"
-        android:paddingEnd="@dimen/_100sdp"
-        android:scrollbarAlwaysDrawHorizontalTrack="false"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCheckCompatibility"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPlus">
+        </androidx.viewpager2.widget.ViewPager2>
 
-    </androidx.viewpager2.widget.ViewPager2>
+        <TextView
+            android:id="@+id/textViewPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jost_bold"
+            android:gravity="center_horizontal"
+            android:text="@string/plus"
+            android:textSize="@dimen/_24ssp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonCheckCompatibility"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewChooseSigns" />
 
-    <Button
-        android:id="@+id/buttonCheckCompatibility"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/_64sdp"
-        android:fontFamily="@font/jost_bold"
-        android:text="@string/check_compatibility"
-        android:textColor="@color/black"
-        app:cornerRadius="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fadingEdge="none"
+            android:paddingStart="@dimen/_100sdp"
+            android:paddingEnd="@dimen/_100sdp"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            app:layout_constraintBottom_toTopOf="@+id/buttonCheckCompatibility"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPlus">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.viewpager2.widget.ViewPager2>
+
+        <Button
+            android:id="@+id/buttonCheckCompatibility"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_64sdp"
+            android:fontFamily="@font/jost_bold"
+            android:text="@string/check_compatibility"
+            android:textColor="@color/black"
+            app:cornerRadius="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

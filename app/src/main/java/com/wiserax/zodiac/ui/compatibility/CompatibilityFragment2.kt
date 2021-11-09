@@ -13,7 +13,6 @@ import androidx.navigation.fragment.navArgs
 import com.wiserax.zodiac.model.JsonReader
 import com.wiserax.zodiac.R
 import com.wiserax.zodiac.databinding.FragmentCompatibility2Binding
-import com.wiserax.zodiac.Sign
 import java.lang.NullPointerException
 
 class CompatibilityFragment2 : Fragment() {

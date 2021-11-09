@@ -12,6 +12,17 @@
     <string name="male">Мужчина</string>
     <string name="female">Женщина</string>
 
+    <string-array name="horoscope_qualities">
+        <item>Общая информация</item>
+        <item>Мужская/женская характеристика</item>
+        <item>Зодиак</item>
+        <item>Любовь и Совместимость</item>
+        <item>Работа и карьера</item>
+        <item>Здоровье</item>
+        <item>Судьба и Удача</item>
+        <item>Советы</item>
+    </string-array>
+
     <string-array name="months">
         <item>января</item>
         <item>февраля</item>
@@ -26,15 +37,7 @@
         <item>ноября</item>
         <item>декабря</item>
     </string-array>
-    <string name="general_text_title">Общая информация</string>
-    <string name="male_text_title">Мужчина</string>
-    <string name="female_text_title">Женщина</string>
-    <string name="love_text_title">Любовь и Совместимость</string>
-    <string name="advice_text_title">Советы</string>
-    <string name="luck_text_title">Судьба и Удача</string>
-    <string name="health_text_title">Здоровье</string>
-    <string name="work_text_title">Работа и Карьера</string>
-    <string name="addition_text_title">Зодиак</string>
+
     <string name="health_title">Здоровье, красота</string>
     <string name="character_title">Характер, сила воли</string>
     <string name="cognition_title">Познание, творчество</string>
@@ -96,15 +99,15 @@
     </string-array>
 
     <string-array name="human_qualities_addition">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
         <item>(столбец "1–2–3")</item>
         <item>(столбец "4–5–6")</item>
         <item>(столбец "7–8–9")</item>

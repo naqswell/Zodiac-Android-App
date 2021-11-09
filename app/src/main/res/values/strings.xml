@@ -10,15 +10,17 @@
     <string name="your_birthdate"> Your date of birth: \n %1$s</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
-    <string name="general_text_title">General</string>
-    <string name="male_text_title">Male features</string>
-    <string name="female_text_title">Female features</string>
-    <string name="addition_text_title">Addition</string>
-    <string name="love_text_title">Love and Compatibility</string>
-    <string name="work_text_title">Work and Career</string>
-    <string name="health_text_title">Health</string>
-    <string name="luck_text_title">Fate and Luck</string>
-    <string name="advice_text_title">Advice</string>
+
+    <string-array name="horoscope_qualities">
+        <item>General</item>
+        <item>Male \nfeatures</item>
+        <item>Addition</item>
+        <item>Love and\n Compatibility</item>
+        <item>Work and\n Career</item>
+        <item>Health</item>
+        <item>Fate and\n Luck</item>
+        <item>Advice</item>
+    </string-array>
 
     <string-array name="months">
         <item>January</item>
@@ -96,15 +98,15 @@
 
 
     <string-array name="human_qualities_addition">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
         <item>(column "1–2–3")</item>
         <item>(column "4–5–6")</item>
         <item>(column "7–8–9")</item>

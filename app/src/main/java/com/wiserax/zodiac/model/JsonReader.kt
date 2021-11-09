@@ -2,7 +2,7 @@ package com.wiserax.zodiac.model
 
 import android.app.Application
 import com.wiserax.zodiac.R
-import com.wiserax.zodiac.Sign
+import com.wiserax.zodiac.ui.compatibility.Sign
 import org.json.JSONArray
 import org.json.JSONObject
 

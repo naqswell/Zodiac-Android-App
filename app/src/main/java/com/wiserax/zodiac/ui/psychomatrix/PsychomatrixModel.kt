@@ -3,10 +3,10 @@ package com.wiserax.zodiac.ui.psychomatrix
 import android.app.Application
 import org.json.JSONObject
 
-class Psychomatrix(application: Application, dateOfBirth: String) {
+class PsychomatrixModel(application: Application, dateOfBirth: String) {
     private val matrixMap: MutableMap<Int, Int> = calculateSquare(dateOfBirth)
     val textMap = getPsychomatrixText(application, matrixMap)
-    val matrixCellsData: Map<Int, String> = createSquare(matrixMap)
+    val matrixCellsData: MutableMap<Int, String> = createSquare(matrixMap)
 
     private fun calculateSquare(dateOfBirth: String): MutableMap<Int, Int> {
         val mapOfInt = mutableListOf<Int>()
@@ -85,7 +85,7 @@ class Psychomatrix(application: Application, dateOfBirth: String) {
         return digitCounter
     }
 
-    private fun createSquare(map: MutableMap<Int, Int>): Map<Int, String> {
+    private fun createSquare(map: MutableMap<Int, Int>): MutableMap<Int, String> {
         val outputMap = mutableMapOf<Int, String>()
         map.forEach() {
             if (it.key < 10) {

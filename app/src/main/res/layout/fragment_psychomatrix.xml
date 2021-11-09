@@ -14,7 +14,8 @@
         android:layout_marginLeft="@dimen/_8sdp"
         android:layout_marginRight="@dimen/_8sdp"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <GridLayout
             android:layout_marginTop="@dimen/_16sdp"
