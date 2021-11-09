@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.wiserax.zodiac.databinding.ActivityMainBinding
@@ -33,7 +35,10 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
         navView.itemIconTintList = null
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
-        if (!prefs.isDateInit()) {
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main);
+
+
+        if (!prefs.isDateInit() && (navController.currentDestination?.id != R.id.navigation_birthdate)) {
             navController.navigate(R.id.action_horoscope_to_birthdate)
         } else {
             supportFragmentManager.commit {
@@ -80,6 +85,7 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
     }
 
     override fun onDateSet() {
+        findNavController(R.id.nav_host_fragment_activity_main).navigate(R.id.action_birthdate_to_horoscope)
         supportFragmentManager.commit {
             replace(R.id.container_fragment_date, DateFragment())
         }

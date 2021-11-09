@@ -21,7 +21,8 @@
             android:id="@+id/constraint_horoscope"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_120sdp"
-            android:background="@drawable/rounded_bottom_corners">
+            android:background="@drawable/rounded_bottom_corners"
+            android:layout_marginBottom="@dimen/_16sdp">
 
             <ImageView
                 android:id="@+id/imageView"

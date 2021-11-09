@@ -23,6 +23,7 @@ import com.wiserax.zodiac.databinding.FragmentPsychomatrixBinding
 class PsychomatrixFragment : Fragment() {
 
     private lateinit var viewModel: PsychomatrixViewModel
+
     private var _binding: FragmentPsychomatrixBinding? = null
 
     private val binding get() = _binding!!
@@ -37,6 +38,7 @@ class PsychomatrixFragment : Fragment() {
 
         _binding = FragmentPsychomatrixBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
 
         val matrixResIdArray: MutableMap<Int, String> = mutableMapOf()
         with(binding) {
@@ -78,7 +80,7 @@ class PsychomatrixFragment : Fragment() {
                 title.typeface = ResourcesCompat.getFont(requireContext(), R.font.jost_bold)
                 title.setTextSize(
                     TypedValue.COMPLEX_UNIT_PX,
-                    resources.getDimension(R.dimen._24ssp)
+                    resources.getDimension(R.dimen.text_title_size)
                 )
                 title.setPadding(resources.getDimensionPixelSize(R.dimen._8sdp))
                 linearLayoutInScrollView.addView(title)
@@ -115,7 +117,7 @@ class PsychomatrixFragment : Fragment() {
                         ResourcesCompat.getFont(requireContext(), R.font.jost_bold)
                     titleAddition2.setTextSize(
                         TypedValue.COMPLEX_UNIT_PX,
-                        resources.getDimension(R.dimen._24ssp)
+                        resources.getDimension(R.dimen.text_simple_size)
                     )
                     val titleAdditionString2 =
                         SpannableString(viewModel.matrixCells.get(it.key).toString())
@@ -132,7 +134,7 @@ class PsychomatrixFragment : Fragment() {
                     ResourcesCompat.getFont(requireContext(), R.font.jost_bold)
                 titleAddition.setTextSize(
                     TypedValue.COMPLEX_UNIT_PX,
-                    resources.getDimension(R.dimen._24ssp)
+                    resources.getDimension(R.dimen.text_simple_size)
                 )
                 titleAddition.setPadding(resources.getDimensionPixelSize(R.dimen._8sdp))
                 linearLayoutInScrollView.addView(titleAddition)
@@ -150,7 +152,7 @@ class PsychomatrixFragment : Fragment() {
                     ResourcesCompat.getFont(requireContext(), R.font.jost_regular)
                 textViewSimple.setTextSize(
                     TypedValue.COMPLEX_UNIT_PX,
-                    resources.getDimension(R.dimen._16ssp)
+                    resources.getDimension(R.dimen.text_simple_size)
                 )
                 textViewSimple.setPadding(resources.getDimensionPixelSize(R.dimen._8sdp))
                 linearLayoutInScrollView.addView(textViewSimple)

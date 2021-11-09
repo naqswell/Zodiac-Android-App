@@ -75,11 +75,12 @@
         <Button
             android:id="@+id/buttonCheckCompatibility"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/_64sdp"
+            android:layout_height="@dimen/_48sdp"
             android:fontFamily="@font/jost_bold"
             android:text="@string/check_compatibility"
             android:textColor="@color/black"
             app:cornerRadius="30dp"
+            android:layout_marginBottom="@dimen/_16sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
