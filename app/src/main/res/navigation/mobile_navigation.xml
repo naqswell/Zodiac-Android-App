@@ -23,11 +23,6 @@
         android:label="@string/title_psychomatrix"
         tools:layout="@layout/fragment_psychomatrix" />
 
-    <fragment
-        android:id="@+id/navigation_compatibility"
-        android:name="com.wiserax.zodiac.ui.compatibility.CompatibilityFragment"
-        android:label="@string/title_compatibility"
-        tools:layout="@layout/fragment_compability" />
 
     <fragment
         android:id="@+id/navigation_birthdate"
@@ -37,7 +32,35 @@
             android:id="@+id/action_birthdate_to_horoscope"
             app:destination="@id/navigation_horoscope"
             app:popUpTo="@+id/navigation_birthdate"
-            app:popUpToInclusive="true"
-            />
+            app:popUpToInclusive="true">
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_compatibility"
+        android:name="com.wiserax.zodiac.ui.compatibility.CompatibilityFragment"
+        android:label="@string/title_compatibility"
+        tools:layout="@layout/fragment_compatibility" >
+        <action
+            android:id="@+id/action_compatibility_to_compabilityFragment2"
+            app:destination="@id/navigation_compatibility2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_compatibility2"
+        android:name="com.wiserax.zodiac.ui.compatibility.CompatibilityFragment2"
+        android:label="fragment_compability2"
+        tools:layout="@layout/fragment_compatibility2" >
+        <action
+            android:id="@+id/action_compabilityFragment2_to_navigation_compatibility"
+            app:destination="@id/navigation_compatibility" />
+        <argument
+            android:name="title1"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="title2"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 </navigation>

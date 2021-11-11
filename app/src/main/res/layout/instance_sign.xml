@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <ImageView
         android:id="@+id/imageViewSign"
         android:layout_width="@dimen/_80sdp"
         android:layout_height="@dimen/_80sdp"
         android:layout_gravity="center_horizontal"
-        app:srcCompat="@drawable/ic_sign_aquaris" />
+        app:srcCompat="@drawable/ic_sign_aquaris"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/textViewSignName"
@@ -19,9 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/jost_bold"
-        android:text="Овен"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_20sdp"
+        android:text="@android:string/untitled"
+        android:textSize="@dimen/_16ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewSign" />
@@ -32,9 +33,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/jost_regular"
-        android:text="21 мар. - 20 апр."
-        android:textColor="@color/black"
-        android:textSize="@dimen/_16sdp"
+        android:text="@android:string/untitled"
+        android:textSize="@dimen/_10ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSignName" />

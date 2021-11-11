@@ -4,14 +4,19 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.wiserax.zodiac.databinding.ActivityMainBinding
 import com.wiserax.zodiac.ui.birthdate.BirthDateFragment
+import com.wiserax.zodiac.ui.birthdate.BirthDateFragmentDirections
 import com.wiserax.zodiac.ui.birthdate.DateFragment
 import com.wiserax.zodiac.ui.birthdate.DateViewModel
+import com.wiserax.zodiac.ui.horoscope.HoroscopeFragment
+import com.wiserax.zodiac.ui.horoscope.HoroscopeFragmentDirections
 
 class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragment.Callbacks {
 
@@ -33,8 +38,11 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
         navView.itemIconTintList = null
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
-        if (!prefs.isDateInit()) {
-            navController.navigate(R.id.action_horoscope_to_birthdate)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main);
+
+
+        if (!prefs.isDateInit() && (navController.currentDestination?.id != R.id.navigation_birthdate)) {
+            navController.navigate(HoroscopeFragmentDirections.actionHoroscopeToBirthdate())
         } else {
             supportFragmentManager.commit {
                 replace(R.id.container_fragment_date, DateFragment())
@@ -51,6 +59,7 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
             when (destination.id) {
                 R.id.navigation_birthdate -> hideBars()
                 R.id.navigation_compatibility -> hideTopBar()
+                R.id.navigation_compatibility2 -> hideTopBar()
                 else -> showBars()
             }
         }
@@ -66,7 +75,6 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
     private fun hideBars() {
         binding.navView.visibility = View.GONE
         hideTopBar()
-
     }
 
     private fun hideTopBar() {
@@ -80,6 +88,7 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
     }
 
     override fun onDateSet() {
+        findNavController(R.id.nav_host_fragment_activity_main).navigate(BirthDateFragmentDirections.actionBirthdateToHoroscope())
         supportFragmentManager.commit {
             replace(R.id.container_fragment_date, DateFragment())
         }

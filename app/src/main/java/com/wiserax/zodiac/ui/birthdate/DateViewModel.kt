@@ -11,7 +11,6 @@ class DateViewModel(application: Application) : AndroidViewModel(application) {
             prefs.getDateFormated()
         } else {
             null
-//            application.resources.getString(R.string.choose_your_birthdate_alert)
         }
     }
 }

@@ -1,227 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_60sdp"
+    android:layout_marginBottom="?actionBarSize"
     android:orientation="vertical"
     tools:context=".ui.horoscope.HoroscopeFragment"
     android:layout_marginBottom="?actionBarSize"
     android:layout_marginTop="@dimen/_60sdp">
 
-    <ScrollView
-        android:id="@+id/scrollView_horoscope"
+    <LinearLayout
+        android:id="@+id/linearLayout_horoscope"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-       >
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_horoscope"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="@dimen/_120sdp"
+            android:background="@drawable/rounded_bottom_corners"
+            android:layout_marginBottom="@dimen/_16sdp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_horoscope"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_120sdp"
-                android:background="@drawable/rounded_bottom_corners">
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="@dimen/_93sdp"
-                    android:layout_height="@dimen/_93sdp"
-                    android:layout_marginStart="@dimen/_16sdp"
-                    android:src="@drawable/ic_sign_empty"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.500" />
-
-                <TextView
-                    android:id="@+id/textName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:text="@android:string/unknownName"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_26sdp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.50" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/_93sdp"
+                android:layout_height="@dimen/_93sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:src="@drawable/ic_sign_empty"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.500"
+                tools:ignore="ContentDescription" />
 
             <TextView
-                android:id="@+id/textViewHoroscopeGeneralTitle"
-                android:layout_width="match_parent"
+                android:id="@+id/textName"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:text="@string/general_text_title"
-                android:textSize="@dimen/_24ssp" />
+                android:fontFamily="sans-serif-black"
+                android:text="@android:string/unknownName"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_26sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.50" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/textViewHoroscopeGeneral"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:textSize="@dimen/_16ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeGenderTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:textSize="@dimen/_24ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeGender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:textSize="@dimen/_16ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeAdditionTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:text="@string/addition_text_title"
-                android:textSize="@dimen/_24ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeAddition"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:textSize="@dimen/_16ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeLoveTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:text="@string/love_text_title"
-                android:textSize="@dimen/_24ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeLove"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:textSize="@dimen/_16ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeWorkTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:text="@string/work_text_title"
-                android:textSize="@dimen/_24ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeWork"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:textSize="@dimen/_16ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeHealthTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:text="@string/health_text_title"
-                android:textSize="@dimen/_24ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeHealth"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:textSize="@dimen/_16ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeLuckTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:text="@string/luck_text_title"
-                android:textSize="@dimen/_24ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeLuck"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:textSize="@dimen/_16ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeAdviceTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:text="@string/advice_text_title"
-                android:textSize="@dimen/_24ssp" />
-
-            <TextView
-                android:id="@+id/textViewHoroscopeAdvice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:textSize="@dimen/_16ssp" />
-
-
-        </LinearLayout>
-    </ScrollView>
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

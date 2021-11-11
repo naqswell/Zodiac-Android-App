@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import com.wiserax.zodiac.Gender
 import com.wiserax.zodiac.R
 import com.wiserax.zodiac.databinding.FragmentBirthdateBinding
@@ -25,8 +24,6 @@ class BirthDateFragment : Fragment() {
     private var _binding: FragmentBirthdateBinding? = null
     private val binding get() = _binding!!
     private var callbacks: Callbacks? = null
-
-//    private var dateString: String? = null
 
     private val calendar: Calendar = Calendar.getInstance()
     private val year = calendar.get(Calendar.YEAR)
@@ -50,13 +47,13 @@ class BirthDateFragment : Fragment() {
             it?.let {
                 binding.chooseDateTextview.text =
                     String.format(resources.getString(R.string.your_birthdate), it)
-
-                when (prefs.sex) {
-                    Gender.Male.text -> binding.radioGroup.check(R.id.male)
-                    Gender.Female.text -> binding.radioGroup.check(R.id.female)
-                }
             }
         })
+
+        when (prefs.sex) {
+            Gender.Male.text -> binding.radioGroup.check(R.id.male)
+            Gender.Female.text -> binding.radioGroup.check(R.id.female)
+        }
 
         binding.btnChooseDate.setOnClickListener {
             showDatePickerDialog()
@@ -66,7 +63,6 @@ class BirthDateFragment : Fragment() {
         binding.btnGetHoroscope.setOnClickListener {
             val selectedId = binding.radioGroup.checkedRadioButtonId
             if ((selectedId != -1) && (viewModel.date.value != null)) {
-                findNavController().navigate(R.id.action_birthdate_to_horoscope)
                 val sex: String = if (binding.male.isChecked) {
                     binding.male.text.toString()
                 } else {
@@ -91,6 +87,8 @@ class BirthDateFragment : Fragment() {
             viewModel.date.value = prefs.getDateFormated()
         }, year, month, day)
         dpd.show()
+        dpd.getButton(DatePickerDialog.BUTTON_NEGATIVE).setTextColor(resources.getColor(R.color.orange, requireActivity().theme))
+        dpd.getButton(DatePickerDialog.BUTTON_POSITIVE).setTextColor(resources.getColor(R.color.orange, requireActivity().theme))
     }
 
     override fun onDestroyView() {

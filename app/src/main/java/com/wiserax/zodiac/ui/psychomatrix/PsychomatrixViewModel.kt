@@ -4,15 +4,14 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.wiserax.zodiac.Psychomatrix
 import com.wiserax.zodiac.prefs
 
 class PsychomatrixViewModel(application: Application) : AndroidViewModel(application) {
     private val psyMatrix = if (prefs.isDateInit()) {
-        Psychomatrix(application, prefs.getFullDate()!!)
-    } else Psychomatrix(application, "01.01.2001")
+        PsychomatrixModel(application, prefs.getFullDate()!!)
+    } else PsychomatrixModel(application, "01.01.2001")
 
-    val matrixCells: LiveData<Map<Int, String>> = MutableLiveData(psyMatrix.matrixCellsData)
+    val matrixCells: MutableMap<Int, String> = psyMatrix.matrixCellsData
 
-    val matrixText: LiveData<Map<Int, String>> = MutableLiveData(psyMatrix.textMap)
+    val matrixText: Map<Int, String> = psyMatrix.textMap
 }

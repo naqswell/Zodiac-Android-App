@@ -10,15 +10,17 @@
     <string name="your_birthdate"> Your date of birth: \n %1$s</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
-    <string name="general_text_title">General</string>
-    <string name="male_text_title">Male features</string>
-    <string name="female_text_title">Female features</string>
-    <string name="addition_text_title">Addition</string>
-    <string name="love_text_title">Love and Compatibility</string>
-    <string name="work_text_title">Work and Career</string>
-    <string name="health_text_title">Health</string>
-    <string name="luck_text_title">Fate and Luck</string>
-    <string name="advice_text_title">Advice</string>
+
+    <string-array name="horoscope_qualities">
+        <item>General</item>
+        <item>Male features</item>
+        <item>Addition</item>
+        <item>Love and Compatibility</item>
+        <item>Work and Career</item>
+        <item>Health</item>
+        <item>Fate and Luck</item>
+        <item>Advice</item>
+    </string-array>
 
     <string-array name="months">
         <item>January</item>
@@ -35,26 +37,46 @@
         <item>December</item>
     </string-array>
 
-    <string name="character_title">Character, willpower</string>
-    <string name="energy_title">Energy, Charisma </string>
-    <string name="cognition_title">Cognition, creativity</string>
-    <string name="health_title">Health, beauty</string>
-    <string name="logic_title">Logic, intuition</string>
-    <string name="diligence_title">Diligence, skill </string>
-    <string name="luck_title">Luck</string>
-    <string name="duty_title">Call of Duty</string>
-    <string name="memory_title">Memory, mind</string>
+<!--    <string name="character_title">Character, willpower</string>-->
+<!--    <string name="energy_title">Energy, Charisma </string>-->
+<!--    <string name="cognition_title">Cognition, creativity</string>-->
+<!--    <string name="health_title">Health, beauty</string>-->
+<!--    <string name="logic_title">Logic, intuition</string>-->
+<!--    <string name="diligence_title">Diligence, skill </string>-->
+<!--    <string name="luck_title">Luck</string>-->
+<!--    <string name="duty_title">Call of Duty</string>-->
+<!--    <string name="memory_title">Memory, mind</string>-->
 
-    <string name="selfesteem_title">Self-esteem</string>
-    <string name="making_money">Making money</string>
-    <string name="talent_potential">Talent potential</string>
-    <string name="sense_of_purpose">Sense of purpose</string>
-    <string name="family">Family</string>
-    <string name="stability">Stability</string>
-    <string name="spiritual_potential">Spiritual potential</string>
-    <string name="temperament">Temperament</string>
+<!--    <string name="selfesteem_title">Self-esteem</string>-->
+<!--    <string name="making_money">Making money</string>-->
+<!--    <string name="talent_potential">Talent potential</string>-->
+<!--    <string name="sense_of_purpose">Sense of purpose</string>-->
+<!--    <string name="family">Family</string>-->
+<!--    <string name="stability">Stability</string>-->
+<!--    <string name="spiritual_potential">Spiritual potential</string>-->
+<!--    <string name="temperament">Temperament</string>-->
 
     <string-array name="human_qualities">
+        <item>Character, willpower</item>
+        <item>Energy, Charisma</item>
+        <item>Cognition, creativity</item>
+        <item>Health, beauty</item>
+        <item>Logic, intuition</item>
+        <item>Diligence, skill</item>
+        <item>Luck</item>
+        <item>Call of Duty</item>
+        <item>Memory, mind</item>
+        <item>Self–esteem</item>
+        <item>Making money</item>
+        <item>Talent potential</item>
+        <item>Sense of purpose</item>
+        <item>Family</item>
+        <item>Stability</item>
+        <item>Spiritual potential</item>
+        <item>Temperament</item>
+    </string-array>
+
+    <string-array name="human_qualities_two_row">
         <item>Character, willpower</item>
         <item>Energy, Charisma</item>
         <item>Cognition, creativity</item>
@@ -73,5 +95,43 @@
         <item>Spiritual potential</item>
         <item>Temperament</item>
     </string-array>
+
+
+    <string-array name="human_qualities_addition">
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item>(column "1–2–3")</item>
+        <item>(column "4–5–6")</item>
+        <item>(column "7–8–9")</item>
+        <item>(column "1–4–7")</item>
+        <item>(row "2–5–8")</item>
+        <item>(row "3–6–9")</item>
+        <item>(diagonal "1–5–9")</item>
+        <item>(diagonal "3–5–7")</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="plus" translatable="false">+</string>
+    <string name="description_first_sign_image" translatable="false">First sign image</string>
+    <string name="description_second_sign_image" translatable="false">Second sign image</string>
+    <string name="description_icon_heart" translatable="false">Heart icon</string>
+    <string name="description_icon_hand" translatable="false">Hand icon</string>
+    <string name="description_icon_case" translatable="false">Case icon</string>
+    <string name="description_icon_home" translatable="false">Home icon</string>
+    <string name="general">General</string>
+    <string name="work">Work</string>
+    <string name="friendship">Friendship</string>
+    <string name="love">Love</string>
+    <string name="family">Family</string>
+    <string name="intimacy">Intimacy</string>
+    <string name="choose_signs">Choose signs</string>
+    <string name="check_compatibility">Проверить совместимость</string>
 
 </resources>

@@ -12,10 +12,21 @@
     <string name="male">Мужчина</string>
     <string name="female">Женщина</string>
 
+    <string-array name="horoscope_qualities">
+        <item>Общая информация</item>
+        <item>Мужская/женская характеристика</item>
+        <item>Зодиак</item>
+        <item>Любовь и Совместимость</item>
+        <item>Работа и карьера</item>
+        <item>Здоровье</item>
+        <item>Судьба и Удача</item>
+        <item>Советы</item>
+    </string-array>
+
     <string-array name="months">
         <item>января</item>
         <item>февраля</item>
-        <item>иарта</item>
+        <item>марта</item>
         <item>апреля</item>
         <item>мая</item>
         <item>июня</item>
@@ -26,35 +37,48 @@
         <item>ноября</item>
         <item>декабря</item>
     </string-array>
-    <string name="general_text_title">Общая информация</string>
-    <string name="male_text_title">Мужчина</string>
-    <string name="female_text_title">Женщина</string>
-    <string name="love_text_title">Любовь и Совместимость</string>
-    <string name="advice_text_title">Советы</string>
-    <string name="luck_text_title">Судьба и Удача</string>
-    <string name="health_text_title">Здоровье</string>
-    <string name="work_text_title">Работа и Карьера</string>
-    <string name="addition_text_title">Зодиак</string>
-    <string name="health_title">Здоровье, красота</string>
-    <string name="character_title">Характер, сила воли</string>
-    <string name="cognition_title">Познание, творчество</string>
-    <string name="logic_title">Логика, интуиция</string>
-    <string name="diligence_title">Трудолюбие, мастерство</string>
-    <string name="luck_title">Удача, везение</string>
-    <string name="duty_title">Чувство долга</string>
-    <string name="memory_title">Память, ум</string>
-    <string name="energy_title">Энергетика, харизма</string>
-    <string name="selfesteem_title">Самооценка</string>
-    <string name="making_money">Зарабатывание денег</string>
-    <string name="talent_potential">Потенциал таланта</string>
-    <string name="sense_of_purpose">Целеустремленность</string>
-    <string name="family">Семейность</string>
-    <string name="stability">Стабильность</string>
-    <string name="spiritual_potential">Духовный потенциал</string>
-    <string name="temperament">Темперамент</string>
+
+<!--    <string name="health_title">Здоровье, красота</string>-->
+<!--    <string name="character_title">Характер, сила воли</string>-->
+<!--    <string name="cognition_title">Познание, творчество</string>-->
+<!--    <string name="logic_title">Логика, интуиция</string>-->
+<!--    <string name="diligence_title">Трудолюбие, мастерство</string>-->
+<!--    <string name="luck_title">Удача, везение</string>-->
+<!--    <string name="duty_title">Чувство долга</string>-->
+<!--    <string name="memory_title">Память, ум</string>-->
+<!--    <string name="energy_title">Энергетика, харизма</string>-->
+<!--    <string name="selfesteem_title">Самооценка</string>-->
+<!--    <string name="making_money">Зарабатывание денег</string>-->
+<!--    <string name="talent_potential">Потенциал таланта</string>-->
+<!--    <string name="sense_of_purpose">Целеустремленность</string>-->
+<!--&lt;!&ndash;    <string name="family">Семейность</string>&ndash;&gt;-->
+<!--    <string name="stability">Стабильность</string>-->
+<!--    <string name="spiritual_potential">Духовный потенциал</string>-->
+<!--    <string name="temperament">Темперамент</string>-->
 
 
     <string-array name="human_qualities">
+        <item>Характер, сила воли</item>
+        <item>Энергетика, харизма</item>
+        <item>Познание, творчество</item>
+        <item>Здоровье, красота</item>
+        <item>Логика, интуиция</item>
+        <item>Трудолюбие,мастерство</item>
+        <item>Удача, везение</item>
+        <item>Чувство долга</item>
+        <item>Память, ум</item>
+        <item>Самооценка</item>
+        <item>Зарабатывание денег</item>
+        <item>Потенциал таланта</item>
+        <item>Целеустремленность</item>
+        <item>Семейность</item>
+        <item>Стабильность</item>
+        <item>Духовный потенциал</item>
+        <item>Темперамент</item>
+    </string-array>
+
+
+    <string-array name="human_qualities_two_row">
         <item>Характер, сила воли</item>
         <item>Энергетика, харизма</item>
         <item>Познание, творчество</item>
@@ -73,5 +97,38 @@
         <item>Духовный потенциал</item>
         <item>Темперамент</item>
     </string-array>
+
+    <string-array name="human_qualities_addition">
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item>(столбец "1–2–3")</item>
+        <item>(столбец "4–5–6")</item>
+        <item>(столбец "7–8–9")</item>
+        <item>(столбец "1–4–7")</item>
+        <item>(строка "2–5–8")</item>
+        <item>(строка "3–6–9")</item>
+        <item>(диагональ "1–5–9")</item>
+        <item>(диагональ "3–5–7")</item>
+    </string-array>
+
+
+
+    // For json reader
+    <string name="general">Общее</string>
+    <string name="work">Работа</string>
+    <string name="friendship">Дружба</string>
+    <string name="love">Любовь</string>
+    <string name="intimacy">Интимные отношения</string>
+    <string name="family">Семья</string>
+    <string name="choose_signs">Выберите знаки</string>
+    <string name="check_compatibility">Проверить совместимость</string>
+
 
 </resources>

@@ -5,7 +5,7 @@
     android:viewportHeight="24">
     <group>
         <path
-            android:fillColor="@color/ic_horoscope_filled"
+            android:fillColor="@color/orange"
             android:pathData="M12.15 0.83L9.1 7.04l-6.84 1c-1.23 0.18-1.72 1.7-0.83 2.56l4.95 4.83l-1.17 6.82c-0.21 1.23 1.09 2.15 2.17 1.58l6.13-3.22l6.13 3.22c1.08 0.57 2.38-0.35 2.17-1.58l-1.17-6.82l4.95-4.83c0.9-0.87 0.4-2.38-0.83-2.56l-6.84-1l-3.06-6.2c-0.55-1.11-2.14-1.13-2.7 0z"/>
     </group>
 </vector>
