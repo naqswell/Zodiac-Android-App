@@ -4,10 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.wiserax.zodiac.databinding.ActivityMainBinding
@@ -15,7 +13,6 @@ import com.wiserax.zodiac.ui.birthdate.BirthDateFragment
 import com.wiserax.zodiac.ui.birthdate.BirthDateFragmentDirections
 import com.wiserax.zodiac.ui.birthdate.DateFragment
 import com.wiserax.zodiac.ui.birthdate.DateViewModel
-import com.wiserax.zodiac.ui.horoscope.HoroscopeFragment
 import com.wiserax.zodiac.ui.horoscope.HoroscopeFragmentDirections
 
 class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragment.Callbacks {
