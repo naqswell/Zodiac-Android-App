@@ -12,8 +12,10 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.wiserax.zodiac.databinding.ActivityMainBinding
 import com.wiserax.zodiac.ui.birthdate.BirthDateFragment
+import com.wiserax.zodiac.ui.birthdate.BirthDateFragmentDirections
 import com.wiserax.zodiac.ui.birthdate.DateFragment
 import com.wiserax.zodiac.ui.birthdate.DateViewModel
+import com.wiserax.zodiac.ui.horoscope.HoroscopeFragment
 
 class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragment.Callbacks {
 
@@ -85,7 +87,7 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
     }
 
     override fun onDateSet() {
-        findNavController(R.id.nav_host_fragment_activity_main).navigate(R.id.action_birthdate_to_horoscope)
+        findNavController(R.id.nav_host_fragment_activity_main).navigate(BirthDateFragmentDirections.actionBirthdateToHoroscope())
         supportFragmentManager.commit {
             replace(R.id.container_fragment_date, DateFragment())
         }
