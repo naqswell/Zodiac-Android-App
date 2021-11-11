@@ -16,6 +16,7 @@ import com.wiserax.zodiac.ui.birthdate.BirthDateFragmentDirections
 import com.wiserax.zodiac.ui.birthdate.DateFragment
 import com.wiserax.zodiac.ui.birthdate.DateViewModel
 import com.wiserax.zodiac.ui.horoscope.HoroscopeFragment
+import com.wiserax.zodiac.ui.horoscope.HoroscopeFragmentDirections
 
 class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragment.Callbacks {
 
@@ -41,7 +42,7 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
 
 
         if (!prefs.isDateInit() && (navController.currentDestination?.id != R.id.navigation_birthdate)) {
-            navController.navigate(R.id.action_horoscope_to_birthdate)
+            navController.navigate(HoroscopeFragmentDirections.actionHoroscopeToBirthdate())
         } else {
             supportFragmentManager.commit {
                 replace(R.id.container_fragment_date, DateFragment())
