@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.wiserax.zodiac.databinding.FragmentCompatibilityBinding
 
@@ -51,9 +53,16 @@ class CompatibilityFragment : Fragment() {
 
     private fun ViewPager2.instantiate(adapter: SignAdapter) {
         this.adapter = adapter
+
         setCurrentItem(Sign.values().size / 2, false)
-        offscreenPageLimit = 3
+
         clipToPadding = false
         clipChildren = false
+        offscreenPageLimit = 3
+
+        val transformer = CompositePageTransformer()
+
+        transformer.addTransformer(MarginPageTransformer(10))
+        setPageTransformer(transformer)
     }
 }

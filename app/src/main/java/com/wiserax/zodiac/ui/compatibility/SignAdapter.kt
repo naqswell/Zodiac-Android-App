@@ -1,6 +1,7 @@
 package com.wiserax.zodiac.ui.compatibility
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.wiserax.zodiac.databinding.InstanceSignBinding
@@ -12,6 +13,8 @@ class SignAdapter: RecyclerView.Adapter<SignAdapter.SignHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SignHolder {
         val itemBinding = InstanceSignBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
+
+        parent.overScrollMode = View.OVER_SCROLL_NEVER
 
         return SignHolder(itemBinding)
     }
