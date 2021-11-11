@@ -46,29 +46,37 @@ class PsychomatrixModel(application: Application, dateOfBirth: String) {
         val firstValue = mapOfInt.sum()
         var part1 = firstValue % 10
         var part2 = firstValue / 10
-        if ((part1 != 0) && (part2 != 0)) {
+        if (part1 != 0) {
             digitCounter[part1] = digitCounter[part1]!! + 1
+        }
+        if (part2 != 0) {
             digitCounter[part2] = digitCounter[part2]!! + 1
         }
         val secondValue = part1 + part2
         part1 = secondValue % 10
         part2 = secondValue / 10
-        if ((part1 != 0) && (part2 != 0)) {
+        if (part1 != 0) {
             digitCounter[part1] = digitCounter[part1]!! + 1
+        }
+        if (part2 != 0) {
             digitCounter[part2] = digitCounter[part2]!! + 1
         }
         val thirdValue = firstValue - mapOfInt[0] * 2
         part1 = thirdValue % 10
         part2 = thirdValue / 10
-        if ((part1 != 0) && (part2 != 0)) {
+        if (part1 != 0) {
             digitCounter[part1] = digitCounter[part1]!! + 1
+        }
+        if (part2 != 0) {
             digitCounter[part2] = digitCounter[part2]!! + 1
         }
         val fourthValue = part1 + part2
         part1 = fourthValue % 10
         part2 = fourthValue / 10
-        if ((part1 != 0) && (part2 != 0)) {
+        if (part1 != 0) {
             digitCounter[part1] = digitCounter[part1]!! + 1
+        }
+        if (part2 != 0) {
             digitCounter[part2] = digitCounter[part2]!! + 1
         }
 
