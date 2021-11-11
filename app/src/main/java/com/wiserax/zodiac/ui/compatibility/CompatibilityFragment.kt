@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import com.wiserax.zodiac.R
 import com.wiserax.zodiac.databinding.FragmentCompatibilityBinding
 
 class CompatibilityFragment : Fragment() {
@@ -62,7 +63,7 @@ class CompatibilityFragment : Fragment() {
 
         val transformer = CompositePageTransformer()
 
-        transformer.addTransformer(MarginPageTransformer(10))
+        transformer.addTransformer(MarginPageTransformer(resources.getDimensionPixelSize(R.dimen._8sdp)))
         setPageTransformer(transformer)
     }
 }
