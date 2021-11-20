@@ -1,5 +1,7 @@
 # Zodiac
 
+##### Android app for viewing the horoscope, compatibility of the signs of the zodiac, the calculation of the square of Pythagore (psychomatrix). 
+⠀⠀
 ##### Андроид приложение для просмотра гороскопа, совместимостей знаков зодиака, расчёта квадрата Пифагора (психоматрицы).
 ⠀⠀
 ![Zodiac](https://user-images.githubusercontent.com/79411173/142713104-3e844ee0-523a-4e86-b583-e83139f23569.png)
