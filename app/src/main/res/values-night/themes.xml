@@ -3,16 +3,12 @@
     <style name="Theme.Zodiac" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/yellow</item>
-<!--        <item name="colorPrimaryVariant">@color/purple_700</item>-->
         <item name="colorOnPrimary">@color/grey_ic_nav_bar</item>
         <item name="colorAccent">@color/white</item>
-        <!-- Secondary brand color. -->
-<!--        <item name="colorSecondary">@color/teal_200</item>-->
-<!--        <item name="colorSecondaryVariant">@color/teal_200</item>-->
-<!--        <item name="colorOnSecondary">@color/black</item>-->
         <!-- Status bar color. -->
         <item name="android:windowLightStatusBar">false</item>
-<!--        <item name="android:statusBarColor">@color/material_on_background_disabled</item>-->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/jost_regular</item>
         <item name="android:textColor">@android:color/white</item>

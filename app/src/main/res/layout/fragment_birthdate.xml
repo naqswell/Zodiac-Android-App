@@ -67,7 +67,10 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/btn_get_horoscope"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        />
 
     <Button
         android:id="@+id/btn_get_horoscope"
@@ -80,7 +83,10 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
