@@ -1,4 +1,4 @@
-package com.wiserax.zodiac
+package com.wiserax.zodiac.model
 
 enum class Gender (val text: String) {
     Male ("Male"),

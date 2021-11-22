@@ -3,7 +3,7 @@ package com.wiserax.zodiac.ui.horoscope
 import android.app.Application
 import android.graphics.drawable.Drawable
 import androidx.core.content.res.ResourcesCompat
-import com.wiserax.zodiac.Gender
+import com.wiserax.zodiac.model.Gender
 import com.wiserax.zodiac.R
 import org.json.JSONArray
 import org.json.JSONObject

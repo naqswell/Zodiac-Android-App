@@ -1,7 +1,6 @@
 package com.wiserax.zodiac.ui.psychomatrix
 
 import android.app.Application
-import android.util.Log
 import org.json.JSONObject
 
 class PsychomatrixModel(application: Application, dateOfBirth: String) {

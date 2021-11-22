@@ -2,7 +2,7 @@ package com.wiserax.zodiac.ui.horoscope
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import com.wiserax.zodiac.Gender
+import com.wiserax.zodiac.model.Gender
 import com.wiserax.zodiac.prefs
 
 class HoroscopeViewModel(application: Application) : AndroidViewModel(application) {

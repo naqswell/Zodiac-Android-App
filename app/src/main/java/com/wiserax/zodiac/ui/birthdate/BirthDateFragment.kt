@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.wiserax.zodiac.Gender
+import com.wiserax.zodiac.model.Gender
 import com.wiserax.zodiac.R
 import com.wiserax.zodiac.databinding.FragmentBirthdateBinding
 import com.wiserax.zodiac.prefs
