@@ -1,6 +1,7 @@
 package com.wiserax.zodiac.ui.psychomatrix
 
 import android.app.Application
+import android.util.Log
 import org.json.JSONObject
 
 class PsychomatrixModel(application: Application, dateOfBirth: String) {
@@ -9,11 +10,11 @@ class PsychomatrixModel(application: Application, dateOfBirth: String) {
     val matrixCellsData: MutableMap<Int, String> = createSquare(matrixMap)
 
     private fun calculateSquare(dateOfBirth: String): MutableMap<Int, Int> {
-        val mapOfInt = mutableListOf<Int>()
+        val listOfInt = mutableListOf<Int>()
 
         for (symbol in dateOfBirth) {
             if (symbol.isDigit()) {
-                mapOfInt.add(symbol.digitToInt())
+                listOfInt.add(symbol.digitToInt())
             }
         }
 
@@ -37,13 +38,13 @@ class PsychomatrixModel(application: Application, dateOfBirth: String) {
             357 to 0
         )
 
-        for (el in mapOfInt) {
-            if (el != 0) {
+        for (el in listOfInt) {
+            if ((el != 0) && (el < 10)) {
                 digitCounter[el] = digitCounter[el]!! + 1
             }
         }
 
-        val firstValue = mapOfInt.sum()
+        val firstValue = listOfInt.sum()
         var part1 = firstValue % 10
         var part2 = firstValue / 10
         if (part1 != 0) {
@@ -61,7 +62,8 @@ class PsychomatrixModel(application: Application, dateOfBirth: String) {
         if (part2 != 0) {
             digitCounter[part2] = digitCounter[part2]!! + 1
         }
-        val thirdValue = firstValue - mapOfInt[0] * 2
+        val num = if (listOfInt[0] == 0) listOfInt[1] else listOfInt[0]
+        val thirdValue = firstValue - num * 2
         part1 = thirdValue % 10
         part2 = thirdValue / 10
         if (part1 != 0) {
