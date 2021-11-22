@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
     }
 
     override fun onDateButtonPressed() {
-        findNavController(R.id.nav_host_fragment_activity_main).navigate(HoroscopeFragmentDirections.actionHoroscopeToBirthdate())
+        findNavController(R.id.nav_host_fragment_activity_main).navigate(R.id.navigation_birthdate)
     }
 
     override fun onDateSet() {
