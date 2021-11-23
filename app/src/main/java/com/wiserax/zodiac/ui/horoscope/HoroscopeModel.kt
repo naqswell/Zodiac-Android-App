@@ -2,6 +2,7 @@ package com.wiserax.zodiac.ui.horoscope
 
 import android.app.Application
 import android.graphics.drawable.Drawable
+import android.util.Log
 import androidx.core.content.res.ResourcesCompat
 import com.wiserax.zodiac.model.Gender
 import com.wiserax.zodiac.R
@@ -31,7 +32,7 @@ class HoroscopeModel {
                     "name" -> name = jsonObject.getString(it)
                     "date" -> {}
                     "maleText" -> if (gender == Gender.Male) {
-                        textMap["genderText"] = jsonObject.getString(it)
+                        Log.d("GENDER", "MEN " + textMap["genderText"].toString())
                     }
                     "femaleText" -> if (gender == Gender.Female) {
                         textMap["genderText"] = jsonObject.getString(it)

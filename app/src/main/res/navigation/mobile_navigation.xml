@@ -13,7 +13,7 @@
         <action
             android:id="@+id/action_horoscope_to_birthdate"
             app:destination="@id/navigation_birthdate"
-            app:popUpTo="@+id/navigation_horoscope"
+            app:popUpTo="@+id/navigation_birthdate"
             app:popUpToInclusive="true" />
     </fragment>
 
@@ -21,8 +21,7 @@
         android:id="@+id/navigation_psychomatrix"
         android:name="com.wiserax.zodiac.ui.psychomatrix.PsychomatrixFragment"
         android:label="@string/title_psychomatrix"
-        tools:layout="@layout/fragment_psychomatrix" />
-
+        tools:layout="@layout/fragment_psychomatrix"/>
 
     <fragment
         android:id="@+id/navigation_birthdate"
@@ -31,7 +30,7 @@
         <action
             android:id="@+id/action_birthdate_to_horoscope"
             app:destination="@id/navigation_horoscope"
-            app:popUpTo="@+id/navigation_birthdate"
+            app:popUpTo="@+id/navigation_horoscope"
             app:popUpToInclusive="true">
         </action>
     </fragment>

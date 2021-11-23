@@ -35,7 +35,8 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
         navView.itemIconTintList = null
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main);
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main);
 
 
         if (!prefs.isDateInit() && (navController.currentDestination?.id != R.id.navigation_birthdate)) {
