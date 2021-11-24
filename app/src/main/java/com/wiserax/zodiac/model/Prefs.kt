@@ -12,8 +12,10 @@ class Prefs(val context: Context) {
     private val PREF_MONTH = "prefMonth"
     private val PREF_YEAR = "prefYear"
     private val PREF_SEX = "prefSex"
+    private val PREF_IS_NIGHT = "preIsNight"
     val DEF_INT_VALUE = -1
     val DEF_STRING_VALUE = Gender.Male.text
+    private val DEF_IS_NIGHT_VALUE = false
 
     private val preferences: SharedPreferences =
         context.getSharedPreferences(PREF_BIRTHDATE, Context.MODE_PRIVATE)
@@ -33,6 +35,10 @@ class Prefs(val context: Context) {
     var sex: String
         get() = preferences.getString(PREF_SEX, DEF_STRING_VALUE)!!
         set(value) = preferences.edit().putString(PREF_SEX, value).apply()
+
+    var isNightMode: Boolean
+        get() = preferences.getBoolean(PREF_IS_NIGHT, DEF_IS_NIGHT_VALUE)
+        set(value) = preferences.edit().putBoolean(PREF_IS_NIGHT, value).apply()
 
     fun isDateInit(): Boolean {
         return ((day != DEF_INT_VALUE) && (month != DEF_INT_VALUE) && (year != DEF_INT_VALUE))

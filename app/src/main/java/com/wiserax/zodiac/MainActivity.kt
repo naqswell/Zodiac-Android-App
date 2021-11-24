@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.commit
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -38,6 +39,11 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main);
 
+        if (!prefs.isNightMode) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
 
         if (!prefs.isDateInit() && (navController.currentDestination?.id != R.id.navigation_birthdate)) {
             navController.navigate(HoroscopeFragmentDirections.actionHoroscopeToBirthdate())
@@ -83,7 +89,9 @@ class MainActivity : AppCompatActivity(), DateFragment.Callbacks, BirthDateFragm
 
     override fun onDateButtonPressed() {
         findNavController(R.id.nav_host_fragment_activity_main).navigate(R.id.navigation_birthdate)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
     }
+
 
     override fun onDateSet() {
         findNavController(R.id.nav_host_fragment_activity_main).navigate(BirthDateFragmentDirections.actionBirthdateToHoroscope())

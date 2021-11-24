@@ -19,6 +19,35 @@
         app:layout_constraintTop_toTopOf="parent">
     </TextView>
 
+<!--    <ImageView-->
+<!--        android:id="@+id/night"-->
+<!--        android:layout_width="@dimen/_16sdp"-->
+<!--        android:layout_height="@dimen/_16sdp"-->
+<!--        android:src="@drawable/ic_moon"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/choose_date_btn"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/day"-->
+<!--        android:layout_width="@dimen/_16sdp"-->
+<!--        android:layout_height="@dimen/_16sdp"-->
+<!--        android:src="@drawable/ic_sun"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/theme_switch"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+<!--    </ImageView>-->
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/theme_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/choose_date_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:useMaterialThemeColors="false">
+    </com.google.android.material.switchmaterial.SwitchMaterial>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/choose_date_btn"
         android:layout_width="@dimen/_32sdp"
