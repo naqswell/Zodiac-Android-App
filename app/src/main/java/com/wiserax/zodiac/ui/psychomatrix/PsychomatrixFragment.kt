@@ -55,7 +55,7 @@ class PsychomatrixFragment : Fragment() {
                     param.setGravity(Gravity.CENTER)
                     textView.layoutParams = param
                     val str =
-                        it.value + "\n" + resources.getStringArray(R.array.human_qualities_two_row)[counter]
+                        it.value + "\n" + resources.getStringArray(R.array.human_qualities)[counter]
                     val id = View.generateViewId()
                     matrixResIdArray[id] = str
                     textView.id = id
