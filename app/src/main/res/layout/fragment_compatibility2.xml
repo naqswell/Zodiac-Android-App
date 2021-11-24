@@ -134,7 +134,7 @@
                     android:layout_marginEnd="@dimen/_4sdp"
                     android:orientation="vertical">
 
-                    <Space
+                    <androidx.legacy.widget.Space
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
@@ -157,7 +157,7 @@
                         android:fontFamily="@font/jost_bold"
                         tools:text="71%" />
 
-                    <Space
+                    <androidx.legacy.widget.Space
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
@@ -180,7 +180,7 @@
                     android:background="@color/card_yellow"
                     android:orientation="vertical">
 
-                    <Space
+                    <androidx.legacy.widget.Space
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
@@ -203,7 +203,7 @@
                         android:fontFamily="@font/jost_bold"
                         tools:text="66%" />
 
-                    <Space
+                    <androidx.legacy.widget.Space
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
@@ -226,7 +226,7 @@
                     android:background="@color/card_blue"
                     android:orientation="vertical">
 
-                    <Space
+                    <androidx.legacy.widget.Space
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
@@ -248,7 +248,7 @@
                         android:fontFamily="@font/jost_bold"
                         tools:text="82%" />
 
-                    <Space
+                    <androidx.legacy.widget.Space
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
@@ -271,7 +271,7 @@
                     android:background="@color/card_green"
                     android:orientation="vertical">
 
-                    <Space
+                    <androidx.legacy.widget.Space
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
@@ -294,7 +294,7 @@
                         android:fontFamily="@font/jost_bold"
                         tools:text="75%" />
 
-                    <Space
+                    <androidx.legacy.widget.Space
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
