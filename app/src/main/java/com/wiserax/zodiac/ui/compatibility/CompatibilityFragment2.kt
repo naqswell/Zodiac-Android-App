@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.view.setPadding
 import androidx.navigation.fragment.navArgs
 import com.wiserax.zodiac.model.JsonReader
 import com.wiserax.zodiac.R
@@ -91,7 +92,7 @@ class CompatibilityFragment2 : Fragment() {
         )
 
 //        params.bottomMargin = 8
-        params.bottomMargin = resources.getDimensionPixelSize(R.dimen._8sdp)
+//        params.bottomMargin = resources.getDimensionPixelSize(R.dimen._8sdp)
 
         textView.layoutParams = params
         textView.text = text
@@ -100,8 +101,7 @@ class CompatibilityFragment2 : Fragment() {
             resources.getDimension(textSizeDimenId)
         )
         textView.typeface = ResourcesCompat.getFont(requireContext(), font)
-//        textView.setTextColor(resources.getColor(R.color.black, null))
-
+        textView.setPadding(resources.getDimensionPixelSize(R.dimen._8sdp))
         return textView
     }
 }
