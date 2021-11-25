@@ -6,8 +6,7 @@ import android.util.Log
 import androidx.core.content.res.ResourcesCompat
 import com.wiserax.zodiac.model.Gender
 import com.wiserax.zodiac.R
-import org.json.JSONArray
-import org.json.JSONObject
+import com.wiserax.zodiac.model.JsonReader
 
 class HoroscopeModel {
 
@@ -23,7 +22,9 @@ class HoroscopeModel {
             gender: Gender,
             birthDate: String
         ): User {
-            val jsonObject = getJsonObject(application, birthDate)
+            val jsonReader = JsonReader(application)
+            val jsonObject = jsonReader.getHoroscopeObject(birthDate)
+
             val textMap: MutableMap<String, String> = mutableMapOf()
             var name = ""
 
@@ -41,20 +42,6 @@ class HoroscopeModel {
                 }
             }
             return User(name, textMap, getImage(name, application))
-        }
-
-        private fun getJsonObject(application: Application, birthDate: String): JSONObject {
-            val file = application.assets.open("character.json")
-            val text = file.bufferedReader().use { it.readText() }
-            val array = JSONArray(text)
-
-            for (i in 0 until array.length()) {
-                val jsonObject = JSONObject(array[i].toString())
-                if (jsonObject.getString("date") == birthDate) {
-                    return jsonObject
-                }
-            }
-            return JSONObject(array[0].toString())
         }
 
         private fun getImage(name: String, application: Application): Drawable {

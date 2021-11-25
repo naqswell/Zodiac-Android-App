@@ -2,19 +2,18 @@ package com.wiserax.zodiac.ui.compatibility
 
 import android.os.Bundle
 import android.util.TypedValue
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.Space
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.view.setPadding
 import androidx.navigation.fragment.navArgs
-import com.wiserax.zodiac.model.JsonReader
 import com.wiserax.zodiac.R
 import com.wiserax.zodiac.databinding.FragmentCompatibility2Binding
-import java.lang.NullPointerException
 
 class CompatibilityFragment2 : Fragment() {
 
@@ -53,55 +52,109 @@ class CompatibilityFragment2 : Fragment() {
     }
 
     private fun loadCompatibilityInfo(layout: LinearLayout) {
-        val application = activity?.application ?: throw NullPointerException("Activity is null")
-        val reader = JsonReader(application)
+        val application = requireActivity().application
 
-        val (textMap, percentagesMap) = reader.getCompatibility(sign1, sign2)
-
-        textMap.forEach { (title, description) ->
-            if (title == application.resources.getString(R.string.general)) {
-                binding.textViewGeneralTitle.text = title
-                binding.textViewGeneralDescription.text = description
-            } else {
-                val titleTextView = createTextView(title, R.dimen.text_title_size, true)
-                val descriptionTextView = createTextView(description, R.dimen.text_simple_size, false)
-
-                layout.addView(titleTextView)
-                layout.addView(descriptionTextView)
-            }
-        }
+        val compatibility = Compatibility(application, sign1, sign2)
+        val percentagesMap = compatibility.percentages
+        val articlesMap = compatibility.articles
 
         percentagesMap.forEach { (key, value) ->
             val percentage = "$value%"
 
             when (key) {
-                "generalPower" -> binding.textViewPercentage.text = percentage
                 "lovePower" -> binding.textViewLove.text = percentage
                 "friendshipPower" -> binding.textViewFriendship.text = percentage
                 "workPower" -> binding.textViewWork.text = percentage
                 "familyPower" -> binding.textViewFamily.text = percentage
             }
         }
+
+        articlesMap.forEach { (title, description) ->
+            val titleView =
+                if (title == application.resources.getString(R.string.general)) {
+                    val generalPercentage = compatibility.generalPercentage
+                    createTitleLayout(title, generalPercentage, R.dimen.text_title_size)
+                } else {
+                    createTextView(
+                        text = title,
+                        textSize = R.dimen.text_title_size,
+                        isBold = true,
+                        bottomMargin = 16,
+                        gravity = Gravity.CENTER_HORIZONTAL
+                    )
+            }
+
+            val descriptionView = createTextView(description, R.dimen.text_simple_size, false)
+
+            layout.addView(titleView)
+            layout.addView(descriptionView)
+        }
     }
 
-    private fun createTextView(text: String, textSizeDimenId: Int, isBold: Boolean): TextView {
-        val textView = TextView(requireContext())
-        val font = if (isBold) R.font.jost_bold else R.font.jost_regular
-        val params = LinearLayout.LayoutParams(
-            ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT
+    private fun createTitleLayout(title: String, percentage: Int, textSize: Int): LinearLayout {
+        val percentageText = "$percentage%"
+
+        val layout = LinearLayout(requireContext())
+
+        val titleTextView = createTextView(
+            text = title,
+            textSize = textSize,
+            isBold = true,
+            bottomMargin = 16,
+            gravity = Gravity.END,
+            weight = 1f
         )
 
-//        params.bottomMargin = 8
-//        params.bottomMargin = resources.getDimensionPixelSize(R.dimen._8sdp)
+        val spacer = Space(requireContext())
+        spacer.layoutParams = LinearLayout.LayoutParams(16, 0)
+
+        val percentageTextView = createTextView(
+            text = percentageText,
+            textSize = textSize,
+            isBold = true,
+            gravity = Gravity.START,
+            weight = 1f
+        )
+
+        val percentageColor = resources.getColor(
+            R.color.orange, null
+        )
+        percentageTextView.setTextColor(percentageColor)
+
+        layout.addView(titleTextView)
+        layout.addView(spacer)
+        layout.addView(percentageTextView)
+
+        return layout
+    }
+
+    private fun createTextView(
+        text: String,
+        textSize: Int,
+        isBold: Boolean,
+        bottomMargin: Int = 0,
+        gravity: Int = Gravity.NO_GRAVITY,
+        weight: Float = 0f
+    ): TextView {
+        val textView = TextView(requireContext())
+
+        val font = if (isBold) R.font.jost_bold else R.font.jost_regular
+
+        val params = LinearLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
+        )
+        params.bottomMargin = bottomMargin
+        params.weight = weight
 
         textView.layoutParams = params
         textView.text = text
+        textView.gravity = gravity
         textView.setTextSize(
             TypedValue.COMPLEX_UNIT_PX,
-            resources.getDimension(textSizeDimenId)
+            resources.getDimension(textSize)
         )
         textView.typeface = ResourcesCompat.getFont(requireContext(), font)
-        textView.setPadding(resources.getDimensionPixelSize(R.dimen._8sdp))
+
         return textView
     }
 }

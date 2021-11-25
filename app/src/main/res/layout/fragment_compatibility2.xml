@@ -308,46 +308,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center"
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="@dimen/_8sdp"
-                android:orientation="horizontal"
-                android:gravity="center"
-                >
-
-                <TextView
-                    android:id="@+id/textViewGeneralTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:fontFamily="@font/jost_bold"
-                    android:textSize="@dimen/_20ssp"
-                    tools:text="Общая"
-                    />
-
-                <TextView
-                    android:id="@+id/textViewPercentage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/jost_bold"
-                    android:textColor="@color/orange"
-                    android:textSize="@dimen/_20ssp"
-                    tools:ignore="TextContrastCheck"
-                    tools:text="65%" />
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/textViewGeneralDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/jost_regular"
-                android:textSize="@dimen/_16ssp"
-                tools:text="@sample/compatibility_example.json/sample" />
-        </LinearLayout>
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp" />
     </LinearLayout>
 </ScrollView>
