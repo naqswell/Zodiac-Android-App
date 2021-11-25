@@ -79,7 +79,7 @@ class CompatibilityFragment2 : Fragment() {
                         text = title,
                         textSize = R.dimen.text_title_size,
                         isBold = true,
-                        bottomMargin = 16,
+                        verticalMargin = 16,
                         gravity = Gravity.CENTER_HORIZONTAL
                     )
             }
@@ -100,7 +100,7 @@ class CompatibilityFragment2 : Fragment() {
             text = title,
             textSize = textSize,
             isBold = true,
-            bottomMargin = 16,
+            verticalMargin = 16,
             gravity = Gravity.END,
             weight = 1f
         )
@@ -112,6 +112,7 @@ class CompatibilityFragment2 : Fragment() {
             text = percentageText,
             textSize = textSize,
             isBold = true,
+            verticalMargin = 16,
             gravity = Gravity.START,
             weight = 1f
         )
@@ -132,7 +133,7 @@ class CompatibilityFragment2 : Fragment() {
         text: String,
         textSize: Int,
         isBold: Boolean,
-        bottomMargin: Int = 0,
+        verticalMargin: Int = 0,
         gravity: Int = Gravity.NO_GRAVITY,
         weight: Float = 0f
     ): TextView {
@@ -143,7 +144,8 @@ class CompatibilityFragment2 : Fragment() {
         val params = LinearLayout.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
         )
-        params.bottomMargin = bottomMargin
+        params.topMargin = verticalMargin
+        params.bottomMargin = verticalMargin / 2
         params.weight = weight
 
         textView.layoutParams = params
