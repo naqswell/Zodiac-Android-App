@@ -43,12 +43,12 @@ class BirthDateFragment : Fragment() {
         _binding = FragmentBirthdateBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        viewModel.date.observe(viewLifecycleOwner, {
+        viewModel.date.observe(viewLifecycleOwner) {
             it?.let {
                 binding.chooseDateTextview.text =
                     String.format(resources.getString(R.string.your_birthdate), it)
             }
-        })
+        }
 
         when (prefs.sex) {
             Gender.Male.text -> binding.radioGroup.check(R.id.male)

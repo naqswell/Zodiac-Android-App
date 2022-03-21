@@ -3,7 +3,6 @@ package com.wiserax.zodiac.ui.birthdate
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.wiserax.zodiac.R
 import com.wiserax.zodiac.databinding.FragmentDateBinding
-import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatDelegate
 import com.wiserax.zodiac.prefs
 

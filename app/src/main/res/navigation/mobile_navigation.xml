@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
@@ -14,7 +15,8 @@
             android:id="@+id/action_horoscope_to_birthdate"
             app:destination="@id/navigation_birthdate"
             app:popUpTo="@+id/navigation_birthdate"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="true"
+            />
     </fragment>
 
     <fragment
@@ -31,7 +33,8 @@
             android:id="@+id/action_birthdate_to_horoscope"
             app:destination="@id/navigation_horoscope"
             app:popUpTo="@+id/navigation_horoscope"
-            app:popUpToInclusive="true">
+            app:popUpToInclusive="true"
+            >
         </action>
     </fragment>
 
