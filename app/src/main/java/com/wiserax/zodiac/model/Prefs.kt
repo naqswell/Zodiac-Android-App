@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 import com.wiserax.zodiac.R
 import com.wiserax.zodiac.prefs
 
-class Prefs(val context: Context) {
+class Prefs(context: Context) {
 
     private val PREF_BIRTHDATE = "prefBirthDate"
     private val PREF_DATE = "prefDay"
@@ -17,8 +17,10 @@ class Prefs(val context: Context) {
     val DEF_STRING_VALUE = Gender.Male.text
     private val DEF_IS_NIGHT_VALUE = false
 
+    private val appContext = context.applicationContext
+
     private val preferences: SharedPreferences =
-        context.getSharedPreferences(PREF_BIRTHDATE, Context.MODE_PRIVATE)
+        appContext.getSharedPreferences(PREF_BIRTHDATE, Context.MODE_PRIVATE)
 
     var day: Int
         get() = preferences.getInt(PREF_DATE, DEF_INT_VALUE)
@@ -57,7 +59,7 @@ class Prefs(val context: Context) {
     }
 
     fun getDateFormated(): String {
-        return prefs.day.toString() + " " + context.resources.getStringArray(
+        return prefs.day.toString() + " " + appContext.resources.getStringArray(
             R.array.months
         )[prefs.month - 1] + " " + prefs.year.toString()
     }

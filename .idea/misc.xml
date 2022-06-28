@@ -5,7 +5,14 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.37604166666666666" />
         <entry key="..\:/Android_Projects/1My/Zodiac-Android-App/app/src/main/res/layout/activity_main.xml" value="0.35989583333333336" />
+        <entry key="..\:/Android_Projects/1My/Zodiac-Android-App/app/src/main/res/layout/fragment_birthdate.xml" value="0.17755825734549138" />
+        <entry key="..\:/Android_Projects/1My/Zodiac-Android-App/app/src/main/res/layout/fragment_compatibility.xml" value="0.3482789855072464" />
+        <entry key="..\:/Android_Projects/1My/Zodiac-Android-App/app/src/main/res/layout/fragment_compatibility2.xml" value="0.3482789855072464" />
         <entry key="..\:/Android_Projects/1My/Zodiac-Android-App/app/src/main/res/layout/fragment_date.xml" value="0.35989583333333336" />
+        <entry key="..\:/Android_Projects/1My/Zodiac-Android-App/app/src/main/res/layout/fragment_horoscope.xml" value="0.3651041666666667" />
+        <entry key="..\:/Android_Projects/1My/Zodiac-Android-App/app/src/main/res/layout/fragment_psychomatrix.xml" value="0.3651041666666667" />
+        <entry key="..\:/Android_Projects/1My/Zodiac-Android-App/app/src/main/res/layout/instance_sign.xml" value="0.30842391304347827" />
+        <entry key="..\:/Android_Projects/1My/Zodiac-Android-App/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3651041666666667" />
         <entry key="..\:/Android_Projects/Zodiac-Android-App/app/src/main/res/drawable/btn_choose_date.xml" value="0.188" />
         <entry key="..\:/Android_Projects/Zodiac-Android-App/app/src/main/res/drawable/ic_horoscope.xml" value="0.37604166666666666" />
         <entry key="..\:/Android_Projects/Zodiac-Android-App/app/src/main/res/drawable/ic_moon.xml" value="0.37604166666666666" />
